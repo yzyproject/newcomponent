@@ -1,0 +1,49 @@
+<table>
+    <thead>
+    <tr>
+        <th rowspan="2"><div style="width: 40px">智能卡类型</div></th>
+        <th rowspan="2"><div style="width: 34px">智能卡名称</div></th>
+        <th rowspan="2"><div style="width: 34px">上季度实际订卡量</div></th>
+        <th rowspan="2"><div style="width: 34px">上季度计划量</div></th>
+        <th rowspan="2"><div style="width: 100px">本季度预计月均发展用户数</div></th>
+        <th rowspan="2"><div style="width: 100px">误差百分比</div></th>
+        <th rowspan="2"><div style="width: 70px">截止上月底库存总量</div></th>
+        <th rowspan="2"><div style="width: 250px">本季度计划总量</div></th>
+        <th colspan="3"><div style="width: 300px">分月计划量</div></th>
+        <th rowspan="2"><div style="width: 100px">计划控制指标</div></th>
+        <th rowspan="2"><div style="width: 100px">经济库存倍数</div></th>
+    </tr>
+    <tr>
+        <th><div style="width: 100px">第一个月</div></th>
+        <th><div style="width: 100px">第二个月</div></th>
+        <th><div style="width: 100px">第三个月</div></th>
+    </tr>
+    </thead>
+    <tbody>
+    {{each rows as value i }}
+    <tr><td colspan="13">{{value.patternName}}</td></tr>
+    {{each value.cardTypeInfoList as List j}}
+      {{each List.cardTypeDetailList as row m}}
+        <tr data-index="{{i}}-{{j}}-{{m}}">
+        {{if m ==0}}
+          <td rowspan="{{List.cardTypeDetailList.length}}"><div>{{List.cardTypeName}}</div></td>
+        {{/if}}
+          <td><div>{{row.cardTypeCodeName}}<div></td>
+          <td><div>{{row.bookCardCount}}<div></td>
+          <td><div>{{row.cardPlanCount}}<div></td>
+          <td><div><input data-field="monthlyUserNum" class="tydic-table-focusout monthlyusernuminput" data-fn-name="monthlyUserNumInput" value={{row.monthlyUserNum}}><div></td>
+          <td><div>{{row.perError}}<div></td>
+          <td><div><input data-field="storeCount"  class="tydic-table-focusout storecountinput" data-fn-name="storeCountInput" value={{row.storeCount}}><div></td>
+          <td><div data-field="allPlanCount"  class="allplancountcell">{{row.allPlanCount}}<div></td>
+          <td><div><input data-field="firstNum"  class="tydic-table-focusout firstnuminput" data-fn-name="cellNumInput" value={{row.firstNum}}><div></td>
+          <td><div><input data-field="secondNum"  class="tydic-table-focusout secondnuminput" data-fn-name="cellNumInput" value={{row.secondNum}}><div></td>
+          <td><div><input data-field="thirdNum"  class="tydic-table-focusout thirdnuminput" data-fn-name="cellNumInput" value={{row.thirdNum}}><div></td>
+          <td><div data-field="planTarget"  class="plantargetinput">{{row.planTarget}}<div></td>
+          <td><div data-field="stockRate"  class="stockrateinput">{{row.stockRate}}<div></td>
+        </tr>
+      {{/each}}
+
+    {{/each}}
+    {{/each}}
+    </tbody>
+</table>

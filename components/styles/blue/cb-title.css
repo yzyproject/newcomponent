@@ -1,0 +1,23 @@
+/*
+ * cb-title 1.0.0
+ * author�� dongjingfeng
+ * Time: 2017.5.12
+ * description: ������ʽ
+ */
+@charset "utf-8";
+.cb-title-div{
+    color: #333;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 900;
+    width: 100%;
+    height: 40px;
+
+}
+.cb-title-div .cb-title{
+    display: inline-block;
+    height:18px;
+    margin: 12px 0;
+    padding-left:10px;
+
+}

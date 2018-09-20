@@ -1,0 +1,182 @@
+@charset "UTF-8";
+.demo-image{
+    box-sizing: border-box;
+    width: 100%;
+}
+.M-box-div{
+    margin-top: 10px;
+}
+.M-box,.M-box1,.M-box2,.M-box3,.M-box4{
+	position: relative;
+    text-align: center;
+  	zoom: 1;
+    float: right;
+}
+.M-box:before,.M-box:after,.M-box1:before,.M-box1:after ,.M-box2:before,.M-box2:after ,.M-box3:before,.M-box3:after,.M-box4:before,.M-box4:after{
+    content:"";
+    display:table;
+}
+.M-box:after,.M-box1:after,.M-box2:after,.M-box3:after,.M-box4:after{
+	clear:both;
+	overflow:hidden;
+}
+.M-box span,.M-box1 span,.M-box2 span,.M-box3 span,.M-box4 span{
+	float: left;
+	width: 28px;
+    height: 28px;
+    line-height: 28px;
+    color: #428bca;
+    font-size: 14px;
+}
+.M-box .active,.M-box1 .active,.M-box2 .active,.M-box3 .active,.M-box4 .active{
+	float: left;
+	width: 28px;
+    height: 28px;
+    line-height: 26px;
+    color: #fff;
+    font-size: 12px;
+    cursor: default;
+    background-color: #428bca;
+    border: 1px solid #428bca;
+    margin: 0;
+}
+.M-box a,.M-box1 a,.M-box2 a,.M-box3 a,.M-box4 a{
+	float: left;
+	width: 28px;
+    height: 28px;
+    line-height: 26px;
+    background: #fff;
+    border: 1px solid #ddd;
+    color: #428bca;
+    font-size: 12px;
+}
+.M-box a:hover,.M-box1 a:hover,.M-box2 a:hover,.M-box3 a:hover,.M-box4 a:hover{
+    background-color: #eee;
+}
+.M-box .next,.M-box .prev,.M-box1 .next,.M-box1 .prev{
+	font-family: "Simsun";
+    font-size: 12px;
+}
+.now,.count{
+	padding:0 5px;
+	color:#f00;
+}
+.eg img{
+	max-width: 800px;
+	min-height: 500px;
+}
+.M-box input{
+    float: left;
+    margin:0 5px;
+    width: 50px;
+    height: 28px;
+    line-height: 26px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #ddd;
+    outline: none;
+    color: #428bca;
+    font-size: 14px;
+}
+.M-box .homepage {
+    width: auto;
+}
+.M-box .endpage {
+    width: auto;
+}
+
+.M-box span{
+    display: inline-block;
+    float: left;
+    color: #428bca;
+    font-size: 12px;
+    margin: 0 5px;
+}
+
+.M-box a.page-remark{
+    height: 28px;
+    padding: 0 10px;
+    width: auto;
+    border: 1px solid #ddd;
+    line-height: 26px;
+    color:#428bca;
+    font-size: 12px;
+    min-width: 28px;
+}
+.M-box a:hover{
+    text-decoration: none;
+}
+.M-box a.jump-btn:hover{
+    border-color: #2B75B2;
+    background-color: #3186CC;
+    color: #FFF;
+}
+.M-box a.jump-btn{
+    width: 50px;
+    height: 28px;
+    font-size: 12px;
+    line-height: 26px;
+    border: 1px solid #2B75B2;
+    background: #3796E5;
+    color: #FFF;
+}
+.M-box a.page-next{
+    height: 28px;
+    width: 6px;
+    background: url("../images/icon-page-next.png") no-repeat center;
+}
+.M-box a.page-prev{
+    height: 28px;
+    width: 6px;
+    background: url("../images/icon-page-prev.png") no-repeat center;
+}
+
+.M-box a.page-home{
+    height: 28px;
+    width: 6px;
+    background: url("../images/icon-page-home.png") no-repeat center;
+}
+.M-box a.page-end{
+    height: 28px;
+    width: 6px;
+    background: url("../images/icon-page-end.png") no-repeat center;
+}
+.M-box a.page-home:hover{
+    background: #eee url("../images/icon-page-home.png") no-repeat center;
+}
+.M-box a.page-end:hover{
+    background:#eee url("../images/icon-page-end.png") no-repeat center;
+}
+.M-box a.page-next:hover{
+    background:#eee url("../images/icon-page-next.png") no-repeat center;
+}
+.M-box a.page-prev:hover{
+    background:#eee url("../images/icon-page-prev.png") no-repeat center;
+}
+
+/*disabled*/
+.M-box a.page-next.page-disabled{
+    cursor: none;
+    height: 28px;
+    width: 6px;
+    background: url("../images/icon-next-page-disabled.png") no-repeat center;
+}
+.M-box a.page-prev.page-disabled{
+    cursor: none;
+    height: 28px;
+    width: 6px;
+    background: url("../images/icon-prev-page-disabled.png") no-repeat center;
+}
+
+.M-box a.page-home.page-disabled{
+    cursor: none;
+    height: 28px;
+    width: 6px;
+    background: url("../images/icon-home-page-disable.png") no-repeat center;
+}
+.M-box a.page-end.page-disabled{
+    cursor: none;
+    height: 28px;
+    width: 6px;
+    background: url("../images/icon-end-page-disabled.png") no-repeat center;
+}

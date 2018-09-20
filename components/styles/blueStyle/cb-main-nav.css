@@ -1,0 +1,27 @@
+/*
+ * cuform 1.0.0
+ * author： anwenzhen
+ * Time: 2017.4.14
+ * description: 主导航栏
+ */
+@charset "utf-8";
+.cb-main-nav-black{
+    display: inline-block;
+    background-color: #373a42;
+    color:#f5f6fa;
+    font-size: 16px;
+    font-weight: bold;
+    padding-left: 180px;
+    float: left;
+}
+.cb-main-nav-black li{
+    float: left;
+    height: 70px;
+    padding: 0 24px 0 24px;
+    line-height: 70px;
+    cursor: pointer;
+}
+.cb-main-nav-black li:hover,
+.cb-main-nav-black li.main-nav-active{
+    background-color: #2a2d33;
+}

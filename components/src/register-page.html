@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>登录</title>
+    <!--  公共模块JS-->
+    <script src="../plugins/jquery/jquery-1.10.1.min.js"></script>
+    <script src="../scripts/api/common-rule.js"></script>
+    <script src="../scripts/common/common.js"></script>
+    <script src="../scripts/api/common-event.js"></script>
+    <script src="../scripts/api/common-listen.js"></script>
+    <script src="../plugins/mustache/mustache.min.js"></script>
+    <script src="../scripts/api/common-template.js"></script>
+    <script src="../scripts/api/common-url.js"></script>
+    <script src="../plugins/layer/layer.js"></script>
+    <!-- 表单容器 -->
+    <script src="../scripts/components/cb-form.js"></script>
+    <!-- 容器 -->
+    <script src="../scripts/components/cb-view.js"></script>
+    <!-- 按钮 -->
+    <script src="../scripts/components/cb-btn.js"></script>
+    <!-- 输入框 -->
+    <script src="../scripts/components/cb-input.js"></script>
+    <!-- 单选 -->
+    <script src="../scripts/components/cb-radio.js"></script>
+    <!-- 多选 -->
+    <script src="../scripts/components/cb-checkbox.js"></script>
+    <!-- 下拉框 -->
+    <script src="../scripts/components/cb-select.js"></script>
+    <!-- 文本 -->
+    <script src="../scripts/components/cb-text.js"></script>
+    <!-- 表单内基础组件 -->
+    <script src="../scripts/components/cb-form-base.js"></script>
+    <!--标题-->
+    <script src="../scripts/components/cb-title.js"></script>
+    <!--主导航栏-->
+    <script src="../scripts/components/cb-main-nav.js"></script>
+    <!--左导航栏-->
+    <script src="../scripts/components/cb-left-nav.js"></script>
+    <!--图标-->
+    <script src="../scripts/components/cb-icon.js"></script>
+    <!--面包导航栏-->
+    <script src="../scripts/components/cb-breadcrumbs.js"></script>
+    <!--title-->
+    <script src="../scripts/components/cb-title.js"></script>
+    <!--textarea-->
+    <script src="../scripts/components/cb-textarea.js"></script>
+    <!--模态框-->
+    <script src="../scripts/components/cb-modal.js"></script>
+    <!--表格-->
+    <script src="../plugins/pagination/script/pagination.js"></script>
+    <script src="../scripts/components/cb-table.js"></script>
+    <script src="../scripts/components/base-components/cb-business-table.js"></script>
+    <script src="../scripts/components/cb-background-image.js"></script>
+</head>
+</head>
+<body>
+<cb-background-image class="register-page"
+                     data-options='{"imageUrl":"../images/page-images/login-in/icon-background.jpg","width":"100%","height":"100%","parentHeight":"100%","parentWidth":"100%"}'>
+    <cb-form class="clearfix" listen={"submitFormData":"submitFormDataFunction"} data-options='{"service":"111","url":"aaa"}'>
+        <cb-view class="cb-view-center clearfix">
+            <cb-form class="clearfix">
+                <cb-form class="clearfix" listen={"submitTel":"submitData"}
+                         data-options='{"service":"111","url":"aaa"}'>
+                    <cb-form-base regexp="required-必须输入手机号,tel-请输入正确格式的手机号" class="cb-form-base-black clearfix"
+                                  regExp="" data-options='{"cid":"tel","item":"input","margin":["12px","0","12px","0"],"labelOptions":{"cid":"ssss","labelText":"手机号:","type":"label","width":"100px","height":"36px"},
+"itemComponentOptions":{"type":"","cid":"ssss","name":"goodLevel","placeholder":"请输入手机号","width":"302px","height":"36px","padding":["0","20px","0","20px"]}}'></cb-form-base>
+                </cb-form>
+                <cb-form-base regexp="email-请输入正确格式的邮箱" class="cb-form-base-black clearfix" regExp="" data-options='{"item":"input","margin":["12px","0","12px","0"],"labelOptions":{"cid":"ssss","labelText":"邮箱:","type":"label","width":"100px","height":"36px"},
+"itemComponentOptions":{"type":"","cid":"ssss","name":"goodLevel","placeholder":"请输入邮箱","width":"302px","height":"36px","padding":["0","20px","0","20px"]}}'></cb-form-base>
+                <cb-form class="clearfix" listen={"submitUserName":"submitData"}
+                         data-options='{"service":"111","url":"aaa"}'>
+                    <cb-form-base bingcl="" class="cb-form-base-black clearfix"
+                                  regExp="required-必须输入用户名,userName-至少4位，可以由数字、字符、_构成，_不能开头" data-options='{"item":"input","cid":"userName","margin":["12px","0","12px","0"],"labelOptions":{"cid":"ssss","labelText":"用户名:","type":"label","width":"100px","height":"36px"},
+"itemComponentOptions":{"type":"","cid":"ssss","name":"goodLevel","type":"","placeholder":"请输入用户名","width":"302px","height":"36px","padding":["0","20px","0","20px"]}}'></cb-form-base>
+                </cb-form>
+                <cb-form-base class="cb-form-base-black clearfix"
+                              regExp="required-必须输入密码,userPassword-至少8位，可以由数字、特殊字符、字母构成" data-options='{"item":"input","margin":["12px","0","12px","0"],"cid":"aaa","labelOptions":{"cid":"ssss","labelText":"密码:","type":"label","width":"100px","height":"36px"},
+"itemComponentOptions":{"type":"","cid":"ssss","name":"goodLevel","type":"password","placeholder":"请输入密码","width":"302px","height":"36px","padding":["0","20px","0","20px"]}}'></cb-form-base>
+                <cb-form-base class="cb-form-base-black clearfix" regExp="required-必须输入密码,equal-两次密码保持一致" data-options='{"item":"input","equalCid":"aaa","margin":["12px","0","12px","0"],"labelOptions":{"cid":"ssss","labelText":"确认密码:","type":"label","width":"100px","height":"36px"},
+"itemComponentOptions":{"type":"","cid":"ssss","name":"goodLevel","type":"password","placeholder":"请输入密码","width":"302px","height":"36px","padding":["0","20px","0","20px"]}}'></cb-form-base>
+            </cb-form>
+            <cb-view class="clearfix">
+                <cb-form-base class="cb-form-base-black verification-code" regExp="required" data-options='{"item":"input","margin":["12px","0","12px","0"],"labelOptions":{"cid":"ssss","labelText":"验证码：","type":"label","width":"100px","height":"36px"},
+"itemComponentOptions":{"type":"","cid":"ssss","name":"goodLevel","placeholder":"请输入验证码","width":"200px","height":"36px","padding":["0","20px","0","20px"]}}'></cb-form-base>
+                <cb-btn class="btn-black btn-right get-verification-code" data-options='{"domDiv":"1","cid":"btn1","height":"34px","width":"90px","borderRadius":["5px","5px","5px","5px"]}'>获取验证码</cb-btn>
+            </cb-view>
+            <cb-view class="clearfix" data-options='{"padding":["20px","0","10px","100px"]}'>
+                <cb-btn class="btn-a btn-left" data-options='{"domDiv":"1","cid":"btn1"}'>登录</cb-btn>
+            </cb-view>
+            <cb-view class="clearfix" data-options='{"padding":["0","0","0","80px"]}'>
+                <cb-btn class="btn-blue"  data-options='{"domDiv":"1","cid":"btn1","height":"34px","borderRadius":["5px","5px","5px","5px"],"width":"300px","href":"222"}' bindcl="triggersubmitFormData,submitFormData">注册</cb-btn>
+            </cb-view>
+
+        </cb-view>
+    </cb-form>
+</cb-background-image>
+
+<script>
+    (function(){
+        EventHandler.addHandler("triggersubmitFormData",function(triggerName){
+            var $form=$(this).closest("form");
+            Event.trigger(triggerName,$form);
+        })
+    })();
+    (function(){
+        EventListenr.addListenr("submitFormDataFunction",function($form){
+            var $dom = $form.parent('div [tagtype="cb-form"]');
+            CbForm.prototype.ajaxSubmit($dom);
+        })
+    })();
+    (function(){
+        EventListenr.addListenr("submitData",function(){
+            var $dom = $(this);
+            CbForm.prototype.ajaxSubmit($dom);
+        })
+    })();
+    $(function () {
+        $(document).on("blur",'div[cid="tel"] input',function () {
+            var $this = $(this);
+            var value = $this.val();
+            var rule = /^[1-9][0-9]{10}$/;
+            if(!rule.test(value)){
+                return false;
+            }else{
+                Event.trigger("submitTel");
+            }
+        });
+        $(document).on("blur",'div[cid="userName"] input',function () {
+            var $this = $(this);
+            var value = $this.val();
+            var rule = /^[0-9a-zA-Z]{1}[0-9a-zA-Z\_]{3,29}$/;
+            if(!rule.test(value)){
+                return false;
+            }else{
+                Event.trigger("submitUserName");
+            }
+        });
+
+    });
+
+    $(function () {
+        //获取短信验证码
+        var validCode = true;
+        $(document).on("click",'.get-verification-code button',function () {
+            var $form =$(this).parents('div[tagtype="cb-view"]').prev().find('form');
+            if(!CheckHelper.checkForm($form)){
+                    layer.alert('表单的信息不完善或者有误', {
+                        closeBtn:0,
+                        icon: 'error',
+                        skin: 'layui-blue' //该皮肤由layer.seaning.com友情扩展。关于皮肤的扩展规则，去这里查阅
+                    },function () {
+                        layer.closeAll();
+                    })
+                return false;
+            };
+            var time = 5;
+            var $this = $(this);
+            if (validCode) {
+                validCode = false;
+                var t = setInterval(function () {
+                    time--;
+                    $this.html(time + "秒");
+                    if (time == 0) {
+                        clearInterval(t);
+                        $this.html("重新获取");
+                        validCode = true;
+                    }
+                }, 1000)
+            }
+        })
+    })
+
+</script>
+</body>
+</html>

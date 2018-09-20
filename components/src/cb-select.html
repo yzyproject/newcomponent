@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>多选组件</title>
+    <!--  公共模块JS-->
+    <script src="../plugins/jquery/jquery-1.10.1.min.js"></script>
+    <script src="../scripts/common/common.js"></script>
+    <script src="../scripts/api/common-event.js"></script>
+    <script src="../scripts/api/common-listen.js"></script>
+    <script src="../scripts/api/common-template.js"></script>
+    <script src="../plugins/mustache/mustache.min.js"></script>
+    <script src="../plugins/layer/layer.js"></script>
+    <!-- 多选 -->
+    <script src="../scripts/components/cb-select.js"></script>
+    <script src="../scripts/components/cb-btn.js"></script>
+</head>
+<body>
+<cb-btn bindcl="asd1">haha</cb-btn>
+<cb-select class=""  data-options='{"service":"12345","name":"init","list":"outputParamList","value":"key","text":"value","url":"checkbox-data.json","isSelectValue":"02","isDefault":true,"dataType":"ajaxData","mergeDataOrder":"ajax","option":[{"key":"1","value":"测试"}]}'></cb-select>
+<cb-select class=""  data-options='{"cid":"a1","service":"123","name":"321","isRequest":true,"list":"outputParamList","value":"key","text":"value","url":"checkbox-data.json","isDefault":true,"dataType":"ajaxData","mergeDataOrder":"ajax","option":[{"key":"1","value":"测试"}]}'></cb-select>
+<script>
+    (function(){
+        EventHandler.addHandler("asd1",function(){
+            var options = $("[cid='a1']").data("options");
+            var param = {
+                "asd":1
+            }
+            CbSelect.prototype.initData($("[cid='a1']"),options,param);
+        })
+    })()
+</script>
+</body>
+</html>

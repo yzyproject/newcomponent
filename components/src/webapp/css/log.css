@@ -1,0 +1,78 @@
+.cb-form-base-black input{
+    background-color: transparent !important;
+    border:1px solid #fff !important;
+}
+.btn-blue .cb-btn{
+    background-color: transparent;
+    border:1px solid #fff;
+}
+
+.btn-blue .cb-btn:hover{
+    background-color: transparent;
+}
+
+.cb-form-base-black input:focus{
+    border: 1px solid #fff !important;
+    box-shadow:-1px 1px 6px 2px rgba(255,255,255,0.7);
+}
+.register-page .invalid-div{
+    border:none;
+    color: #fff;
+    background:url("../images/prompt.png") no-repeat left center;
+    text-align: left;
+    text-indent: 15px;
+    background-size:100% 100%;
+    -moz-background-size:100% 100%;
+}
+.cb-title{
+    width: 100% !important;
+    height: 100px !important;
+    text-align: center !important;
+    color: #fff;
+    font-size: 36px;
+    margin-top: 85px !important;
+}
+.cb-background-image-div{
+    border:1px solid #fff;
+}
+.btn-log .cb-btn:hover{
+    background-color: #eef4f8;
+    color: #4484b3;
+    border:none;
+    outline: none;
+
+}
+.btn-a .cb-btn{
+    outline: none;
+}
+.checkbox-list input{
+    outline: none;
+    border: 1px solid #fff;
+
+}
+.checkbox-list input:hover{
+    outline: none;
+    border: 1px solid #fff;
+
+}
+.cb-checkbox-blue input+label{
+    vertical-align: middle;
+    position: relative;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin: -3px 6px 0 0;
+    background:url("../images/password-round.png") no-repeat;
+}
+.cb-checkbox-blue input+label:hover{
+    background:url("../images/password-exit.png") no-repeat;
+}
+.cb-checkbox-blue input:checked+label:after {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    top:0;
+    left: 0;
+    background:url("../images/password.png") no-repeat;
+}

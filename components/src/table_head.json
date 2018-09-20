@@ -1,0 +1,14 @@
+{
+  "respCode":"0000",
+  "data":[
+    [
+      {"contents":"请求首付款单号","field":"danhao","formatter":"Hyperlink","width":"300px", "class":"er"},
+      {"contents":"请求转售企业","field":"qiye","width":"320px", "class":"er2"},
+      {"contents":"请求结算账期","field":"moneytime","width":"340px", "class":"erdf"},
+      {"contents":"请求收付款金额","field":"money","width":"360px", "class":"ervf"},
+      {"contents":"请求申请人","field":"people","width":"380px", "class":"ercd"},
+      {"contents":"请求账本类型","field":"type","width":"400px", "class":"esdr"}
+
+    ]
+  ]
+}

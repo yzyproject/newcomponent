@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>浮动面板组件</title>
+    <!--  公共模块JS-->
+    <script src="../plugins/jquery/jquery-1.10.1.min.js"></script>
+    <script src="../scripts/common/common.js"></script>
+    <script src="../scripts/api/common-event.js"></script>
+    <script src="../scripts/api/common-listen.js"></script>
+    <script src="../scripts/api/common-rule.js"></script>
+    <script src="../plugins/mustache/mustache.min.js"></script>
+    <script src="../scripts/api/common-template.js"></script>
+    <!-- 浮动面板 -->
+    <script src="../scripts/components/cb-floating-panel.js"></script>
+    <script src="../scripts/components/cb-btn.js"></script>
+</head>
+<body>
+<cb-btn  bindcl="ShowFloatingPanel,event1"></cb-btn>
+<cb-floating-panel  listen={"event1":"ShowFloatingPanel"} data-options='{"ctype":"2","masterId":"","animation":"3","showBeforeProcessor":"","showAfterProcessor":"","hidebeforeProcessor":"","hideAfterProcessor":"","showOperationMethod":""}'></cb-floating-panel>
+</body>
+</html>

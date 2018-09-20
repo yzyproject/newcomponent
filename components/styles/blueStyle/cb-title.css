@@ -1,0 +1,45 @@
+/*
+ * cb-title 1.0.0
+ * author： dongjingfeng
+ * Time: 2017.5.12
+ * description: 标题样式ʽ
+ */
+@charset "utf-8";
+.cb-title-div{
+    color: #333;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 900;
+    width: 100%;
+    line-height: 20px;
+    padding: 20px 0 15px 0;
+}
+.cb-title-div .cb-title{
+    display: inline-block;
+    line-height:20px;
+    padding-left:10px;
+    margin:0;
+}
+
+/*zhangying*/
+.cb-title-div-zy{
+    color: #333;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 900;
+    width: 100%;
+    line-height: 20px;
+    padding: 0 0 15px 0;
+}
+.cb-title-div-zy .cb-title{
+    display: inline-block;
+    line-height:20px;
+    padding-left:10px;
+    margin:0;
+}
+.title-bottom{
+    border-bottom:4px solid #5A8DE0;
+}
+.title-left{
+    border-left:4px solid #5A8DE0;
+}

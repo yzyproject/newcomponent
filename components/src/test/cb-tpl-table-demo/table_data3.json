@@ -1,0 +1,141 @@
+{
+  "respCode": "0000",
+  "respDesc": "成功",
+  "planTitle": "中国联通2017年第一季度电信智能卡计划表（单位：万）",
+  "provinceCodeName": "山东",
+  "createTime": "2017-02-02",
+  "cardPatternList": [
+    {
+      "pattern": "1",
+      "patternName": "实体卡计划",
+      "cardTypeInfoList": [
+        {
+          "cardType": "33",
+          "cardTypeName": "微型2",
+          "cardTypeDetailList": [
+            {
+              "cpApplyDetailId":"11",
+              "cardTypeCode": "111",
+              "cardTypeCodeName": "128k手机卡（微型2）",
+              "bookCardCount": "0.0",
+              "cardPlanCount": "6.001",
+              "controlQuota": "200",
+              "monthlyUserNum":"200",
+              "firstNum":"23",
+              "secondNum":"23",
+              "thirdNum":"23"
+            },
+            {
+              "cpApplyDetailId":"11",
+              "cardTypeCode": "111",
+              "cardTypeCodeName": "128k三合一卡",
+              "bookCardCount": "0.0",
+              "cardPlanCount": "6.001",
+              "controlQuota": "200"	,
+              "monthlyUserNum":"200",
+              "firstNum":"23",
+              "secondNum":"23",
+              "thirdNum":"23"
+            }
+          ]
+        },
+        {
+          "cardType": "33",
+          "cardTypeName": "普通卡",
+          "cardTypeDetailList": [
+            {
+              "cpApplyDetailId":"11",
+              "cardTypeCode": "111",
+              "cardTypeCodeName": "64k手机卡（普通）",
+              "bookCardCount": "0.0",
+              "cardPlanCount": "6.001",
+              "controlQuota": "200",
+              "monthlyUserNum":"200",
+              "firstNum":"23",
+              "secondNum":"23",
+              "thirdNum":"23"
+            },
+            {
+              "cpApplyDetailId":"11",
+              "cardTypeCode": "111",
+              "cardTypeCodeName": "128k手机卡（普通）",
+              "bookCardCount": "0.0",
+              "cardPlanCount": "6.001",
+              "controlQuota": "200",
+              "monthlyUserNum":"200",
+              "firstNum":"23",
+              "secondNum":"23",
+              "thirdNum":"23"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pattern": "2",
+      "patternName": "数据卡计划",
+      "cardTypeInfoList": [
+        {
+          "cardType": "22",
+          "cardTypeName": "微型2",
+          "cardTypeDetailList": [
+            {
+              "cpApplyDetailId":"11",
+              "cardTypeCode": "111",
+              "cardTypeCodeName": "128k手机卡（微型2）",
+              "bookCardCount": "0.0",
+              "cardPlanCount": "6.001",
+              "controlQuota": "200",
+              "monthlyUserNum":"200",
+              "firstNum":"23",
+              "secondNum":"23",
+              "thirdNum":"23"
+            },
+            {
+              "cpApplyDetailId":"11",
+              "cardTypeCode": "111",
+              "cardTypeCodeName": "128k三合一卡",
+              "bookCardCount": "0.0",
+              "cardPlanCount": "6.001",
+              "controlQuota": "200",
+              "monthlyUserNum":"200",
+              "firstNum":"23",
+              "secondNum":"23",
+              "thirdNum":"23"
+            }
+          ]
+        },
+        {
+          "cardType": "33",
+          "cardTypeName": "普通卡",
+          "cardTypeDetailList": [
+            {
+              "cpApplyDetailId":"11",
+              "cardTypeCode": "111",
+              "cardTypeCodeName": "64k手机卡（普通）",
+              "bookCardCount": "0.0",
+              "cardPlanCount": "6.001",
+              "controlQuota": "200",
+              "monthlyUserNum":"200",
+              "firstNum":"23",
+              "secondNum":"23",
+              "thirdNum":"23"
+            },
+            {
+              "cpApplyDetailId":"11",	
+              "cardTypeCode": "111",
+              "cardTypeCodeName": "128k手机卡（普通）",
+              "bookCardCount": "0.0",
+              "cardPlanCount": "6.001",
+              "controlQuota": "200",
+              "monthlyUserNum":"200",
+              "firstNum":"23",
+              "secondNum":"23",
+              "thirdNum":"23"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

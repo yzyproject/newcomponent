@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+  <meta name="renderer" content="webkit"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>模态框组件</title>
+  <!--  公共模块-->
+    <script src="../plugins/jquery/jquery-1.10.1.min.js"></script>
+    <script src="../scripts/api/common-rule.js"></script>
+    <script src="../scripts/common/common.js"></script>
+    <script src="../scripts/api/common-event.js"></script>
+    <script src="../scripts/api/common-listen.js"></script>
+    <script src="../plugins/mustache/mustache.min.js"></script>
+    <script src="../scripts/api/common-template.js"></script>
+    <!-- 表单容器 -->
+    <script src="../scripts/components/cb-form.js"></script>
+    <!-- 容器 -->
+    <script src="../scripts/components/cb-view.js"></script>
+    <!-- 按钮 -->
+    <script src="../scripts/components/cb-btn.js"></script>
+    <!-- 输入框 -->
+    <script src="../scripts/components/cb-input.js"></script>
+    <!-- 单选 -->
+    <script src="../scripts/components/cb-radio.js"></script>
+    <!-- 多选 -->
+    <script src="../scripts/components/cb-checkbox.js"></script>
+    <!-- 下拉框 -->
+    <script src="../scripts/components/cb-select.js"></script>
+    <!-- 文本 -->
+    <script src="../scripts/components/cb-text.js"></script>
+    <!-- 表单内基础组件 -->
+    <script src="../scripts/components/cb-form-base.js"></script>
+    <!-- 图标-->
+    <script src="../scripts/components/cb-icon.js"></script>
+    <!-- 模态框-->
+    <script src="../scripts/components/cb-modal.js"></script>
+</head>
+<body>
+
+
+
+  <cb-btn bindcl="modalShow,show" data-options='{"showId":"modal1"}'>模态框</cb-btn>
+  <cb-modal  listen={"show":"showModal"} data-options = '{"cid":"modal1","ctype":"blue","isShowMaskLayer":false,"contentCid":"cb-form1","title":"模态框思密达","isShowCloseIcon":true,"closeIconUrl":"123.jpg","primaryPostion":[266,30],"closeIconLocation":"rightUp","draggable":true,"cancelBtnText":"取消","confirmBtnText":"确定","width":"600","beforeCloseProcessor":"Fun1"}'>
+
+
+
+  </cb-modal>
+</body>
+</html>

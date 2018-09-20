@@ -1,0 +1,159 @@
+@charset "utf-8";
+.cb-left-nav-div {
+    width: 100%;
+    background: #fafafa;
+    height: 100%;
+    /*overflow: auto;*/
+}
+.left-list-nav{
+    display: none;
+}
+/*360*/
+.left-list-nav>li{
+    background: #343547;
+    overflow: hidden;
+    position:relative;
+}
+.expand .left-list-nav>li{
+    height: 50px;
+}
+/*.left-list-nav-active{*/
+    /*position:relative;*/
+/*}*/
+/*.left-list-nav-active>li{*/
+    /*position:relative;*/
+/*}*/
+/*.left-list-nav-active>li:hover{
+    border: 3px dotted green;
+    z-index: 99;
+}*/
+
+
+.left-list-nav>li>a{
+    font-size: 14px;
+    /*color:#333;*/
+    color:#CDD0D8;
+    display: inline-block;
+    height: 50px;
+    line-height: 20px;
+    width: 100%;
+    padding: 15px 20px 15px 50px;
+    position: relative;
+    font-weight: bold;
+}
+.left-list-nav>li>a:hover,.left-list-nav>li>a.active{
+    border-left: 6px solid #fff;
+    /*color: #4490cf;*/
+    color: #3F9CE1;
+    padding-left: 44px;
+}
+.left-list-nav>li>a.is-parent:hover,.left-list-nav>li>a.is-parent.active{
+    /*border-left: 6px solid #4490cf;*/
+    border-left: 6px solid #4F9CEC;
+    padding-left: 44px;
+    color: #4490cf;
+    /*background-color: #e4eef7;*/
+    background-color: #292A3E;
+}
+.left-list-nav>li>a:hover:before,.left-list-nav>li>a.active:before{
+    left: 14px;
+}
+.left-list-nav>li ul{
+    display: none;
+}
+
+.icon-yonghuguanli:before {
+    position: absolute;
+    top :15px;
+    left: 20px;
+    content: '';
+    height: 20px;
+    width: 20px;
+    background: url("../../images/cb-left-nav/icon-yonghuguanli.png") no-repeat;
+}
+.icon-yonghuguanli:hover:before,.icon-yonghuguanli.active:before{
+    background: url("../../images/cb-left-nav/icon-yonghuguanli-active.png") no-repeat;
+}
+.icon-quanxianguanli:before {
+    position: absolute;
+    top :15px;
+    left: 20px;
+    content: '';
+    height: 20px;
+    width: 20px;
+    background: url("../../images/cb-left-nav/icon-quanxianguanli.png") no-repeat;
+}
+.icon-quanxianguanli:hover:before,.icon-quanxianguanli.active:before {
+    background: url("../../images/cb-left-nav/icon-quanxianguanli-active.png") no-repeat;
+}
+.icon-zuhuguanli:before {
+    position: absolute;
+    top :15px;
+    left: 20px;
+    content: '';
+    height: 20px;
+    width: 20px;
+    background: url("../../images/cb-left-nav/icon-zuhuguanli.png") no-repeat;
+}
+.icon-zuhuguanli:hover:before,.icon-zuhuguanli.active:before {
+    background: url("../../images/cb-left-nav/icon-zuhuguanli-active.png") no-repeat;
+}
+.left-list-nav>li>.is-parent:after{
+    position: absolute;
+    top :21px;
+    right: 20px;
+    content: '';
+    height: 8px;
+    width: 14px;
+    background: url("../../images/cb-left-nav/icon-arrow-down.png") no-repeat;
+}
+.left-list-nav>li>a.pack-up:after{
+    background: url("../../images/cb-left-nav/icon-arrow-up.png") no-repeat;
+}
+.left-list-nav>li>ul li a{
+    width: 100%;
+    display: inline-block;
+    height: 42px;
+    padding: 14px 20px 14px 50px;
+    /*360*/
+    line-height: 14px;
+    font-size: 14px;
+    /*color:#333;*/
+    /*360*/
+    color:#fff;
+}
+.left-list-nav-expandUl li>a{
+    padding: 14px 0 !important;
+}
+.left-list-nav>li>ul li a:hover,.left-list-nav>li>ul li a.active{
+    color: #4490cf;
+}
+.left-list-nav-active{
+    display: block;
+}
+
+
+/*360*/
+.secondMenu{
+    width:217px;
+    position:absolute;
+    top:50px;
+    left:50px;
+
+
+}
+.expand .secondMenu{
+    background: #292A3E;
+}
+.expand{
+    width:50px !important;
+    text-overflow: clip;
+}
+.stretch{
+    width:267px;
+    overflow: visible !important;
+    background: #2D323D;
+}
+.showMenu{
+    display: block !important;
+}

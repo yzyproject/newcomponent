@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>按钮组件</title>
+</head>
+<body>
+<!--<cb-btn data-options='{"domDiv":"1","cid":"btn1","type":"reset","disabled":"true"}' data-cbstyle='{"width":"300px","border":"2px solid #000"}' bindcl="binddb,even1" bindbl="wing3,event2">中国</cb-btn>-->
+<cb-btn class="btn1" data-options='{"domDiv":"1","cid":"btn1","service":"1111","href":"http://www.baidu.com","beforeHref":"var data={},params={};data.params=params;data.url=\"checkbox-data.json\";data.successF=function(){location.href = options.href;};  CommonAjax.ajax(data);"}'>跳转</cb-btn>
+<cb-btn class="btn1 print"  data-options='{"domDiv":"1","cid":"btn1"}' bindcl="wing,even1" >打印</cb-btn>
+<cb-table  listen='{"even1":"print","table1":"loading","long":"geting","append":"appending","celling":"setcelling"}' data-options='{
+        "bodyData":{
+          "merge":[ [ [0,0] , [1,0] ], [ [0,2],[1,2] ] ],
+
+          "data":[["0.0-1.1 合并","1","2","数据4","3"],
+                  [null,null,null,"数据5","4"]
+                ]
+        },
+        "headData":{
+          "data":[["姓名","性别","年龄","备注","备注1"]
+                ]
+        }
+      }'
+>
+</cb-table>
+<!--  公共模块-->
+<script src="../plugins/jquery/jquery-1.10.1.min.js"></script>
+<script src="../scripts/common/common.js"></script>
+<script src="../scripts/api/common-event.js"></script>
+<script src="../scripts/api/common-listen.js"></script>
+<script src="../plugins/print/jquery.PrintArea.js"></script>
+<!-- 按钮 -->
+<script src="../scripts/components/cb-btn.js"></script>
+<script src="../scripts/components/cb-table.js"></script>
+<script type="text/javascript">
+
+    (function(){
+        EventHandler.addHandler("wing", function (triggerName) {
+            Event.trigger(triggerName);
+        });
+    })();
+
+    (function(){
+        EventListenr.addListenr("print",function(){
+            //打印功能
+            $(this).printArea();
+        });
+    })();
+</script>
+</body>
+</html>
+

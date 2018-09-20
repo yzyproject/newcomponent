@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--  公共模块JS-->
+    <script src="../plugins/jquery/jquery-1.10.1.min.js"></script>
+    <script src="../plugins/bootstrap/bootstrap.min.js"></script>
+    <script src="../plugins/bootstrap/bootstrap-datetimepicker.js"></script>
+    <script src="../plugins/bootstrap/bootstrap-datetimepicker.zh-CN.js"></script>
+    <link rel="stylesheet" href="../plugins/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../plugins/bootstrap/bootstrap-datetimepicker.css">
+    <script src="../plugins/jedate/jquery.jedate.js"></script>
+    <link rel="stylesheet" href="../plugins/jedate/skin/jedate.css">
+    <script src="../scripts/common/common.js"></script>
+    <script src="../scripts/api/common-event.js"></script>
+    <script src="../scripts/api/common-listen.js"></script>
+    <script src="../scripts/api/common-rule.js"></script>
+    <script src="../plugins/mustache/mustache.min.js"></script>
+    <script src="../scripts/api/common-template.js"></script>
+    <!-- 输入框 -->
+    <script src="../scripts/components/cb-input.js"></script>
+    <script src="../scripts/components/cb-icon.js"></script>
+    <script src="../scripts/components/cb-date.js"></script>
+</head>
+<body>
+<cb-input class="cb-input-big"   data-options='{"name":"aaa","isReadonly":true,"width":"200px","height":"34px"}'>
+    <cb-icon class="cb-icon-big" data-options='{"ctype":"icon-calendar","imageUrl":"../images/cb-icon/icon-calendar.png"}'></cb-icon>
+</cb-input>
+<cb-date class=""
+         data-options='{"ctype":"1","masterId":"","onValued":"","format":"yyyy-mm-dd hh:ii","minDate":"2017-03-17 00:00:00","maxDate":"2017-04-17 00:00:00","language":"zh-CN","weekStart":"","autoclose":false,"todayBtn":true,"todayHighlight":true,"weekAlias":["日","一","二","三","四","五","六"],
+         "duringDate":"2017-03-17 00:00:00","maxDate":"2017-04-17 00:00:00","language":"zh-CN","weekStart":"","autoclose":false,"todayBtn":true,"todayHighlight":true,"weekAlias":["日","一","二","三","四","五","六"],
+         "duringDate":"var nowDate = new Date();var yy = nowDate.getFullYear();var mmo = nowDate.getMonth() + 1;var dd = nowDate.getDate();var hh = nowDate.getHours();var mmi = nowDate.getMinutes();var nowD = yy + \"-\" + mmo + \"-\" + dd+\" \" + hh + \":\" + mmi;options.minDate=nowD;nowDate.setDate(nowDate.getDate()+6);var mmo = nowDate.getMonth() + 1;var dd = nowDate.getDate();var hh = nowDate.getHours();var mmi = nowDate.getMinutes();var endD = yy + \"-\" + mmo + \"-\" + dd+\" \" + hh + \":\" + mmi;options.maxDate=endD;console.log(options);"
+         }'></cb-date>
+</body>
+</html>

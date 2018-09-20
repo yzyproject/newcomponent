@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>按钮组件</title>
+    <!--  公共模块-->
+    <script src="../plugins/jquery/jquery-1.10.1.min.js"></script>
+    <script src="../scripts/common/common.js"></script>
+    <script src="../scripts/api/common-event.js"></script>
+    <script src="../scripts/api/common-listen.js"></script>
+    <!-- 按钮 -->
+    <script src="../scripts/components/cb-btn.js"></script>
+
+  </head>
+  <body>
+    <!-- <cb-btn data-options='{"domDiv":"1","cid":"btn1","type":"reset","disabled":"true"}' data-params='{"href":"23232323","keyId":[45,45],"keyName",}' data-cbstyle='{"width":"300px","border":"2px solid #000"}' bindcl="binddb" bindbl="wing3,event2">中国</cb-btn> -->
+    <cb-btn class="btn1"  data-options='{"domDiv":"1","cid":"btn1"}' bindcl="wing" ><div>中国1</div></cb-btn>
+    <button class="click-btn" data-fn-name="wing" data-trigger-name="xxx">点我点我</button>
+    <div class="btn-view"></div>
+    <script type="text/javascript">
+
+    (function(){
+        EventHandler.addHandler("wing",function(triggerName){
+            console.log($(this).closest('div[tagtype]').data("options"));
+             var html = '<cb-btn class="btn-blue btn-right btn-margin-right" bindcl="wing"'
+		         + 'data-options=\'{"href":"publish-process-details.html"}\'>按钮</cb-btn>';
+			          $('.btn-view').append(html);
+                ParsingHelper.parsingTag();
+               //二次解析标签
+               ParsingHelper.parsinghtml($('.btn-view'));
+               //标签解析完毕后，进行事件绑定与校验绑定
+               InitModal.initHtml($('.btn-view'));
+        });
+
+    })();
+
+
+    </script>
+
+
+  </body>
+
+</html>

@@ -1,0 +1,17 @@
+{
+  "respCode":"0000",
+  "outputParamList":[
+    {
+      "key":"01",
+      "value":"类型一"
+    },
+    {
+      "key":"02",
+      "value":"类型二"
+    },
+    {
+      "key":"03",
+      "value":"类型三"
+    }
+  ]
+}

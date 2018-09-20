@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>测试页面</title>
+    <!--  公共模块JS-->
+    <script src="../plugins/jquery/jquery-1.10.1.min.js"></script>
+    <script src="../scripts/api/common-rule.js"></script>
+    <script src="../scripts/common/common.js"></script>
+    <script src="../scripts/api/common-event.js"></script>
+    <script src="../scripts/api/common-listen.js"></script>
+    <script src="../plugins/mustache/mustache.min.js"></script>
+    <script src="../scripts/api/common-template.js"></script>
+    <script src="../scripts/api/common-url.js"></script>
+    <script src="../plugins/bootstrap/bootstrap-datetimepicker.js"></script>
+    <script src="../plugins/bootstrap/bootstrap-datetimepicker.zh-CN.js"></script>
+    <link rel="stylesheet" href="../plugins/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../plugins/bootstrap/bootstrap-datetimepicker.css">
+    <!-- 表单容器 -->
+    <script src="../scripts/components/cb-form.js"></script>
+    <!-- 容器 -->
+    <script src="../scripts/components/cb-view.js"></script>
+    <!-- 按钮 -->
+    <script src="../scripts/components/cb-btn.js"></script>
+    <!-- 输入框 -->
+    <script src="../scripts/components/cb-input.js"></script>
+    <!-- 单选 -->
+    <script src="../scripts/components/cb-radio.js"></script>
+    <!-- 多选 -->
+    <script src="../scripts/components/cb-checkbox.js"></script>
+    <!-- 下拉框 -->
+    <script src="../scripts/components/cb-select.js"></script>
+    <!-- 文本 -->
+    <script src="../scripts/components/cb-text.js"></script>
+    <!-- 表单内基础组件 -->
+    <script src="../scripts/components/cb-form-base.js"></script>
+    <script src="../scripts/components/cb-floating-panel.js"></script>
+    <script src="../scripts/components/cb-show-list.js"></script>
+    <script src="../scripts/components/cb-icon.js"></script>
+    <script src="../scripts/components/cb-text.js"></script>
+    <script src="../scripts/components/cb-date.js"></script>
+    <script src="../scripts/components/custom-components/cb-date-interval.js"></script>
+    <!--  表格组件 -->
+    <script src="../plugins/pagination/script/pagination.js"></script>
+    <script src="../scripts/components/cb-table.js"></script>
+    <script src="../scripts/components/base-components/cb-business-table.js"></script>
+    <!--标题-->
+    <script src="../scripts/components/cb-title.js"></script>
+</head>
+<body>
+<cb-title data-options='{"title":"收付款查询/审批"}'>标题</cb-title>
+<cb-business-table class="detail-table" listen='{"loading":"loadTable"}' data-options='{
+        "width":"100%",
+        "pagination":false,
+        "width":"100%",
+        "method":"post",
+        "tbodyService":"111111",
+        "url":"table_data.json",
+        "detailList":{
+            "isAllMarge":true,
+            "data":[
+                {"name":"accountType","cName":"测试","position":[1,1]},
+                {"name":"collectingBank","cName":"测试0","position":[2,1]},
+                {"name":"settlementAccount","cName":"测试1","position":[3,1]},
+                {"name":"bankCertificate","cName":"测试2","position":[4,1]},
+                {"name":"amountPayable","cName":"测试3","position":[5,1]},
+                {"name":"counterFee","cName":"测试4","position":[6,1]},
+                {"name":"remarks","cName":"测试5","position":[7,1]},
+                {"name":"attachCount","cName":"测试6","position":[1,2]},
+                {"name":"file","cName":"测试7","position":[2,2]}
+            ]
+        },
+        "thead":{
+          "data":[
+              [
+                {"contents":"首付款单号","field":"danhao", "width":"15%","class":"er"},
+                {"contents":"转售企业","field":"qiye","width":"15%", "class":"er2"},
+                {"contents":"结算账期","field":"moneytime","width":"15%", "class":"erdf"},
+                {"contents":"收付款金额","field":"money","width":"15%", "class":"ervf"},
+                {"contents":"申请人","field":"people","width":"15%", "class":"ercd"},
+                {"contents":"账本类型","field":"type","width":"15%", "class":"esdr"},
+                {"contents":"查看","field":"operation","width":"10%","formatter":"moreBtn", "class":"esdr"}
+
+              ]
+          ],
+          "merge":[]
+        },
+        "tbody":{
+          "service":"1111",
+          "data":[
+
+          ],
+          "merge":[]
+        },
+        "tips":{
+
+        }
+    }'
+>
+</cb-business-table>
+
+<script>
+    $(window).load(function(){
+        var actionType =  Number(UrlParam.param('actionType'));
+        var mpai = Number(UrlParam.param('mpai'));
+        var $table = $(".detail-table");
+        var param={};
+        CbBusinessTable.loadTable($table, param);
+    });
+</script>
+
+</body>
+
+</html>

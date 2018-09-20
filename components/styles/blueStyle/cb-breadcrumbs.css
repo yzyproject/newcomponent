@@ -1,0 +1,75 @@
+/*
+ * CbBreadcrumbs 1.0.0
+ * author�� dongjingfeng
+ * Time: 2017.5.17
+ * description: ���м������ʽ��
+ */
+@charset "utf-8";
+.cb-breadcrumbs{
+    width:100%;
+    height:48px;
+    font-size: 14px;
+    line-height: 48px;
+    background: #fafafa;
+    border-bottom: 1px solid #979ca8;
+}
+.cb-breadcrumbs .cb-breadcrumbs-list{
+    float: left;
+    height: 48px;
+    padding-left: 32px;
+}
+
+.cb-breadcrumbs .cb-breadcrumbs-list li{
+    float:left;
+}
+.cb-breadcrumbs .cb-breadcrumbs-list li:first-child{
+    display: none;
+}
+.cb-breadcrumbs .cb-breadcrumbs-list li a:hover, a:visited, a:link, a:active{
+    text-decoration: none;
+    color:#333;
+}
+.cb-breadcrumbs .cb-breadcrumbs-arrow{
+    margin:0 12px;
+    height: 100%;
+    width: 6px;
+    background: url("../../images/cb-breadcrumbs/breadcrums-arrow.png") no-repeat center;
+    background-size: 6px 10px;
+}
+
+.cb-breadcrumbs .cross-screen{
+    float: left;
+     height: 100%;
+     width: 16px;
+     background: url("../../images/cb-breadcrumbs/icon-left.png") no-repeat center ;
+     background-size: 16px 16px;
+     cursor: pointer;
+     margin-right:16px;
+ }
+.cb-breadcrumbs .cross-screen:hover{
+    background: url("../../images/cb-breadcrumbs/icon-left-hover.png") no-repeat center ;
+}
+.cb-breadcrumbs .cross-screen.cross-fold-up{
+    background: url("../../images/cb-breadcrumbs/icon-right.png") no-repeat center ;
+}
+.cb-breadcrumbs .cross-screen.cross-fold-up:hover{
+    background: url("../../images/cb-breadcrumbs/icon-right-hover.png") no-repeat center ;
+}
+
+.cb-breadcrumbs .vertical-screen{
+    float: left;
+    height: 100%;
+    width: 16px;
+    background: url("../../images/cb-breadcrumbs/icon-up.png") no-repeat center ;
+    background-size: 16px 16px;
+    cursor: pointer;
+}
+.cb-breadcrumbs .vertical-screen:hover{
+    background: url("../../images/cb-breadcrumbs/icon-up-hover.png") no-repeat 0 center ;
+}
+.cb-breadcrumbs .vertical-screen.vertical-fold-up{
+    background: url("../../images/cb-breadcrumbs/icon-down.png") no-repeat 0 center ;
+}
+.cb-breadcrumbs .vertical-screen.vertical-fold-up:hover{
+    background: url("../../images/cb-breadcrumbs/icon-down-hover.png") no-repeat 0 center ;
+}

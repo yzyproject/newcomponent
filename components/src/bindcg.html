@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>bindcg的用法</title>
+    <!--  公共模块-->
+    <script src="../plugins/jquery/jquery-1.10.1.min.js"></script>
+    <script src="../scripts/common/common.js"></script>
+    <script src="../scripts/api/common-event.js"></script>
+    <script src="../scripts/api/common-listen.js"></script>
+    <script src="../scripts/api/common-template.js"></script>
+    <script src="../plugins/mustache/mustache.min.js"></script>
+
+    <script src="../scripts/components/cb-select.js"></script>
+    <script src="../scripts/components/cb-input.js"></script>
+</head>
+<body>
+<cb-select class=""  bindcg="changeFunction,selectValueChange1+selectValueChange2+selectValueChange3" data-options='{"cid":"ssss","service":"111","name":"goodLevel","list":"outputParamList","value":"key","text":"value","url":"checkbox-data.json","isDefault":true}'></cb-select>
+<cb-input class="" listen={"selectValueChange1":"changeValueFunction"} data-options='{"placeholder":"请输入姓名","name":"input1","width":"300px","borderRadius":["0"],"height":"30px"}'></cb-input>
+<cb-input class="" listen={"selectValueChange2":"changeValueFunction"} data-options='{"placeholder":"请输入姓名","name":"input1","width":"300px","borderRadius":["0"],"height":"30px"}'></cb-input>
+<cb-input class="" listen={"selectValueChange3":"changeValueFunction"}  data-options='{"placeholder":"请输入姓名","name":"input1","width":"300px","borderRadius":["0"],"height":"30px"}'></cb-input>
+
+<script>
+    (function () {
+        EventHandler.addHandler("changeFunction", function (triggerName) {
+            var names = triggerName.split("+");
+
+            if($(this).val() === "01"){
+                Event.trigger(names[0],$(this).val());
+            }
+            if($(this).val() === "02"){
+                Event.trigger(names[1],$(this).val());
+            }
+            if($(this).val() === "03"){
+                Event.trigger(names[2],$(this).val());
+            }
+
+        });
+        (function(){
+            EventListenr.addListenr("changeValueFunction",function(param){
+                $(this).find("input").val(param);
+            })
+        })();
+
+    })();
+</script>
+</body>
+</html>

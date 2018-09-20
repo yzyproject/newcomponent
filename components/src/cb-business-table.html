@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>复杂表格组件</title>
+    <!--  公共模块JS-->
+    <script src="../plugins/jquery/jquery-1.10.1.min.js"></script>
+    <script src="../plugins/layer/layer.js"></script>
+    <script src="../scripts/common/common.js"></script>
+    <script src="../scripts/api/common-event.js"></script>
+    <script src="../scripts/api/common-listen.js"></script>
+    <script src="../scripts/api/common-rule.js"></script>
+    <script src="../plugins/mustache/mustache.min.js"></script>
+    <script src="../scripts/api/common-template.js"></script>
+    <script src="../plugins/pagination/script/pagination.js"></script>
+    <script src="../scripts/components/cb-table.js"></script>
+    <script src="../scripts/components/base-components/cb-business-table.js"></script>
+    <script src="../scripts/components/cb-btn.js"></script>
+
+</head>
+<body>
+  <cb-btn  data-options='{}' bindcl="loadTable,table1"><div>刷新表格内容</div></cb-btn>
+  <cb-btn  data-options='{}' bindcl="getTable,long"><div>获得已选择的表格数据</div></cb-btn>
+  <!-- <cb-business-table class="cb-business-table-blue dongjingfeng" listen='{"table1":"loading","long":"geting"}' data-options='{
+          "pagination":true,
+          "method":"post",
+          "chooseBox":"checkbox",
+          "url":"table_data.json",
+          "tbodyService":"123456",
+          "homePage":"",
+          "endPage":"",
+          "prevContent":"",
+          "nextContent":"",
+          "isPageSearch":true,
+          "keepShowPN":false,
+          "isPageShowAll":false,
+          "thead":{
+            "data":[
+                [
+                  {"contents":"首付款单号","field":"danhao","formatter":"Hyperlink","class":"er"},
+                  {"contents":"转售企业","field":"qiye", "class":"er2"},
+                  {"contents":"结算账期","field":"moneytime","class":"erdf"},
+                  {"contents":"收付款金额","field":"money", "class":"ervf"},
+                  {"contents":"申请人","field":"people","class":"ercd"},
+                  {"contents":"查看","field":"operation","formatter":"threeBtn", "class":"esdr"}
+
+                ]
+            ],
+            "merge":[]
+          },
+          "tbody":{
+            "data":[
+
+            ],
+            "merge":[]
+          },
+          "tips":{
+
+          }
+      }'
+          >
+  </cb-business-table> -->
+  <cb-business-table class="cb-business-table-blue wing" listen='{"table1":"loading","long":"geting"}' data-options='{
+          "pagination":true,
+          "method":"GET",
+          "chooseBox":"checkbox",
+          "url":"table_data.json",
+          "tbodyService":"123456",
+          "homePage":"",
+          "endPage":"",
+          "prevContent":"",
+          "nextContent":"",
+          "isPageSearch":true,
+          "keepShowPN":false,
+          "isPageShowAll":false,
+          "thead":{
+            "data":[
+                [
+                  {"contents":"首付款单号","field":"danhao","formatter":"Hyperlink","class":"er"},
+                  {"contents":"转售企业","field":"qiye", "class":"er2"},
+                  {"contents":"结算账期","field":"moneytime","class":"erdf"},
+                  {"contents":"收付款金额","field":"money", "class":"ervf"},
+                  {"contents":"申请人","field":"people","class":"ercd"},
+                  {"contents":"查看","field":"operation","formatter":"threeBtn", "class":"esdr"}
+
+                ]
+            ],
+            "merge":[]
+          },
+          "tbody":{
+            "data":[
+
+            ],
+            "merge":[]
+          },
+          "tips":{
+                "noResult":"ajajajaj"
+          }
+      }'
+          >
+  </cb-business-table>
+  <!--数据转换代码-->
+ <!--"afterAjax":"var oldData = data.data;var newData = [];for(var index in oldData){var item = oldData[index];var arr = [];newData.push(arr);for (var key in item){var  newItem={};newItem.contents=item[key];newItem.field=key;arr.push(newItem);};};data.data=newData;return data;"-->
+</body>
+
+      <script type="text/javascript">
+        //            "afterAjax":"var oldData = data.data;var newData = [];for(var index in oldData){var item = oldData[index];var arr = [];newData.push(arr);for (var key in item){var  newItem={};newItem.contents=item[key];newItem.field=key;arr.push(newItem);};};data.data=newData;return data;",
+
+        (function(){
+          EventHandler.addHandler("loadTable",function(triggerName){
+            var param = {
+              name:"董京逢",
+              sex:"♀",
+              class:"草民",
+              service:"5009"
+            };
+            Event.trigger(triggerName,param);
+          })
+        })();
+        (function(){
+          EventListenr.addListenr("loading",function(param){
+            var $table = $(this);
+
+            CbBusinessTable.loadTable($table, param);
+          })
+        })();
+      (function(){
+          EventHandler.addHandler("getTable",function(triggerName){
+              Event.trigger(triggerName);
+          })
+      })();
+      (function(){
+          EventListenr.addListenr("geting",function(param){
+              var data = CbBusinessTable.getSelectionsFrom($(this));
+              console.log(data);
+          })
+      })();
+      (function(){
+          var fun = function(headData, data,$dom){
+              return '<a data-options = \'{"service":"2323","type":"POST","url":"table_data.json","tips":"确定要重置密码吗？"}\' class="table-operation-event" data-eventName="sendTrData" >删除</a>';
+
+          };
+          CbBusinessTable.addFormatter("threeBtn",fun);
+      })()
+
+      $(function () {
+
+      })
+
+      </script>
+</html>

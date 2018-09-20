@@ -1,0 +1,106 @@
+.cb-download-div{
+    width: 110px;
+    height: 30px;
+    float: left;
+}
+.cb-download-div .cb-btn-a{
+    width: 110px;
+    height: 26px;
+    background-color: pink;
+    display: block;
+    border-radius: 5px;
+}
+.cb-btn{
+    width: 100px;
+    height: 26px;
+    background-color: #00B83F;
+    border-radius: 5px;
+}
+
+
+
+.cb-download-div .btn-upload-wrapper {
+    position: relative;
+    display: inline-block;
+    *display: inline;
+    overflow: hidden;
+    vertical-align: middle;
+    cursor: pointer
+}
+
+.cb-download-div .input-file {
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    z-index: 1;
+    font-size: 30em;
+    *font-size: 30px;
+    opacity: 0;
+    filter: alpha(opacity=0)
+}
+.cb-download-div .files-list > li {
+    font-size: 14px;
+    margin-top: 5px;
+    margin-right: 10px;
+    padding: 0 15px;
+    background: #DBEFFF;
+    line-height: 30px;
+    float: left;
+}
+.cb-download-div .close-btn{
+    margin-left: 10px;
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    background: url("../../images/cb-file-upload/icon-close.png") no-repeat;
+}
+.cb-download-div .files-name{
+    display: inline-block;
+}
+.label-remark{
+    line-height: 26px;
+    font-size: 12px;
+    height: 26px;
+    padding: 0 10px;
+    border: 1px solid #4490cf;
+    display: inline-block;
+    border-radius: 5px;
+    color:#4490cf;
+}
+.label-remark:hover{
+    background-color: #4490cf;
+    color:#fff;
+}
+.files-list{
+    height: 0;
+}
+
+.cb-download-div>span{
+    display: inline-block;
+    padding: 0 20px;
+    line-height: 26px;
+}
+.fileName{
+    width: 50px;
+    height: 30px;
+    background-color: pink;
+}
+.fileupload{
+    border: 2px solid red;
+}
+/*zhangying*/
+.cb-download-div-zy{
+    width: 100px;
+    height: 26px;
+}
+.cb-download-div-zy .down-load{
+    width: 100px;
+    height: 26px;
+    display: inline-block;
+    border-radius: 5px;
+    background-color: #4F9CEC;
+}
+.cb-download-right{
+    float: right;
+}

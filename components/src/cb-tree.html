@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>树组件</title>
+    <!--  公共模块-->
+    <link rel="stylesheet" href="../plugins/ztree/css/zTreeStyle/zTreeStyle.css">
+
+    <script src="../plugins/jquery/jquery-1.10.1.min.js"></script>
+    <script src="../scripts/common/common.js"></script>
+    <script src="../scripts/api/common-event.js"></script>
+    <script src="../scripts/api/common-listen.js"></script>
+    <script src="../scripts/api/common-rule.js"></script>
+    <script src="../scripts/api/common-template.js"></script>
+    <script src="../plugins/mustache/mustache.min.js"></script>
+    <script src="../plugins/layer/layer.js"></script>
+    <script src="../plugins/ztree/js/jquery.ztree.core.min.js"></script>
+    <script src="../plugins/ztree/js/jquery.ztree.exedit.js"></script>
+    <script src="../plugins/ztree/js/jquery.ztree.excheck.min.js"></script>
+
+    <script src="../scripts/components/cb-form-base.js"></script>
+    <script src="../scripts/components/cb-select.js"></script>
+    <script src="../scripts/components/cb-input.js"></script>
+    <script src="../scripts/components/cb-text.js"></script>
+    <script src="../scripts/components/cb-form.js"></script>
+    <script src="../scripts/components/cb-modal.js"></script>
+    <script src="../scripts/components/cb-btn.js"></script>
+    <script src="../scripts/components/cb-view.js"></script>
+    <script src="../scripts/components/base-components/cb-tree.js"></script>
+
+</head>
+<body>
+<cb-tree listen='{"getTreeSelectedData":"getTreeSelectedDataFunction"}' data-options='{"width":"600px","height":"600px","treeListName":"treeList","rowShowNum":"2","tipsOptions":[{"tipContent":" 新增","tipFlag":"add"},{"tipContent":"修改","tipFlag":"modify"},{"tipContent":"删除","tipFlag":"delete"}],"treeCheckList":{"enable":true,"chkStyle":false},"addNodeRelate":["parentName"],"url":"tree-data.json","service":"111","beforeAjax":"data.params.id = 1;return data;","modalContentOptions":[
+{"modalClass":"add-modal","modalBtnText":"新增","nodeListName":"treeList","url":"add-tree.json","beforeAjax":"data.params.operType = 1;return data;",
+"optionsData":[{"isHasRule":"","formBaseOptions":{"item":"input","labelOptions":{"labelText":"父菜单名称","width":"100px"},"itemComponentOptions":{"type":"","name":"parentName","placeholder":"父菜单名称"}}},
+{"isHasRule":"","formBaseOptions":{"item":"input","labelOptions":{"labelText":"菜单名称","width":"100px"},"itemComponentOptions":{"type":"","name":"name","placeholder":"菜单名称"}}},
+{"isHasRule":"","formBaseOptions":{"item":"input","labelOptions":{"labelText":"菜单编码","width":"100px"},"itemComponentOptions":{"type":"","name":"selfCode","placeholder":"菜单编码"}}},
+{"isHasRule":"","formBaseOptions":{"item":"input","labelOptions":{"labelText":"权限代码","width":"100px"},"itemComponentOptions":{"type":"","name":"code","placeholder":"权限代码"}}},
+{"isHasRule":"","formBaseOptions":{"item":"input","labelOptions":{"labelText":"链接地址","width":"100px"},"itemComponentOptions":{"type":"","name":"url","placeholder":"链接地址"}}},
+{"isHasRule":"","formBaseOptions":{"item":"input","labelOptions":{"labelText":"图标地址","width":"100px"},"itemComponentOptions":{"type":"","name":"imgUrl","placeholder":"图标地址"}}},
+{"isHasRule":"","formBaseOptions":{"item":"input","labelOptions":{"labelText":"菜单样式","width":"100px"},"itemComponentOptions":{"type":"","name":"style","placeholder":"菜单样式"}}},
+{"isHasRule":"","formBaseOptions":{"item":"input","labelOptions":{"labelText":"上下文","width":"100px"},"itemComponentOptions":{"type":"","name":"relateContent","placeholder":"上下文"}}}]},
+{"modalClass":"delete-modal","modalBtnText":"删除","nodeListName":"treeList","url":"add-tree.json","beforeAjax":"data.params.operType =2;return data;",
+"optionsData":[{"formBaseOptions":{"item":"text","labelOptions":{"labelText":"父菜单名称：","width":"100px"},
+"itemComponentOptions":{"type":"text","name":"parentName","width":"150px"}}},
+{"formBaseOptions":{"item":"text","labelOptions":{"labelText":"菜单名称：","width":"100px"},
+"itemComponentOptions":{"type":"text","name":"name","width":"150px"}}},
+{"formBaseOptions":{"item":"text","labelOptions":{"labelText":"菜单编码：","width":"100px"},
+"itemComponentOptions":{"type":"text","name":"selfCode","width":"150px"}}},
+{"formBaseOptions":{"item":"text","labelOptions":{"labelText":"权限代码：","width":"100px"},
+"itemComponentOptions":{"type":"text","name":"code","width":"150px"}}},
+{"formBaseOptions":{"item":"text","labelOptions":{"labelText":"链接地址：","width":"100px"},
+"itemComponentOptions":{"type":"text","name":"url","width":"150px"}}},
+{"formBaseOptions":{"item":"text","labelOptions":{"labelText":"图标地址：","width":"100px"},
+"itemComponentOptions":{"type":"text","name":"imgUrl","width":"150px"}}},
+{"formBaseOptions":{"item":"text","labelOptions":{"labelText":"菜单样式：","width":"100px"},
+"itemComponentOptions":{"type":"text","name":"style","width":"150px"}}},
+{"formBaseOptions":{"item":"text","labelOptions":{"labelText":"上下文：","width":"100px"},
+"itemComponentOptions":{"type":"text","name":"relateContent","width":"150px"}}}]},
+{
+"modalClass":"modify-modal","modalBtnText":"修改","nodeListName":"treeList","url":"add-tree.json","beforeAjax":"data.params.operType =3;return data;",
+"optionsData":[{"isHasRule":"","formBaseOptions":{"item":"input","labelOptions":{"labelText":"父菜单名称","width":"100px"},"itemComponentOptions":{"type":"","name":"parentName","placeholder":"父菜单名称"}}},
+{"isHasRule":"","formBaseOptions":{"item":"input","labelOptions":{"labelText":"菜单名称","width":"100px"},"itemComponentOptions":{"type":"","name":"name","placeholder":"菜单名称"}}},
+{"isHasRule":"","formBaseOptions":{"item":"input","labelOptions":{"labelText":"菜单编码","width":"100px"},"itemComponentOptions":{"type":"","name":"selfCode","placeholder":"菜单编码"}}},
+{"isHasRule":"","formBaseOptions":{"item":"input","labelOptions":{"labelText":"权限代码","width":"100px"},"itemComponentOptions":{"type":"","name":"code","placeholder":"权限代码"}}},
+{"isHasRule":"","formBaseOptions":{"item":"input","labelOptions":{"labelText":"链接地址","width":"100px"},"itemComponentOptions":{"type":"","name":"url","placeholder":"链接地址"}}},
+{"isHasRule":"","formBaseOptions":{"item":"input","labelOptions":{"labelText":"图标地址","width":"100px"},"itemComponentOptions":{"type":"","name":"imgUrl","placeholder":"图标地址"}}},
+{"isHasRule":"","formBaseOptions":{"item":"input","labelOptions":{"labelText":"菜单样式","width":"100px"},"itemComponentOptions":{"type":"","name":"style","placeholder":"菜单样式"}}},
+{"isHasRule":"","formBaseOptions":{"item":"input","labelOptions":{"labelText":"上下文","width":"100px"},"itemComponentOptions":{"type":"","name":"relateContent","placeholder":"上下文"}}}]}],
+"modalOptions":{"ctype":"blue","title":"选择用户","primaryPostion":[400,80],"isShowMaskLayer":true,"isShowCloseIcon":true,"closeIconLocation":"rightUp","width":"600","height":"300","draggable":true,"beforeCloseProcessor":"Fun1","isShowConfirmBtn":false,"isShowCancelBtn":false}}'></cb-tree>
+
+
+<cb-btn bindcl="triggerGetTreeSelectedDataFunction,getTreeSelectedData">点击获取选中树的节点</cb-btn>
+
+<script>
+    (function(){
+        EventHandler.addHandler("triggerGetTreeSelectedDataFunction",function(triggerName){
+            Event.trigger(triggerName);
+        })
+    })();
+    (function(){
+        EventListenr.addListenr("getTreeSelectedDataFunction",function(){
+            var getData = CbTree.selectedTreeData('cbTree');
+            console.log(getData);
+        })
+    })();
+</script>
+
+</body>
+</html>

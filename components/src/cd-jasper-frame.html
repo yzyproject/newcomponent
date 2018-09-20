@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>物联网jasper</title>
+    <!--  公共模块JS-->
+    <script src="../plugins/jquery/jquery-1.10.1.min.js"></script>
+    <script src="../scripts/api/common-rule.js"></script>
+    <script src="../scripts/common/common.js"></script>
+    <script src="../scripts/api/common-event.js"></script>
+    <script src="../scripts/api/common-listen.js"></script>
+    <script src="../plugins/mustache/mustache.min.js"></script>
+    <script src="../scripts/api/common-template.js"></script>
+    <script src="../scripts/api/common-url.js"></script>
+    <!-- 表单容器 -->
+    <script src="../scripts/components/cb-form.js"></script>
+    <!-- 容器 -->
+    <script src="../scripts/components/cb-view.js"></script>
+    <!--标题-->
+    <script src="../scripts/components/cb-title.js"></script>
+    <!--左导航栏-->
+    <script src="../scripts/components/cb-left-nav.js"></script>
+    <!--图标-->
+    <script src="../scripts/components/cb-icon.js"></script>
+    <!--模态框-->
+    <script src="../scripts/components/cb-modal.js"></script>
+    <!--文本-->
+    <script src="../scripts/components/cb-text.js"></script>
+
+</head>
+<body>
+<cb-view  listen={"verticalFoldUp":"verticalFoldUpFunction"} class="cb-view-white main-nav-height white clearfix jasper-blue">
+    <cb-view class="cb-view-left clearfix cb-padding">
+        <cb-icon class="" data-options='{"ctype":"icon-aaa","imageUrl":"../images/jasper/logo.jpg","width":"100%","height":"100%"}'></cb-icon>
+    </cb-view>
+    <cb-view class="cb-view-right clearfix">
+        <cb-text class="quit" data-options='{"cid":"ssss","labelText":"退出","type":"text","width":"70px","height":"67px"}'></cb-text>
+        <cb-text class="user-name" data-options='{"cid":"ssss","labelText":"user-name","type":"text","width":"90px","height":"67px"}'></cb-text>
+    </cb-view>
+</cb-view>
+<cb-view class="cb-view-block body bgc-blue" listen={"verticalFoldUp":"verticalSpreadFunction"}>
+    <cb-view  class="cb-view-left-block left-nav-height body-left" listen={"crossFoldUp":"crossFoldUpFunction"} data-options='{"width":"14.64%"}'>
+        <cb-left-nav class="jasper-left" data-options='{"service":"","navListName":"navList","navTextName":"navText","flagName":"flag","url":"jasper-left-nav.json","hrefName":"href","iconClassName":"iconClass","idName":"menuId","defaultShowId":"1"}'></cb-left-nav>
+    </cb-view>
+    <cb-view class="cb-view-block body-right" listen={"crossFoldUp":"crossSpreadFunction"}
+             data-options='{"padding":["0","0","0","14.64%"]}'>
+        <cb-form class="cb-form-default" listen={"submitData":"formSubmit"}>
+            <cb-view class="cb-view-block body-right-nav" data-options='{}'>
+
+            </cb-view>
+        </cb-form>
+    </cb-view>
+</cb-view>
+</body>
+</html>

@@ -1,0 +1,93 @@
+/*
+ * cuform 1.0.0
+ * author： anwenzhen
+ * Time: 2017.4.12
+ * description: 多选框
+ */
+@charset "utf-8";
+.cb-checkbox-div{
+    width: 80%;
+}
+
+.cb-checkbox-div > .checkbox-list{
+    float: left;
+    width: 100%;
+    padding-left: 22px;
+}
+.cb-checkbox-div > .checkbox-list>li{
+    float: left;
+    line-height: 26px;
+    padding-right: 40px;
+}
+.cb-checkbox-div.equal-four> .checkbox-list>li{
+    float: left;
+    line-height: 26px;
+    width: 25%;
+    word-break:break-all;
+    word-wrap:break-word;
+}
+
+.cb-checkbox-div > .checkbox-list>li>span{
+    margin-left: 5px;
+}
+
+.cb-checkbox-div input[type=checkbox] {
+    visibility: hidden;
+}
+.cb-checkbox-div input+label {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 1px solid #008fd6;
+    margin-left:-34px;
+    margin-bottom: 2px;
+    vertical-align: middle;
+}
+.cb-checkbox-div input:checked+label:after {
+    content: '';
+    position: absolute;
+    width: 9px;
+    height: 5px;
+    margin-top:1px;
+    border: 2px solid #008fd6;
+    border-top: none;
+    border-right: none;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+
+.cb-checkbox-blue span{
+    font-size: 12px;
+    color:#fff;
+}
+.cb-checkbox-blue input[type=checkbox] {
+    visibility: hidden;
+}
+.cb-checkbox-blue input+label{
+    vertical-align: middle;
+    position: relative;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin: -3px 6px 0 0;
+    background:url("../../images/cb-select/icon-checkbox.png") no-repeat;
+}
+.cb-checkbox-blue input+label:hover{
+    background:url("../../images/cb-select/icon-checkbox-hover.png") no-repeat;
+}
+.cb-checkbox-blue input:checked+label:after {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    top:0;
+    left: 0;
+    background:url("../../images/cb-select/icon-checkbox-selected.png") no-repeat;
+}
+.cb-checkbox-right{
+    float: right;
+}

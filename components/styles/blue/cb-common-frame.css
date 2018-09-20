@@ -1,0 +1,4 @@
+@charset "utf-8";
+.cb-common-frame-div + div{
+    overflow-y: auto;
+}

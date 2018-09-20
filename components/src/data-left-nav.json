@@ -1,0 +1,361 @@
+{
+  "respCode":"0000",
+  "navList":[
+    {
+      "flag": "aa",
+      "navList": [
+        {
+          "navText": "用户管理",
+          "flag": "aa",
+          "iconClass": "icon-yonghuguanli",
+          "href": "",
+          "navList": [
+            {
+              "navText": "用户租户成员申请",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": "localhost:63342/components/views/power-html1.html"
+            },
+            {
+              "navText": "用户组织机构加入申请",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            },
+            {
+              "navText": "用户组织机构管理",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "navText": "权限管理",
+          "flag": "aa",
+          "iconClass": "icon-quanxianguanli",
+          "href": "",
+          "navList": [
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            },
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            },
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "navText": "租户管理",
+          "flag": "aa",
+          "iconClass": "icon-zuhuguanli",
+          "href": "",
+          "navList": [
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            },
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            },
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            },
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            },
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            },
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            },
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "flag": "bb",
+      "navList": [
+        {
+          "navText": "目录bb",
+          "flag": "aa",
+          "iconClass": "aa",
+          "href": "",
+          "navList": [
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            },
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            },
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "navText": "目录一一",
+          "flag": "aa",
+          "iconClass": "aa",
+          "href": "",
+          "navList": [
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            },
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            },
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "navText": "目录一一",
+          "flag": "aa",
+          "iconClass": "aa",
+          "href": "",
+          "navList": [
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            },
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            },
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "flag": "cc",
+      "navList": [
+        {
+          "navText": "目录cc",
+          "flag": "aa",
+          "iconClass": "aa",
+          "href": "",
+          "navList": [
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            },
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            },
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "navText": "目录一一",
+          "flag": "aa",
+          "iconClass": "aa",
+          "href": "",
+          "navList": [
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            },
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            },
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "navText": "目录一一",
+          "flag": "aa",
+          "iconClass": "aa",
+          "href": "",
+          "navList": [
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            },
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            },
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "flag": "dd",
+      "navList": [
+        {
+          "navText": "目录dd",
+          "flag": "aa",
+          "iconClass": "aa",
+          "href": "",
+          "navList": [
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            },
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            },
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "navText": "目录一一",
+          "flag": "aa",
+          "iconClass": "aa",
+          "href": "",
+          "navList": [
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            },
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            },
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "navText": "目录一一",
+          "flag": "aa",
+          "iconClass": "aa",
+          "href": "",
+          "navList": [
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            },
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            },
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

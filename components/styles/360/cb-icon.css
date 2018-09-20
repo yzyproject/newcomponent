@@ -1,0 +1,75 @@
+@charset "utf-8";
+.cb-icon-div,.icon-gray-arrow,.icon-blue-arrow,.icon-calendar ,.icon-notice-gray,.cb-icon-big{
+    position: relative;
+    display:table;
+    text-align:center;
+    height: 24px;
+    width: 20px;
+}
+.cb-icon-div span,.icon-gray-arrow span,.icon-blue-arrow span,.icon-calendar span{
+    display:table-cell;
+    vertical-align:middle;
+}
+.cb-icon-div.icon-gray-arrow,.cb-icon-div.icon-blue-arrow{
+    height: 24px;
+    width: 20px;
+    background: #fff;
+    position: absolute;
+    right: 1px;
+    top: 1px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+.cb-icon-div.icon-calendar {
+    height: 24px;
+    width: 34px;
+    background: #ccc;
+    position: absolute;
+    right: 1px;
+    top: 1px;
+}
+.cb-icon-big.icon-calendar{
+    height: 32px;
+    width: 38px;
+    background: #ccc;
+    position: absolute;
+    right: 1px;
+    top: 1px;
+}
+.cb-icon-big.icon-gray-arrow,.cb-icon-big.icon-blue-arrow{
+    height: 32px;
+    width: 38px;
+    background: #fff;
+    position: absolute;
+    right: 1px;
+    top: 1px;
+}
+.icon-search{
+    height: 14px;
+    width: 14px;
+    position: absolute;
+    right: 1px;
+    top: 26px;
+}
+.icon-search>span{
+    height: 14px;
+    width: 14px;
+}
+
+.icon-notice-gray{
+    float: left;
+    width: 16px;
+    height: 70px;
+    margin-right: 30px;
+}
+
+.icon-notice-blue{
+    float: left;
+    margin-right: 12px;
+}
+.icon-arrow-down{
+    float: right;
+    width: 16px;
+    height: 20px;
+    margin-left: 10px;
+}

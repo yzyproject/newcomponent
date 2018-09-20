@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>bindcg的用法</title>
+    <!--  公共模块-->
+    <script src="../plugins/jquery/jquery-1.10.1.min.js"></script>
+    <script src="../scripts/common/common.js"></script>
+    <script src="../scripts/api/common-event.js"></script>
+    <script src="../scripts/api/common-listen.js"></script>
+    <script src="../scripts/api/common-rule.js"></script>
+    <script src="../scripts/api/common-template.js"></script>
+    <script src="../plugins/mustache/mustache.min.js"></script>
+    <script src="../plugins/pagination/script/pagination.js"></script>
+    <!--组件js-->
+    <script src="../scripts/components/cb-form-base.js"></script>
+    <script src="../scripts/components/cb-select.js"></script>
+    <script src="../scripts/components/cb-input.js"></script>
+    <script src="../scripts/components/cb-text.js"></script>
+    <script src="../scripts/components/cb-form.js"></script>
+    <script src="../scripts/components/cb-modal.js"></script>
+    <script src="../scripts/components/cb-btn.js"></script>
+    <script src="../scripts/components/cb-table.js"></script>
+    <script src="../scripts/components/cb-view.js"></script>
+    <script src="../scripts/components/base-components/cb-business-table.js"></script>
+    <script src="../scripts/components/custom-components/cb-echo.js"></script>
+</head>
+<body>
+<cb-echo data-options='{"triggerType":"cb-form-base","echoName":"qiye",
+"triggerData":{"item":"input","labelOptions":{"cid":"ssss","labelText":"姓名","width":"100px"},
+"itemComponentOptions":{"type":"","cid":"ssss","name":"goodLevel","placeholder":"请输入姓名"}},
+"queryConditionTypeAttr":["cb-form-base","cb-form-base"],
+"queryConditionDataAttr":[{"item":"input","labelOptions":{"cid":"ssss","labelText":"姓名","width":"100px"},
+"itemComponentOptions":{"type":"","cid":"ssss","name":"goodLevel","placeholder":"请输入姓名"}},{"item":"input","labelOptions":{"cid":"ssss","labelText":"aaa","width":"100px"},
+"itemComponentOptions":{"type":"","cid":"ssss","name":"goodLevel2","placeholder":"请输入年龄"}}],
+"modalOptions":{"ctype":"blue","title":"选择用户","primaryPostion":[266,30],"height":"560px","width":"1000px","isShowMaskLayer":true,"isShowCloseIcon":true,"closeIconLocation":"rightUp","draggable":true,"beforeCloseProcessor":"Fun1","isShowConfirmBtn":false,"isShowCancelBtn":false},
+"tableOptions":{
+          "pagination":true,
+          "method":"post",
+          "chooseBox":"checkbox",
+          "url":"table_data.json",
+          "tbodyService":"123456",
+          "homePage":"",
+          "endPage":"",
+          "prevContent":"",
+          "nextContent":"",
+          "isPageSearch":true,
+          "keepShowPN":false,
+          "isPageShowAll":false,
+          "cache":true,
+          "thead":{
+            "data":[
+                [
+                  {"contents":"首付款单号","field":"danhao","formatter":"Hyperlink","class":"er"},
+                  {"contents":"转售企业","field":"qiye", "class":"er2"},
+                  {"contents":"结算账期","field":"moneytime","class":"erdf"},
+                  {"contents":"收付款金额","field":"money", "class":"ervf"},
+                  {"contents":"申请人","field":"people","class":"ercd"}
+                ]
+            ],
+            "merge":[]
+          },
+          "tbody":{
+            "data":[
+
+            ],
+            "merge":[]
+          },
+          "tips":{
+
+          }
+      }
+}'>
+
+</cb-echo>
+</body>
+</html>

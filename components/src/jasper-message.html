@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>能力列表</title>
+    <!--  公共模块JS-->
+    <script src="../plugins/jquery/jquery-1.10.1.min.js"></script>
+     <script src="../plugins/bootstrap/bootstrap.min.js"></script>
+    <script src="../plugins/bootstrap/bootstrap-datetimepicker.js"></script>
+    <script src="../plugins/bootstrap/bootstrap-datetimepicker.zh-CN.js"></script>
+    <link rel="stylesheet" href="../plugins/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../plugins/bootstrap/bootstrap-datetimepicker.css">
+    <script src="../plugins/jedate/jquery.jedate.js"></script>
+    <link rel="stylesheet" href="../plugins/jedate/skin/jedate.css">
+     <link rel="stylesheet" href="../styles/redStyle/cd-icon-demo.css">
+    <script src="../plugins/layer/layer.js"></script>
+    <script src="../scripts/api/common-rule.js"></script>
+    <script src="../scripts/common/common.js"></script>
+    <script src="../scripts/api/common-event.js"></script>
+    <script src="../scripts/api/common-listen.js"></script>
+    <script src="../plugins/mustache/mustache.min.js"></script>
+    <script src="../scripts/api/common-template.js"></script>
+    <script src="../scripts/api/common-url.js"></script>
+    <script src="../plugins/jQuery-File-Upload/js/jquery.fileupload.js"></script>
+    <script src="../plugins/jQuery-File-Upload/js/jquery.fileupload-process.js"></script>
+    <!-- 表单容器 -->
+    <script src="../scripts/components/cb-form.js"></script>
+    <!-- 容器 -->
+    <script src="../scripts/components/cb-view.js"></script>
+    <!-- 按钮 -->
+    <script src="../scripts/components/cb-btn.js"></script>
+    <!-- 输入框 -->
+    <script src="../scripts/components/cb-input.js"></script>
+    <!-- 单选 -->
+    <script src="../scripts/components/cb-radio.js"></script>
+    <!-- 多选 -->
+    <script src="../scripts/components/cb-checkbox.js"></script>
+    <!-- 下拉框 -->
+    <script src="../scripts/components/cb-select.js"></script>
+    <!-- 文本 -->
+    <script src="../scripts/components/cb-text.js"></script>
+    <!-- 表单内基础组件 -->
+    <script src="../scripts/components/cb-form-base.js"></script>
+    <script src="../scripts/components/cb-floating-panel.js"></script>
+    <script src="../scripts/components/cb-show-list.js"></script>
+    <script src="../plugins/jQuery-File-Upload/js/vendor/jquery.ui.widget.js"></script>
+    <script src="../plugins/jQuery-File-Upload/js/jquery.iframe-transport.js"></script>
+    <script src="../plugins/jQuery-File-Upload/js/jquery.fileupload.js"></script>
+    <script src="../plugins/jQuery-File-Upload/js/jquery.fileupload-process.js"></script>
+    <script src="../plugins/jQuery-File-Upload/js/jquery.fileupload-validate.js"></script>
+    <script src="../scripts/components/cb-file-upload.js"></script>
+    <script src="../scripts/components/cb-radio.js"></script>
+    <!--标题-->
+    <script src="../scripts/components/cb-title.js"></script>
+    <!--主导航栏-->
+    <script src="../scripts/components/cb-main-nav.js"></script>
+    <!--左导航栏-->
+    <script src="../scripts/components/cb-left-nav.js"></script>
+    <!--图标-->
+    <script src="../scripts/components/cb-icon.js"></script>
+    <!--面包导航栏-->
+    <script src="../scripts/components/cb-breadcrumbs.js"></script>
+    <!--title-->
+    <script src="../scripts/components/cb-title.js"></script>
+    <!--textarea-->
+    <script src="../scripts/components/cb-textarea.js"></script>
+    <!--表格-->
+    <script src="../plugins/pagination/script/pagination.js"></script>
+    <script src="../scripts/components/cb-table.js"></script>
+    <script src="../scripts/components/base-components/cb-business-table.js"></script>
+    <!--tap切换-->
+    <script src="../scripts/components/cb-tap-switch.js"></script>
+    <!-- 标题 -->
+    <script src="../scripts/components/cb-title.js"></script>
+    <script src="../scripts/components/cb-common-frame.js"></script>
+    <script src="../scripts/components/cb-date.js"></script>
+    <!--模态框-->
+    <script src="../scripts/components/cb-modal.js"></script>
+    <!-- 下载文件 -->
+    <script src="../scripts/components/cb-download.js"></script>
+</head>
+<body>
+ <cb-view class="cb-view-div cb-view-padding jasper-border jasper-head clearfix" data-options='{"height":"97px"}'>
+    <cb-view class="cb-view-left cb-view-padding" data-options='{"height":"97px"}'>
+        <cb-icon class="" data-options='{"ctype":"icon-aaa","imageUrl":"../images/jasper/logo.jpg","width":"100%","height":"100%"}'></cb-icon>
+    </cb-view>
+</cb-view>
+ <cb-view class="cb-view-div cb-view-transparent body clearfix">
+     <cb-view  class="cb-view-left body-left" data-options='{"width":"15%"}'>
+        <cb-left-nav class="left-nav-jasper" data-options='{"service":"","navListName":"navList","navTextName":"navText","flagName":"flag","url":"jasper-left-nav.json","hrefName":"href","iconClassName":"iconClass","idName":"menuId","defaultShowId":"1"}'></cb-left-nav>
+       <!--<cb-view class="cb-nav-div left-nav-jasper">-->
+           <!--<ul class="left-list-nav">-->
+               <!--<li flag="aa">-->
+                   <!--<a class="is-parent " href="javascript:void(0);">JASPER短信</a>-->
+                   <!--<ul>-->
+                       <!--<li class="nav-href" flag="aa">-->
+                           <!--<a class="show-now-nav-a aa" href="message.html">发送短信</a>-->
+                       <!--</li>-->
+                       <!--<li class="" flag="aa">-->
+                           <!--<a class=" aa" href="messageRecord.html">发送记录</a>-->
+                       <!--</li>-->
+                   <!--</ul>-->
+               <!--</li>-->
+           <!--</ul>-->
+       <!--</cb-view>-->
+    </cb-view>
+     <cb-view class="cb-view-right body-right" data-options='{"width":"85%"}'> &ndash;&gt;
+         <cb-view class="body-right-nav">
+             <cb-form class="cb-form-default" data-options={"service":"","url":""} listen={"submitData":"formSubmit"}>
+                 <cb-view>
+                     <cb-view data-options='{"width":"100%"}'>
+                         <cb-title data-options='{"width":"98%"}'>JASPER短信</cb-title>
+                     </cb-view>
+                     <cb-view data-options='{"padding":["35px","0","35px","0"]}'>
+                         <cb-text class="cb-text-title" data-options='{"cid":"","labelText":"上传短信文件","type":"text","width":"93px","height":"26px"}'></cb-text>
+                         <cb-input   regexp="required-请上传文件" data-options = '{"cid":"bbb","width":"400px"}'></cb-input>
+                         <cb-file-upload class="cb-file-upload-div cb-upload-sure" listen={"fileUpload":"fileUploadFunction","fileCancel":"fileCancelFunction"} data-options='{"labelRemark":"浏览","limitFileType":["xlsx","txt","xls"],"padding":["0","0","0","33px"],"fileName":"fileName","maxFileNum":"3","maxFileSize":"20971520","echoContent":"fileContent","url":"/sms/upload","relateCid":"aaa","autoUpload":false,"echoFileNameCid":"bbb","afterAjax":"showModal(data)"}' ></cb-file-upload>
+                         <cb-btn class="cb-btn-div cb-btn-cancel" bindcl="fileCanceltrigger,fileCancel" >取消上传</cb-btn>
+                         <cb-download class="cb-download-a" data-options={"downloadFile":"/sms/downloadTemplate","value":"模板下载"}></cb-download>
+                     </cb-view>
+                 </cb-view>
+                 <cb-view data-options='{"padding":["10px","0","10px","0"]}'>
+                     <cb-text class="cb-text-title" data-options='{"cid":"","labelText":"上传短信文件","type":"text","width":"93px","height":"26px"}'></cb-text>
+                     <cb-radio class="cb-radio-div floatLeft cb-radio-default" bindcg="listenRadio,readRadio" data-options='{"cid":"rediochoose","name":"sendType","list":"outputParamList","value":"key","text":"value","option":[{"key":"1","value":"立即发送"},{"key":"2","value":"定时发送"}],"width":"16.3%"}'></cb-radio>
+                     <cb-btn class="cb-btn-div floatLeft" bindcl="fileUploadtrigger,fileUpload">发送</cb-btn>
+                 </cb-view>
+                 <cb-view class="cb-view-div clearfix hide" listen={"readRadio":"readRadioFun"} data-options='{"padding":["6px","0","0","138px"]}'>
+                     <cb-input class="cb-input-big"   data-options='{"name":"sendTime","isReadonly":true,"width":"200px","height":"35px"}'>
+                         <cb-icon class="cb-icon-big" data-options='{"ctype":"icon-calendar","imageUrl":"../images/cb-icon/icon-calendar.png","height":"34px"}'></cb-icon>
+                     </cb-input>
+                     </cb-input>
+                     <cb-date class=""
+                              data-options='{"ctype":"1","masterId":"","onValued":"","format":"yyyy-mm-dd hh:ii","minDate":"","maxDate":"","language":"zh-CN","weekStart":"","autoclose":true,"todayBtn":true,"todayHighlight":true,"weekAlias":["日","一","二","三","四","五","六"],
+         "duringDate":"var n=6;var nowDate = new Date();var yy = nowDate.getFullYear();var mmo = nowDate.getMonth() + 1;var dd = nowDate.getDate();var hh = nowDate.getHours();var mmi = nowDate.getMinutes();var nowD = yy + \"-\" + mmo + \"-\" + dd+\" \" + hh + \":\" + mmi;options.minDate=nowD;console.log(options.minDate);var d = new Date();var year = d.getFullYear();var mon = d.getMonth() + 1;var day = d.getDate();var hours = d.getHours();var minutes = d.getMinutes();if(day <= n){if(mon > 1) {mon = mon + 1;} else {year = year + 1;mon = 12;}};d.setDate(d.getDate() + n);year = d.getFullYear();mon = d.getMonth() + 1;day = d.getDate();s = year + \"-\" + (mon < 10 ? (\"0\"+ mon) : mon) + \"-\" + (day < 10 ? (\"0\" + day) : day)+\" \" + hours + \":\" + minutes;options.maxDate=s;console.log(options.maxDate);console.log(options);"
+         }'></cb-date>
+                 </cb-view>
+             </cb-form>
+         </cb-view>
+     </cb-view>
+ </cb-view>
+ <cb-view  class="cb-view-bottom jasper-bottom">
+     <cb-text class="aa" data-options='{"cid":"ssss","labelText":"Copyright© 1999-2017     中国联通   版权所有","type":"text","width":"100%","height":""}'></cb-text>
+     <cb-text class="aa" data-options='{"cid":"ssss","labelText":"中华人民共和国增值电信业务经营许可证 经营许可证编号：A2.B1.B2-20090003","type":"text","width":"100%","height":""}'></cb-text>
+ </cb-view>
+<!--发送成功后弹出模态框-->
+<cb-modal class="cb-modal-div cb-modal-red click-modal" listen={"modalHide":"hideModalFunction"} data-options = '{"ctype":"blue","title":"","primaryPostion":[348,166,30,40],"isShowMaskLayer":true,"isShowCloseIcon":true,"closeIconLocation":"rightUp","draggable":true,"beforeCloseProcessor":"Fun1","isShowConfirmBtn":false,"isShowCancelBtn":false}'>
+    <cb-text class="cb-text-first" data-options='{"cid":"ssss","labelText":"短信已发送","type":"text","width":"100%","height":"38px"}'></cb-text>
+    <cb-text class="cb-text-second" data-options='{"cid":"ssss","labelText":"短信将于指定时间发送","type":"text","width":"100%","height":"38px"}'></cb-text>
+    <cb-view class="cb-view-div jasper-margin clearfix" data-options={"width":"56%"}>
+        <cb-text class="aa" data-options='{"cid":"ssss","labelText":"稍后可至","type":"text","width":"","height":"30px"}'></cb-text>
+        <cb-text class="cb-text-link"  data-options='{"cid":"ssss","labelText":"发送记录","type":"text","width":"","height":"30px"}'></cb-text>
+        <cb-text class="aa" data-options='{"cid":"ssss","labelText":"查看发送情况","type":"text","width":"","height":"30px"}'></cb-text>
+    </cb-view>
+    <cb-btn class="cb-btn-div cb-cancel jasper-login" bindcl="sendMessage,modalHide" data-options={"height":"26px","width":"92px"} >确定</cb-btn>
+</cb-modal>
+
+<script>
+    //是否显示日期控件
+    $(window).load(function(){
+        $(".cb-radio-default .radio-list input[value=1]").attr("checked","checked");
+        var height = $(document.body).height()-$('.jasper-head').outerHeight()-$('.jasper-bottom').outerHeight();
+        $('.body-left .cb-nav-div').css('min-height',height+'px');
+        $('.body-right-nav').css('min-height',height-60+'px');
+    });
+    (function(){
+        EventHandler.addHandler("sendMessage",function(triggerName){
+            var names = triggerName.split("+");
+            console.log(names);
+            Event.trigger(names[0]);
+            Event.trigger(names[1]);
+        })
+    })();
+    //点击显示隐藏时间控件
+    (function(){
+        EventHandler.addHandler("listenRadio",function(triggerName){
+            Event.trigger(triggerName,$(this).val());
+        })
+    })();
+    (function(){
+        EventListenr.addListenr("readRadioFun",function(param){
+            if(param == 1){
+                $(this).addClass("hide");
+            }
+            if(param == 2){
+                var today = new Date();
+                today.setMinutes(today.getMinutes()+30);
+                var yy = today.getFullYear();
+                var mmo = today.getMonth()+1;
+                var dd = today.getDate();
+                var hh = today.getHours();
+                var mmi = today.getMinutes();
+                var ss = today.getSeconds();
+                var nowD = yy + "-" + mmo + "-" + dd + " " + hh + ":" + mmi;
+                console.log(nowD);
+                $(this).find(".cb-input").val(nowD);
+                $(this).removeClass("hide");
+            }
+        })
+    })();
+    //发送成功后显示模态框
+    function showModal(data) {
+            var $radio = $(".cb-radio-default .radio-list li:nth-child(1) input[type=radio]").prop("checked");
+            $(".cb-modal-div").show();
+            if($radio === true){
+                $(".click-modal .cb-text-first").removeClass("hide");
+                $(".click-modal .cb-text-second").addClass("hide");
+            }else{
+                $(".click-modal .cb-text-second").removeClass("hide");
+                $(".click-modal .cb-text-first").addClass("hide");
+            }
+            var windowWidth = $(window).width();
+            var windowHeight = $(window).height();
+            $("body").css({
+                "width":windowWidth,
+                "height":windowHeight,
+                "overflow":"hidden"
+            });
+    }
+    $(document).on("click",".cb-text-link",function(){
+        location.href = "messageRecord.html";
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+/*
+ * CbFileUpload 1.0.0
+ * author: liuqianwen
+ * Time: 2017.08.08
+ * description: 文件上传
+ */
+@charset "utf-8";
+.cb-file-upload-div{
+    width: 90px;
+    height: 26px;
+    display: block;
+    float: left;
+    margin-left: 40px;
+}
+.cb-file-upload-div .btn-upload-wrapper {
+    position: relative;
+    width: 90px;
+    height: 26px;
+    line-height: 26px;
+    background-color: #bf2934;
+    border-radius: 5px;
+    color: #FFF;
+    display: inline-block;
+    *display: inline;
+    overflow: hidden;
+    vertical-align: middle;
+    cursor: pointer
+}
+.cb-file-upload-div .btn-upload-wrapper a {
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    color: #fff;
+}
+.cb-file-upload-div .btn-upload-wrapper .fileupload {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 1;
+    font-size: 30em;
+    opacity: 0;
+}

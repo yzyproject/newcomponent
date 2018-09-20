@@ -1,0 +1,208 @@
+{
+  "respCode": "0000",
+  "navList": [
+    {
+      "flag": "aa",
+      "navList": [
+        {
+          "navText": "能力管理",
+          "flag": "aa",
+          "iconClass": "",
+          "href": "",
+          "navList": [
+            {
+              "navText": "能力新增",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": "http://localhost:63342/components/views/wlw-capacity-management-add.html"
+            },
+            {
+              "navText": "能力编辑",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": "http://www.baidu.com"
+            },
+            {
+              "navText": "能力订购权限配置",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": "http://www.sohu.com"
+            },
+            {
+              "navText": "我的能力",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": "http://www.sohu.com"
+            }
+          ]
+        },
+        {
+          "navText": "用户管理",
+          "flag": "aa",
+          "iconClass": "",
+          "href": "",
+          "navList": [
+            {
+              "navText": "发送短信",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            },
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            },
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "navText": "公告管理",
+          "flag": "aa",
+          "iconClass": "",
+          "href": "",
+          "navList": [
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            },
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "navText": "公告管理",
+          "flag": "aa",
+          "iconClass": "",
+          "href": "",
+          "navList": [
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            },
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "navText": "工单管理",
+          "flag": "aa",
+          "iconClass": "",
+          "href": "",
+          "navList": [
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            },
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "navText": "门户配置",
+          "flag": "aa",
+          "iconClass": "",
+          "href": "",
+          "navList": [
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            },
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "navText": "参数配置管理",
+          "flag": "aa",
+          "iconClass": "",
+          "href": "",
+          "navList": [
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            },
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "navText": "统计分析",
+          "flag": "aa",
+          "iconClass": "",
+          "href": "",
+          "navList": [
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            },
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            }
+          ]
+        },
+        {
+          "navText": "监控管理",
+          "flag": "aa",
+          "iconClass": "",
+          "href": "",
+          "navList": [
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            },
+            {
+              "navText": "目录一一",
+              "flag": "aa",
+              "iconClass": "aa",
+              "href": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

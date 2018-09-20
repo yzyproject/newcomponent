@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>按钮组件</title>
+    <!--  公共模块-->
+    <script src="../../../plugins/jquery/jquery-1.10.1.min.js"></script>
+    <script src="../../../plugins/artTemplate/artTemplate.js"></script>
+    <script src="../../../plugins/layer/layer.js"></script>
+    <script src="../../../scripts/common/common.js"></script>
+    <script src="../../../scripts/api/common-event.js"></script>
+    <script src="../../../scripts/api/common-listen.js"></script>
+    <script src="../../../scripts/api/common-rule.js"></script>
+    <script src="../../../scripts/api/common-fn.js"></script>
+    <script src="../../../plugins/store/store.legacy.min.js"></script>
+    <!-- 时间组件 -->
+    <script src="../../../plugins/date/jquery.jedate.js"></script>
+    <script src="../../../scripts/components/cb-tpl-date.js"></script>
+    <!--页面JS -->
+    <script src="date-test.js"></script>
+  </head>
+  <body>
+<cb-tpl-date data-options='{"name":"12345","label":"起始时间","placeholder":"起始时间","chooseFn":"limitDate","clearFn":"clearLimitDate","cid":"start1","endDate":"end1"}'></cb-tpl-date>
+<cb-tpl-date data-options='{"name":"1234w5","label":"结束时间","placeholder":"结束时间","chooseFn":"limitDate","clearFn":"clearLimitDate","cid":"end1","startDate":"start1"}'></cb-tpl-date>
+
+  </body>
+
+</html>

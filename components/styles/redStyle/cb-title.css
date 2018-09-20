@@ -1,0 +1,27 @@
+/*
+ * CbTitle 1.0.0
+ * author: liuqianwen
+ * Time: 2017.08.08
+ * description: 标题
+ */
+@charset "utf-8";
+.cb-title-div{
+    color: #333;
+    text-align: left;
+    font-weight: 900;
+    width: 100%;
+    height: 30px;
+    font-size: 17px;
+    float: left;
+    border-bottom: 1px solid #d2d2d2;
+    margin: 10px 10px 0 10px;
+    padding-bottom: 10px;
+}
+.cb-title-div .cb-title{
+    display: inline-block;
+    height:18px;
+    margin: 0;
+    padding:0;
+    padding-left: 5px;
+    border-left: 4px solid #bf2934;
+}

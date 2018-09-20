@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>发送记录</title>
+    <!--  公共模块JS-->
+    <link rel="stylesheet" href="../styles/redStyle/common.css">
+    <script src="../plugins/jquery/jquery-1.10.1.min.js"></script>
+    <script src="../scripts/api/common-rule.js"></script>
+    <script src="../plugins/layer/layer.js"></script>
+    <script src="../scripts/common/common.js"></script>
+    <script src="../scripts/api/common-event.js"></script>
+    <script src="../scripts/api/common-listen.js"></script>
+    <script src="../plugins/mustache/mustache.min.js"></script>
+    <script src="../scripts/api/common-template.js"></script>
+    <script src="../scripts/api/common-url.js"></script>
+    <!-- 表单容器 -->
+    <script src="../scripts/components/cb-form.js"></script>
+    <!-- 容器 -->
+    <script src="../scripts/components/cb-view.js"></script>
+    <!-- 按钮 -->
+    <script src="../scripts/components/cb-btn.js"></script>
+    <!-- 输入框 -->
+    <script src="../scripts/components/cb-input.js"></script>
+    <!-- 单选 -->
+    <script src="../scripts/components/cb-radio.js"></script>
+    <!-- 多选 -->
+    <script src="../scripts/components/cb-checkbox.js"></script>
+    <!-- 下拉框 -->
+    <script src="../scripts/components/cb-select.js"></script>
+    <!-- 文本 -->
+    <script src="../scripts/components/cb-text.js"></script>
+    <!-- 表单内基础组件 -->
+    <script src="../scripts/components/cb-form-base.js"></script>
+    <!--标题-->
+    <script src="../scripts/components/cb-title.js"></script>
+    <!--主导航栏-->
+    <script src="../scripts/components/cb-main-nav.js"></script>
+    <!--左导航栏-->
+    <script src="../scripts/components/cb-left-nav.js"></script>
+    <!--图标-->
+    <script src="../scripts/components/cb-icon.js"></script>
+    <!--面包导航栏-->
+    <script src="../scripts/components/cb-breadcrumbs.js"></script>
+    <!--title-->
+    <script src="../scripts/components/cb-title.js"></script>
+    <!--textarea-->
+    <script src="../scripts/components/cb-textarea.js"></script>
+    <!--表格-->
+    <script src="../plugins/pagination/script/pagination.js"></script>
+    <script src="../scripts/components/cb-table.js"></script>
+    <script src="../scripts/components/base-components/cb-business-table.js"></script>
+    <!--tap切换-->
+    <script src="../scripts/components/cb-tap-switch.js"></script>
+    <script src="../scripts/components/cb-common-frame.js"></script>
+    <!--模态框-->
+    <script src="../scripts/components/cb-modal.js"></script>
+    <!-- 下载文件 -->
+    <script src="../scripts/components/cb-download.js"></script>
+</head>
+<body>
+<cb-view class="cb-view-div cb-view-padding jasper-border jasper-head clearfix" data-options='{"height":"97px"}'>
+    <cb-view class="cb-view-left cb-view-padding" data-options='{"height":"97px"}'>
+        <cb-icon class="" data-options='{"ctype":"icon-aaa","imageUrl":"../images/jasper/logo.jpg","width":"100%","height":"100%"}'></cb-icon>
+    </cb-view>
+</cb-view>
+<cb-view class="cb-view-div cb-view-transparent body clearfix">
+    <cb-view  class="cb-view-left body-left" data-options='{"width":"15%"}'>
+        <cb-left-nav class="left-nav-jasper" data-options='{"service":"","navListName":"navList","navTextName":"navText","flagName":"flag","url":"jasper-left-nav.json","hrefName":"href","iconClassName":"iconClass","idName":"menuId","defaultShowId":"1"}'></cb-left-nav>
+        <!--<cb-view class="cb-nav-div left-nav-jasper">-->
+            <!--<ul class="left-list-nav">-->
+                <!--<li flag="aa">-->
+                    <!--<a class="is-parent " href="javascript:void(0);">JASPER短信</a>-->
+                    <!--<ul>-->
+                        <!--<li class="" flag="aa">-->
+                            <!--<a class="show-now-nav-a aa" href="message.html">发送短信</a>-->
+                        <!--</li>-->
+                        <!--<li class="nav-href" flag="aa">-->
+                            <!--<a class=" aa" href="messageRecord.html">发送记录</a>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+            <!--</ul>-->
+        <!--</cb-view>-->
+    </cb-view>
+    <cb-view class="cb-view-right body-right" data-options='{"width":"85%"}'>
+        <cb-view class="body-right-nav">
+            <cb-form class="cb-form-default" data-options={"service":"","url":""} listen={"submitData":"formSubmit"}>
+                <cb-view>
+                    <cb-view data-options='{"width":"100%"}'>
+                        <cb-title data-options='{"width":"98%"}'>JASPER短信</cb-title>
+                    </cb-view>
+                    <cb-view class="cb-view-div jasper-form clearfix" data-options='{"padding":["35px","0","35px","0"]}'>
+                        <cb-form-base class="" data-options='{"item":"input","width":"24%","labelOptions":{"labelText":"短信文件名称:","type":"label","width":"37%","height":"30px"},
+							"itemComponentOptions":{"placeholder":"","name":"fileName","borderRadius":["0"],"height":"30px","width":"120px"}}'></cb-form-base>
+                        <cb-form-base class="" data-options='{"item":"select","width":"21%",
+							            "labelOptions":{"labelText":"发送类型:","type":"label","width":"31%","height":"30px"},
+							"itemComponentOptions":{"isDefault":true,"name":"sendType","borderRadius":["0"],"height":"30px","width":"120px","option":[{"key":"0","value":"立即发送"},{"key":"1","value":"定时发送"}]}}'></cb-form-base>
+                        <cb-form-base class="" data-options='{"item":"select","width":"21%",
+							            "labelOptions":{"labelText":"发送状态:","type":"label","width":"31%","height":"30px"},
+							"itemComponentOptions":{"isDefault":true,"name":"state","borderRadius":["0"],"height":"30px","width":"120px","option":[{"key":"0","value":"未发送"},{"key":"1","value":"已发送"},{"key":"2","value":"取消发送"},{"key":"3","value":"发送中"}]}}'></cb-form-base>
+                        <cb-form-base class="" data-options='{"item":"select","width":"21%",
+							            "labelOptions":{"labelText":"发送结果:","type":"label","width":"31%","height":"30px"},
+							"itemComponentOptions":{"isDefault":true,"name":"sendResult","borderRadius":["0"],"height":"30px","width":"120px","option":[{"key":"0","value":"发送成功"},{"key":"1","value":"发送失败"},{"key":"2","value":"部分失败"}]}}'></cb-form-base>
+                        <cb-btn class="cb-btn-div trigger-btn" bindcl="submitForm,loading" data-options='{"padding":["0","0","0","10px"]}'>查询</cb-btn>
+                    </cb-view>
+                </cb-view>
+            </cb-form>
+            <cb-business-table listen='{"getData":"getSelectedDataFunction","loading":"loadTable","initTableData":"loadTable","deleteRole":"deleteAbilityFunction"}' class="cb-business-table-blue  first-tap-table hide" data-options='{
+                        "width":"100%",
+				          "pagination":true,
+				          "method":"post",
+				          "chooseBox":"false",
+				          "url":"table-data11.json",
+				          "tbodyService":"sendRecordList",
+				          "homePage":"",
+				          "endPage":"",
+				          "prevContent":"",
+				          "nextContent":"",
+				          "isPageSearch":true,
+				          "keepShowPN":false,
+				          "pageSize":"10",
+				          "isPageShowAll":false,
+				          "cache":true,
+				          "afterAjax":"return changeOperation(data);",
+				          "thead":{
+				            "data":[
+				                [
+				                {"contents":"短信文件名称","field":"fileName","formatter":"Hyperlink","width":"15%","class":"esdr"},
+				                {"contents":"发送类型","field":"sendType","width":"15%", "class":"er2"},
+				                {"contents":"发送状态","field":"state","width":"15%", "class":"erdf"},
+				                {"contents":"发送时间","field":"sendTime","width":"15%", "class":"ervf"},
+				                {"contents":"发送结果","field":"sendResult","width":"15%", "class":"ervf"},
+				                {"contents":"操作", "field":"operation","width":"15%","class":"esdr"}
+				                ]
+				            ],
+				            "merge":[]
+				          },
+				          "tbody":{
+				            "data":[
+
+				            ],
+				            "merge":[]
+				          },
+				          "tips":{
+
+				          }
+				      }'>
+            </cb-business-table>
+        </cb-view>
+    </cb-view>
+</cb-view>
+</cb-view>
+<cb-view  class="cb-view-bottom jasper-bottom">
+    <cb-text class="aa" data-options='{"cid":"ssss","labelText":"Copyright© 1999-2017     中国联通   版权所有","type":"text","width":"100%","height":""}'></cb-text>
+    <cb-text class="aa" data-options='{"cid":"ssss","labelText":"中华人民共和国增值电信业务经营许可证 经营许可证编号：A2.B1.B2-20090003","type":"text","width":"100%","height":""}'></cb-text>
+</cb-view>
+
+<!--登录模态框-->
+ 	<cb-modal class="cb-modal-div cb-modal-red cb-login" data-options = '{"ctype":"blue","title":"","primaryPostion":[348,166,30,40],"isShowMaskLayer":true,"isShowCloseIcon":false,"closeIconLocation":"rightUp","draggable":false,"beforeCloseProcessor":"Fun1","isShowConfirmBtn":false,"isShowCancelBtn":false,"modalOffClose":"false"}'>
+	    <cb-form class="clearfix" listen={"submitData1":"formSubmit"} data-options='{"service":"userAuthentication","url":"/proxy/userAuthentication","afterAjax":"loginTest(data)"}'>
+	        <cb-view class="cb-view-div clearfix cb-view-margin" data-options={"width":"100%"}>
+	            <cb-text class="aa" data-options='{"cid":"","labelText":"jasper用户名","type":"text","width":"25%","height":"26px"}'></cb-text>
+	            <cb-input  class="cb-input-div modal-user-name" regexp="required-请输入用户名" data-options = '{"cid":"bbb","width":"60%","height":"26px","name":"userName"}'></cb-input>
+	        </cb-view>
+	        <cb-view class="cb-view-div clearfix cb-view-margin" data-options={"height":"102px","width":"100%"}>
+	            <cb-text class="aa" data-options='{"cid":"","labelText":"jasper密&nbsp;&nbsp;&nbsp;码","type":"text","width":"25%","height":"26px"}'></cb-text>
+	            <cb-input  regexp="required-请输入密码" data-options = '{"cid":"","width":"60%","height":"26px","name":"userPsd","type":"password"}'></cb-input>
+	        </cb-view>
+	        <cb-view>
+                <cb-btn class="cb-btn-div cb-login-messange-record" bindcl="submitForm,submitData1" data-options={"height":"26px","width":"92px"} >确定</cb-btn>
+                <cb-btn class="cb-btn-div cb-modal-cancel" data-options={"height":"26px","width":"92px"} >取消</cb-btn>
+            </cb-view>
+	    </cb-form>
+	</cb-modal>
+
+<script>
+    (function(){
+        EventListenr.addListenr("getSelectedDataFunction",function(){
+            var selectedData = CbBusinessTable.getSelectionsFrom($(this));
+            if(selectedData){
+            	console.log(selectedData);
+            }else{
+                console.log("请选择数据");
+            }
+        })
+    })();
+    function changeOperation(data) {
+        var oldData = data.data;
+        var newData = [];
+        for(var i=0;i<oldData.length;i++){
+            if(oldData[i].state ==="已发送" && (oldData[i].sendResult ==="发送失败" || oldData[i].sendResult ==="部分失败")){
+                oldData[i].operation ="<span class='operation-download'>下载失败清单</span><div class='cb-download-div hide'><input type='button' class='down-load hide'></div>";
+            }else if(oldData[i].state ==="未发送"){
+                oldData[i].operation ="<span class='operation-cancel'>取消发送</span>";
+            }else{
+                oldData[i].operation ="<span>-</span>";
+            }
+        }
+        windowData = oldData;
+        for (var index in oldData) {
+            var item = oldData[index];
+            var arr = [];
+            newData.push(arr);
+            for (var key in item) {
+                var newItem = {};
+                newItem.contents = item[key];
+                newItem.field = key;
+                arr.push(newItem);
+            }
+            ;
+        }
+        ;
+        data.data = newData;
+        return data;
+    }
+    $(document).on("click",".operation-download",function () {
+        var i = $(this).parent().parent().parent().index();
+        $(".down-load").on("click",function(){
+            location.href = "/sms/exportExcel?fileId="+windowData[i].fileId;
+        });
+        $(".down-load").trigger("click");
+    });
+    $(document).on("click",".operation-cancel",function () {
+        var i = $(this).parent().parent().parent().index();
+        console.log("取消发送");
+        var data = {
+            "type":"post",
+            "url":"/proxy/cancelSend",
+            "params":{"fileId":windowData[i].fileId}
+        };
+        data.successF = function (returnData) {
+            layer.alert(returnData.respDesc, {
+                closeBtn:0,
+                icon: 'success',
+                skin: 'layui-blue'
+            },function () {
+                layer.closeAll();
+                $(".trigger-btn>button").trigger("click");
+            })
+        };
+        data.errorF = function (returnData) {
+            layer.alert(returnData.respDesc, {
+                icon: 'fail',
+                skin: 'layui-blue'
+            });
+        };
+        CommonAjax.ajax(data);
+    });
+    $(window).load(function(){
+        $(".cb-modal-div").show();
+        var height = $(document).outerHeight()-$('.jasper-head').outerHeight()-$('.jasper-bottom').outerHeight();
+        $('.body-left .cb-nav-div').css('min-height',height+'px');
+        $('.body-right-nav').css('min-height',height-60+'px');
+    });
+    function loginTest(data) {
+        var userName = $(".cb-login .modal-user-name").val();
+        $(".body-right input[name=userName]").val(userName);
+        $(".cb-login").hide();
+        var $table = $(".cb-business-table-blue");
+        var param = {};
+        CbBusinessTable.loadTable($table, param);
+    }
+    $(document).on("click",".cb-modal-cancel",function(){
+        location.href = "jasper-message.html";
+    })
+
+</script>
+</body>
+
+</html>
+

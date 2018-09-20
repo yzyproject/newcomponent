@@ -1,0 +1,12 @@
+{
+  "respCode":"0000",
+  "treeList": {
+    "id":1,
+    "pId":0,
+    "name":"test15555",
+    "open":true,
+    "parentName":"88",
+    "selfCode":"111",
+    "code":"12222"
+  }
+}

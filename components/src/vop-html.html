@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>测试页面</title>
+    <!--  公共模块JS-->
+    <script src="../plugins/jquery/jquery-1.10.1.min.js"></script>
+    <script src="../scripts/api/common-rule.js"></script>
+    <script src="../scripts/common/common.js"></script>
+    <script src="../scripts/api/common-event.js"></script>
+    <script src="../scripts/api/common-listen.js"></script>
+    <script src="../plugins/mustache/mustache.min.js"></script>
+    <script src="../scripts/api/common-template.js"></script>
+    <script src="../plugins/bootstrap/bootstrap-datetimepicker.js"></script>
+    <script src="../plugins/bootstrap/bootstrap-datetimepicker.zh-CN.js"></script>
+    <link rel="stylesheet" href="../plugins/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../plugins/bootstrap/bootstrap-datetimepicker.css">
+    <!-- 表单容器 -->
+    <script src="../scripts/components/cb-form.js"></script>
+    <!-- 容器 -->
+    <script src="../scripts/components/cb-view.js"></script>
+    <!-- 按钮 -->
+    <script src="../scripts/components/cb-btn.js"></script>
+    <!-- 输入框 -->
+    <script src="../scripts/components/cb-input.js"></script>
+    <!-- 单选 -->
+    <script src="../scripts/components/cb-radio.js"></script>
+    <!-- 多选 -->
+    <script src="../scripts/components/cb-checkbox.js"></script>
+    <!-- 下拉框 -->
+    <script src="../scripts/components/cb-select.js"></script>
+    <!-- 文本 -->
+    <script src="../scripts/components/cb-text.js"></script>
+    <!-- 表单内基础组件 -->
+    <script src="../scripts/components/cb-form-base.js"></script>
+    <script src="../scripts/components/cb-floating-panel.js"></script>
+    <script src="../scripts/components/cb-show-list.js"></script>
+    <script src="../scripts/components/cb-icon.js"></script>
+    <script src="../scripts/components/cb-text.js"></script>
+    <script src="../scripts/components/cb-date.js"></script>
+    <script src="../scripts/components/custom-components/cb-date-interval.js"></script>
+    <!--  表格组件 -->
+    <script src="../plugins/pagination/script/pagination.js"></script>
+    <script src="../scripts/components/cb-table.js"></script>
+    <script src="../scripts/components/base-components/cb-business-table.js"></script>
+
+</head>
+<body>
+<cb-form class="" data-options='{"title":"收付款查询/审批 ","width":""}'>
+    <cb-view class="" >
+        <!--转售企业-->
+        <cb-text class="" data-options='{"labelText":"转售企业："}'></cb-text>
+        <!--input 的name提交的值-->
+        <cb-input class="" bindcl="ShowFloatingPanel,event1"
+                  data-options='{"placeholder":"请输入","name":"aaa","isReadonly": true,"isHasHiddenInput":true}'>
+            <cb-icon class=""
+                     data-options='{"ctype":"icon-gray-arrow","imageUrl":"../images/cb-icon/icon-gray-arrow.png"}'></cb-icon>
+            <cb-floating-panel listen={"event1":"ShowFloatingPanel","event2":"HideFloatingPanel"}
+                               data-options='{"ctype":"1","masterId":"","animation":"3","showBeforeProcessor":"","showAfterProcessor":"","hidebeforeProcessor":"","hideAfterProcessor":"","showOperationMethod":""}'>
+                <cb-show-list class="" bindcl="HideFloatingPanel,event2"
+                              data-options='{"service":"111","url":"text_data.json","name":"goodLevel","isRequest":"true","onValued":"","listName":"data","valueName":"code","textName":"title","localDataList":[{"key":"1","value":"普号"},{"key":"2","value":"靓号"},{"key":"03","value":"优质号码"},{"key":"04","value":"带“4”号"}]}'></cb-show-list>
+            </cb-floating-panel>
+        </cb-input>
+        <!--收付款单号-->
+        <cb-text class="" data-options='{"labelText":"收付款单号："}'></cb-text>
+        <cb-input class=""
+                  data-options='{"placeholder":"关键字，支持模糊查询","name":"aaa"}'></cb-input>
+        <!--审批状态-->
+        <cb-text class="" data-options='{"labelText":"审批状态："}'></cb-text>
+        <!--input 的name提交的值-->
+        <cb-input class="" bindcl="ShowFloatingPanel,event3" data-options='{"name":"aaa","isReadonly": true,"isHasHiddenInput":true}'>
+            <cb-icon class=""
+                     data-options='{"ctype":"icon-gray-arrow","imageUrl":"../images/cb-icon/icon-gray-arrow.png"}'></cb-icon>
+            <cb-floating-panel listen={"event3":"ShowFloatingPanel","event2":"HideFloatingPanel"}
+                               data-options='{"ctype":"2","masterId":"","animation":"3","showBeforeProcessor":"","showAfterProcessor":"","hidebeforeProcessor":"","hideAfterProcessor":"","showOperationMethod":""}'>
+                <cb-show-list class="" bindcl="HideFloatingPanel,event2"
+                              data-options='{"ctype":"blue","isDefaultSelected":true,"service":"111","name":"goodLevel","isRequest":"true","onValued":"","listName":"outputParamList","valueName":"key","textName":"value","localDataList":[{"key":"1","value":"普号"},{"key":"2","value":"靓号"},{"key":"03","value":"优质号码"},{"key":"04","value":"带“4”号"}]}'></cb-show-list>
+            </cb-floating-panel>
+        </cb-input>
+    </cb-view>
+    <cb-view class="">
+        <!--结算账期-->
+        <cb-text class="" data-options='{"labelText":"结算账期："}'></cb-text>
+        <cb-date-interval class=""
+                          data-options='{
+         "ctype":"1",
+         "inputNames":["startTime","endTime"],
+         "isReadonly":true,
+         "labelTexts":["","到"],
+         "labelTypes":["label","text"],
+         "placeholder":["起始月份","结束月份"],
+         "dateFormat":"yyyy-mm",
+         "dateIntervals":[["2017-01-01","2017-08-10"],["2017-01-11","2017-09-10"]],
+         "imageUrl":"../images/cb-icon/icon-calendar.png",
+         "onValued":"$($($($master1).children()[0]).children()[0]).val(value1);$($($($master2).children()[0]).children()[0]).val(value2);"
+   }'></cb-date-interval>
+        <!--到款日期-->
+        <cb-text class="" data-options='{"labelText":"到款日期："}'></cb-text>
+        <cb-date-interval class=""
+                          data-options='{
+         "ctype":"1",
+         "inputNames":["startTime","endTime"],
+         "isReadonly":true,
+         "labelTexts":["","到"],
+         "labelTypes":["label","text"],
+         "placeholder":["起始日期","结束日期"],
+         "dateFormat":"yyyy-mm-dd",
+         "imageUrl":"../images/cb-icon/icon-calendar.png",
+         "dateIntervals":[["2017-01-01","2017-08-10"],["2017-01-11","2017-09-10"]],
+         "onValued":"$($($($master1).children()[0]).children()[0]).val(value1);$($($($master2).children()[0]).children()[0]).val(value2);"
+   }'></cb-date-interval>
+    </cb-view>
+    <cb-view class="">
+        <!--收付款日期-->
+        <cb-text class="" data-options='{"labelText":"收付款日期："}'></cb-text>
+        <cb-date-interval class=""
+                          data-options='{
+         "ctype":"1",
+         "inputNames":["startTime","endTime"],
+         "isReadonly":true,
+         "labelTexts":["","到"],
+         "labelTypes":["label","text"],
+         "placeholder":["起始日期","结束日期"],
+         "dateFormat":"yyyy-mm-dd",
+         "imageUrl":"../images/cb-icon/icon-calendar.png",
+         "dateIntervals":[["2017-01-01","2017-08-10"],["2017-01-11","2017-09-10"]],
+         "onValued":"$($($($master1).children()[0]).children()[0]).val(value1);$($($($master2).children()[0]).children()[0]).val(value2);"
+   }'></cb-date-interval>
+        <!--账本类型-->
+        <cb-text class="" data-options='{"labelText":"账本类型："}'></cb-text>
+        <!--input 的name提交的值-->
+        <cb-input class="" bindcl="ShowFloatingPanel,event4" data-options='{"name":"aaa","isReadonly": true,"isHasHiddenInput":true}'>
+            <cb-icon class=""
+                     data-options='{"ctype":"icon-gray-arrow","imageUrl":"../images/cb-icon/icon-gray-arrow.png"}'></cb-icon>
+            <cb-floating-panel listen={"event4":"ShowFloatingPanel","event6":"HideFloatingPanel"}
+                               data-options='{"ctype":"2","masterId":"","animation":"3","showBeforeProcessor":"","showAfterProcessor":"","hidebeforeProcessor":"","hideAfterProcessor":"","showOperationMethod":""}'>
+                <cb-show-list class="" bindcl="HideFloatingPanel,event6"
+                              data-options='{"ctype":"blue","isDefaultSelected":true,"service":"111","name":"goodLevel","isRequest":"true","onValued":"","listName":"outputParamList","valueName":"key","textName":"value","localDataList":[{"key":"1","value":"普号"},{"key":"2","value":"靓号"},{"key":"03","value":"优质号码"},{"key":"04","value":"带“4”号"}]}'></cb-show-list>
+            </cb-floating-panel>
+        </cb-input>
+        <cb-btn id="aaa"  bindcl="serialize,loading">查询</cb-btn>
+    </cb-view>
+</cb-form>
+<cb-business-table listen='{"loading":"loadTable"}' data-options='{
+        "width":"100%",
+        "pagination":true,
+        "method":"POST",
+        "chooseBox":"check",
+        "pageSize":"10",
+        "url":"table_data.json",
+        "tbodyService":"5555",
+        "detailList":{
+            "isAllMarge":true,
+            "data":[
+                {"name":"accountType","cName":"测试","position":[1,1]},
+                {"name":"collectingBank","cName":"测试0","position":[2,1]},
+                {"name":"settlementAccount","cName":"测试1","position":[3,1]},
+                {"name":"bankCertificate","cName":"测试2","position":[4,1]},
+                {"name":"amountPayable","cName":"测试3","position":[5,1]},
+                {"name":"counterFee","cName":"测试4","position":[6,1]},
+                {"name":"remarks","cName":"测试5","position":[7,1]},
+                {"name":"attachCount","cName":"测试6","position":[1,2]},
+                {"name":"file","cName":"测试7","position":[2,2]}
+            ]
+        },
+        "thead":{
+          "data":[
+              [
+                {"contents":"首付款单号","field":"danhao","formatter":"Hyperlink", "class":"er"},
+                {"contents":"转售企业","field":"qiye","width":"10%", "class":"er2"},
+                {"contents":"结算账期","field":"moneytime","width":"10%", "class":"erdf"},
+                {"contents":"收付款金额","field":"money","width":"10%", "class":"ervf"},
+                {"contents":"申请人","field":"people","width":"30%", "class":"ercd"},
+                {"contents":"账本类型","field":"type","width":"10%", "class":"esdr"},
+                {"contents":"查看","field":"operation","formatter":"moreBtn", "class":"esdr"}
+
+              ]
+          ],
+          "merge":[]
+        },
+        "tbody":{
+          "service":"xxxx",
+          "data":[
+
+          ],
+          "merge":[]
+        },
+        "tips":{
+
+        }
+    }'
+>
+</cb-business-table>
+
+<script>
+    $(function () {
+        $('.cb-btn').trigger('click');
+    })
+</script>
+
+</body>
+
+</html>

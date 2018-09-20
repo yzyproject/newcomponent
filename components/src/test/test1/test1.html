@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>按钮组件</title>
+    <!--  公共模块-->
+    <script src="../../../plugins/jquery/jquery-1.10.1.min.js"></script>
+    <script src="../../../plugins/artTemplate/artTemplate.js"></script>
+    <script src="../../../plugins/layer/layer.js"></script>
+    <script src="../../../scripts/common/common.js"></script>
+    <script src="../../../scripts/api/common-event.js"></script>
+    <script src="../../../scripts/api/common-listen.js"></script>
+    <script src="../../../scripts/api/common-rule.js"></script>
+    <script src="../../../plugins/store/store.legacy.min.js"></script>
+    <!-- 输入框 -->
+    <script src="../../../scripts/components/cb-input.js"></script>
+    <!-- 文本 -->
+    <script src="../../../scripts/components/cb-text.js"></script>
+    <!-- 按钮 -->
+    <script src="../../../scripts/components/cb-btn.js"></script>
+    <!--页面JS -->
+    <script src="test1.js"></script>
+  </head>
+  <body>
+    <!-- <cb-btn data-options='{"domDiv":"1","cid":"btn1","type":"reset","disabled":"true"}' data-params='{"href":"23232323","keyId":[45,45],"keyName",}' data-cbstyle='{"width":"300px","border":"2px solid #000"}' bindcl="binddb" bindbl="wing3,event2">中国</cb-btn> -->
+    <cb-btn class="btn1"  data-options='{"domDiv":"1","cid":"btn1"}' bindcl="wing,xxx" ><div>中国1</div></cb-btn>
+    <span class="click-btn" data-fn-name="wing" data-trigger-name="xxx">点我点我</span>
+    <div class="btn-view" listen='{"xxx":"console"}' ></div>
+    <cb-input class="" data-options='{"placeholder":"请输入姓名","name":"input1"}'></cb-input>
+    <cb-input class="" data-options='{"placeholder":"请输入姓名","name":"input2"}'></cb-input>
+    <cb-input class="" data-options='{"placeholder":"请输入姓名","name":"input3"}'></cb-input>
+    <cb-input class="" data-options='{"placeholder":"请输入姓名","name":"input4"}'></cb-input>
+    <div style="  width: 2px;  height: 50px;"></div>
+    <div class="" name="div1" ></div>
+    <div class="" name="div2" ></div>
+
+
+
+
+  </body>
+
+</html>

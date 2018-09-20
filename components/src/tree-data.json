@@ -1,0 +1,11 @@
+{
+  "respCode": "0000",
+  "respDesc": "操作成功！",
+  "treeList": [
+	  {"id":1, "pId":0, "name":"test1","open":true,"parentName":"88","selfCode":"111","code":"12222",      "checked":true},
+	  {"id":2, "pId":0, "name":"test2","parentName":"88","selfCode":"222","code":"12222"},
+	  {"id":11, "pId":1, "name":"test11","parentName":"88","selfCode":"333","code":"12222"},
+	  {"id":12, "pId":1, "name":"test12","parentName":"88","selfCode":"444","code":"12222"},
+	  {"id":111, "pId":11, "name":"test111","parentName":"88","selfCode":"555","code":"12222"}
+  ]
+}

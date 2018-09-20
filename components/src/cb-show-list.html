@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>展示列表组件</title>
+    <!--  公共模块JS-->
+    <script src="../plugins/jquery/jquery-1.10.1.min.js"></script>
+    <script src="../scripts/common/common.js"></script>
+    <script src="../scripts/api/common-event.js"></script>
+    <script src="../scripts/api/common-listen.js"></script>
+    <script src="../scripts/api/common-rule.js"></script>
+    <script src="../scripts/api/common-template.js"></script>
+    <script src="../plugins/mustache/mustache.min.js"></script>
+    <!--展示列表-->
+    <script src="../scripts/components/cb-show-list.js"></script>
+</head>
+<body>
+<cb-show-list class=""
+              data-options='{"cid":"ssss","isDefaultSelected":true,"service":"","name":"goodLevel","isRequest":"true","onValued":"console.log($dom);","listName":"outputParamList","valueName":"key","textName":"value","localDataList":[{"key":"1","value":"普号"},{"key":"2","value":"靓号"},{"key":"03","value":"优质号码"},{"key":"04","value":"带“4”号"}]}'></cb-show-list>
+</body>
+</html>

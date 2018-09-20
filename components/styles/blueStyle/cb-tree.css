@@ -1,0 +1,75 @@
+@charset "utf-8";
+#cbTree{
+    height: 300px;
+    width: 300px;
+    border: 1px solid #81848f;
+}
+
+.cb-tree-div #cbTree{
+    border:none;
+}
+.opeation-menu-btn-area{
+    position:absolute;
+    display:none;
+    top:0;
+}
+.opeation-menu-btn-area ul{
+    background-color: #fff;
+    text-align: left;
+    padding: 0 10px;
+    border: 1px solid #81848f;
+    border-radius: 10px;
+}
+
+.opeation-menu-btn-area ul:before{
+    content: "";
+    height: 8px;
+    width: 14px;
+    background: url("../../images/cb-tree/arrow.png") no-repeat;
+    position: absolute;
+    top:-8px;
+    left:10px;
+}
+.opeation-menu-btn-area ul{
+    position: relative;
+    margin: 10px 0;
+}
+
+.opeation-menu-btn-area ul li{
+    padding: 5px 10px;
+    cursor: pointer;
+    list-style: none outside none;
+    border-top:1px solid #81848f;
+}
+
+.opeation-menu-btn-area ul li:first-child{
+    border-top:none;
+}
+
+.opeation-menu-btn-area ul li:hover{
+    color: #4490cf;
+}
+
+
+/*自定义弹框样式-djf*/
+.customDiv{
+    border:1px solid #cccccc;
+    background: #ffffff;
+}
+
+.customDiv .cb-view-div{
+    padding:5px 10px;
+}
+.customDiv .cb-view-div:hover{
+    background:#eee;
+}
+
+.customDiv .cb-view-div .text-content:hover{
+    color:deepskyblue;
+}
+.tree-icon{
+    padding:2px 10px;
+}
+.icon-downLoad{
+    background:url("../../images/cb-tree/download.png") no-repeat ;
+}

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>测试页面</title>
+    <!--  公共模块JS-->
+    <script src="../plugins/jquery/jquery-1.10.1.min.js"></script>
+    <script src="../scripts/api/common-rule.js"></script>
+    <script src="../scripts/common/common.js"></script>
+    <script src="../scripts/api/common-event.js"></script>
+    <script src="../scripts/api/common-listen.js"></script>
+    <script src="../plugins/mustache/mustache.min.js"></script>
+    <script src="../scripts/api/common-template.js"></script>
+    <script src="../scripts/api/common-url.js"></script>
+    <!-- 表单容器 -->
+    <script src="../scripts/components/cb-form.js"></script>
+    <!-- 容器 -->
+    <script src="../scripts/components/cb-view.js"></script>
+    <!-- 按钮 -->
+    <script src="../scripts/components/cb-btn.js"></script>
+    <!-- 输入框 -->
+    <script src="../scripts/components/cb-input.js"></script>
+    <!-- 单选 -->
+    <script src="../scripts/components/cb-radio.js"></script>
+    <!-- 多选 -->
+    <script src="../scripts/components/cb-checkbox.js"></script>
+    <!-- 下拉框 -->
+    <script src="../scripts/components/cb-select.js"></script>
+    <!-- 文本 -->
+    <script src="../scripts/components/cb-text.js"></script>
+    <!-- 表单内基础组件 -->
+    <script src="../scripts/components/cb-form-base.js"></script>
+    <!--标题-->
+    <script src="../scripts/components/cb-title.js"></script>
+    <!--主导航栏-->
+    <script src="../scripts/components/cb-main-nav.js"></script>
+    <!--左导航栏-->
+    <script src="../scripts/components/cb-left-nav.js"></script>
+    <!--图标-->
+    <script src="../scripts/components/cb-icon.js"></script>
+    <!--面包导航栏-->
+    <script src="../scripts/components/cb-breadcrumbs.js"></script>
+    <!--title-->
+    <script src="../scripts/components/cb-title.js"></script>
+    <!--textarea-->
+    <script src="../scripts/components/cb-textarea.js"></script>
+    <!--表格-->
+    <script src="../plugins/pagination/script/pagination.js"></script>
+    <script src="../scripts/components/cb-table.js"></script>
+    <script src="../scripts/components/base-components/cb-business-table.js"></script>
+    <!--tap切换-->
+    <script src="../scripts/components/cb-tap-switch.js"></script>
+</head>
+<body>
+<cb-view  class="text-align-style" data-options='{"padding":["25px","0","25px","0"]}'>
+    <cb-tap-switch data-options='{"tapTextList":["选项一","选项二","选型三"],"releaseNewsList":["aa","bb","cc"],"activeTapNum":"0"}'></cb-tap-switch>
+</cb-view>
+<cb-view class="hide show" listen={"aa":"TapActive"}>
+    <cb-view class="clearfix" data-options='{"padding":["15px","0","15px","0"]}'>
+        <cb-btn class="btn-default btn-right btn-margin-right" bindcl="getSelectedData,getData"
+                data-options='{"padding":["0","20px","0","20px"],"height":"30px"}'>打回
+        </cb-btn>
+        <cb-btn class="btn-blue btn-right btn-margin-right" bindcl="getSelectedData,getData"
+                data-options='{"padding":["0","20px","0","20px"],"height":"30px"}'>同意
+        </cb-btn>
+    </cb-view>
+    <cb-business-table listen={"getData":"getSelectedDataFunction","loading":"loadTable","initTableData":"loadTable"}
+                       class="cb-business-table-blue first-tap-table" data-options='{
+          "pagination":true,
+          "method":"post",
+          "chooseBox":"radio",
+          "url":"table_data.json",
+          "tbodyService":"123456",
+          "homePage":"",
+          "endPage":"",
+          "prevContent":"",
+          "nextContent":"",
+          "isPageSearch":true,
+          "keepShowPN":false,
+          "isPageShowAll":false,
+          "cache":true,
+          "thead":{
+            "data":[
+                [
+                  {"contents":"首付款单号","field":"danhao","formatter":"Hyperlink","class":"er"},
+                  {"contents":"转售企业","field":"qiye", "class":"er2"},
+                  {"contents":"结算账期","field":"moneytime","class":"erdf"},
+                  {"contents":"收付款金额","field":"money", "class":"ervf"},
+                  {"contents":"申请人","field":"people","class":"ercd"}
+                ]
+            ],
+            "merge":[]
+          },
+          "tbody":{
+            "data":[
+
+            ],
+            "merge":[]
+          },
+          "tips":{
+
+          }
+      }'
+    >
+    </cb-business-table>
+</cb-view>
+<cb-view class="hide" listen={"bb":"TapActive"}>
+    <cb-form class="cb-form-default" listen={"clearData1":"clearInput","show":"getInitFormData"}>
+        <cb-title data-options='{"borderPosition":"left"}'>查询信息</cb-title>
+        <cb-view class="border-bottom clearfix" data-options='{"padding":["15px","0","15px","0"]}'>
+            <cb-view class="cb-view-left clearfix">
+                <cb-form-base class="" data-options='{"item":"input","labelOptions":{"labelText":"租户名称","type":"label","width":"100px","height":"30px"},
+"itemComponentOptions":{"placeholder":"","name":"input1","borderRadius":["0"],"height":"30px","width":"260px"}}'></cb-form-base>
+                <cb-form-base class="" data-options='{"item":"select",
+            "labelOptions":{"labelText":"用户类型","type":"label","width":"100px","height":"30px"},
+"itemComponentOptions":{"height":"30px","width":"260px","service":"111","name":"goodLevel","list":"outputParamList","value":"key","text":"value","url":"checkbox-data.json"}}'></cb-form-base>
+            </cb-view>
+            <cb-view class="cb-view-right">
+                <cb-btn class="btn-blue btn-left btn-margin-right" bindcl="serialize,loading2"
+                        data-options='{"padding":["0","20px","0","20px"],"height":"30px"}'>查询
+                </cb-btn>
+                <cb-btn class="btn-default btn-left  btn-margin-right" bindcl="clearOperation,clearData1"
+                        data-options='{"padding":["0","20px","0","20px"],"height":"30px"}'>重置
+                </cb-btn>
+            </cb-view>
+        </cb-view>
+    </cb-form>
+    <cb-title data-options='{"borderPosition":"left"}'>查询结果</cb-title>
+    <cb-view class="clearfix" data-options='{"padding":["15px","0","15px","0"]}'>
+        <cb-btn class="btn-blue btn-right btn-margin-right" bindcl="getSelectedData,getData"
+                data-options='{"padding":["0","20px","0","20px"],"height":"30px"}'>确定
+        </cb-btn>
+    </cb-view>
+    <cb-business-table listen={"getData":"getSelectedDataFunction","loading2":"loadTable","initTableData":"loadTable"}
+                       class="cb-business-table-blue" data-options='{
+          "pagination":true,
+          "method":"post",
+          "chooseBox":"radio",
+          "url":"table_data.json",
+          "tbodyService":"123456",
+          "homePage":"",
+          "endPage":"",
+          "prevContent":"",
+          "nextContent":"",
+          "isPageSearch":true,
+          "keepShowPN":false,
+          "isPageShowAll":false,
+          "cache":true,
+          "thead":{
+            "data":[
+                [
+                  {"contents":"首付款单号","field":"danhao","formatter":"Hyperlink","class":"er"},
+                  {"contents":"转售企业","field":"qiye", "class":"er2"},
+                  {"contents":"结算账期","field":"moneytime","class":"erdf"},
+                  {"contents":"收付款金额","field":"money", "class":"ervf"},
+                  {"contents":"申请人","field":"people","class":"ercd"}
+                ]
+            ],
+            "merge":[]
+          },
+          "tbody":{
+            "data":[
+
+            ],
+            "merge":[]
+          },
+          "tips":{
+
+          }
+      }'
+    >
+    </cb-business-table>
+</cb-view>
+<cb-view class="hide" listen={"cc":"TapActive"}>
+    <cb-form class="cb-form-default" listen={"clearData1":"clearInput","show":"getInitFormData"}>
+        <cb-title data-options='{"borderPosition":"left"}'>查询信息</cb-title>
+        <cb-view class="border-bottom clearfix" data-options='{"padding":["15px","0","15px","0"]}'>
+            <cb-view class="cb-view-left clearfix">
+                <cb-form-base class="" data-options='{"item":"input","labelOptions":{"labelText":"租户名称","type":"label","width":"100px","height":"30px"},
+"itemComponentOptions":{"placeholder":"","name":"input1","borderRadius":["0"],"height":"30px","width":"260px"}}'></cb-form-base>
+                <cb-form-base class="" data-options='{"item":"select",
+            "labelOptions":{"labelText":"用户类型","type":"label","width":"100px","height":"30px"},
+"itemComponentOptions":{"height":"30px","width":"260px","service":"111","name":"goodLevel","list":"outputParamList","value":"key","text":"value","url":"checkbox-data.json"}}'></cb-form-base>
+            </cb-view>
+            <cb-view class="cb-view-right">
+                <cb-btn class="btn-blue btn-left btn-margin-right" bindcl="serialize,loading3"
+                        data-options='{"padding":["0","20px","0","20px"],"height":"30px"}'>查询
+                </cb-btn>
+                <cb-btn class="btn-default btn-left  btn-margin-right" bindcl="clearOperation,clearData1"
+                        data-options='{"padding":["0","20px","0","20px"],"height":"30px"}'>重置
+                </cb-btn>
+            </cb-view>
+        </cb-view>
+    </cb-form>
+    <cb-title data-options='{"borderPosition":"left"}'>查询结果</cb-title>
+    <cb-view class="clearfix" data-options='{"padding":["15px","0","15px","0"]}'>
+        <cb-btn class="btn-blue btn-right btn-margin-right" bindcl="getSelectedData,getData"
+                data-options='{"padding":["0","20px","0","20px"],"height":"30px"}'>分配
+        </cb-btn>
+    </cb-view>
+    <cb-business-table listen={"getData":"getSelectedDataFunction","loading3":"loadTable","initTableData":"loadTable"}
+                       class="cb-business-table-blue" data-options='{
+          "pagination":true,
+          "method":"post",
+          "chooseBox":"radio",
+          "url":"table_data.json",
+          "tbodyService":"123456",
+          "homePage":"",
+          "endPage":"",
+          "prevContent":"",
+          "nextContent":"",
+          "isPageSearch":true,
+          "keepShowPN":false,
+          "isPageShowAll":false,
+          "cache":true,
+          "thead":{
+            "data":[
+                [
+                  {"contents":"首付款单号","field":"danhao","formatter":"Hyperlink","class":"er"},
+                  {"contents":"转售企业","field":"qiye", "class":"er2"},
+                  {"contents":"结算账期","field":"moneytime","class":"erdf"},
+                  {"contents":"收付款金额","field":"money", "class":"ervf"},
+                  {"contents":"申请人","field":"people","class":"ercd"}
+                ]
+            ],
+            "merge":[]
+          },
+          "tbody":{
+            "data":[
+
+            ],
+            "merge":[]
+          },
+          "tips":{
+
+          }
+      }'
+    >
+    </cb-business-table>
+</cb-view>
+
+
+<script>
+    (function () {
+        EventListenr.addListenr("TapActive",function(param){
+            if(param === 'true'){
+                $(this).addClass('show');
+            } else{
+                $(this).removeClass('show');
+            }
+        })
+    })();
+
+    (function(){
+        EventListenr.addListenr("getSelectedDataFunction",function(){
+            var selectedData = CbBusinessTable.getSelectionsFrom($(this));
+            if(selectedData){
+                Event.trigger('inputValue',selectedData);
+                Event.trigger('modalHide');
+            }else{
+                console.log("请选择数据");
+            }
+        })
+    })();
+
+        $(window).load(function(){
+            var $table = $(".first-tap-table");
+            var param={};
+            CbBusinessTable.loadTable($table, param);
+        });
+</script>
+</body>
+
+</html>

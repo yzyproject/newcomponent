@@ -1,0 +1,9 @@
+{
+  "respCode":"0000",
+  "navList":[
+    {"navText":"目录一","flag":"aa"},
+    {"navText":"目录二","flag":"bb"},
+    {"navText":"目录三","flag":"cc"},
+    {"navText":"目录四","flag":"dd"}
+  ]
+}

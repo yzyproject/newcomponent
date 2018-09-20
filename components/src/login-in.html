@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>登录</title>
+
+    <link rel="stylesheet" type="text/css" href="log.css">
+    <!--  公共模块JS-->
+    <script src="../plugins/jquery/jquery-1.10.1.min.js"></script>
+    <script src="../scripts/api/common-rule.js"></script>
+    <script src="../scripts/common/common.js"></script>
+    <script src="../scripts/api/common-event.js"></script>
+    <script src="../scripts/api/common-listen.js"></script>
+    <script src="../plugins/mustache/mustache.min.js"></script>
+    <script src="../scripts/api/common-template.js"></script>
+    <script src="../scripts/api/common-url.js"></script>
+    <script src="../plugins/layer/layer.js"></script>
+    <!-- 表单容器 -->
+    <script src="../scripts/components/cb-form.js"></script>
+    <!-- 容器 -->
+    <script src="../scripts/components/cb-view.js"></script>
+    <!-- 按钮 -->
+    <script src="../scripts/components/cb-btn.js"></script>
+    <!-- 输入框 -->
+    <script src="../scripts/components/cb-input.js"></script>
+    <!-- 单选 -->
+    <script src="../scripts/components/cb-radio.js"></script>
+    <!-- 多选 -->
+    <script src="../scripts/components/cb-checkbox.js"></script>
+    <!-- 下拉框 -->
+    <script src="../scripts/components/cb-select.js"></script>
+    <!-- 文本 -->
+    <script src="../scripts/components/cb-text.js"></script>
+    <!-- 表单内基础组件 -->
+    <script src="../scripts/components/cb-form-base.js"></script>
+    <!--标题-->
+    <script src="../scripts/components/cb-title.js"></script>
+    <!--主导航栏-->
+    <script src="../scripts/components/cb-main-nav.js"></script>
+    <!--左导航栏-->
+    <script src="../scripts/components/cb-left-nav.js"></script>
+    <!--图标-->
+    <script src="../scripts/components/cb-icon.js"></script>
+    <!--面包导航栏-->
+    <script src="../scripts/components/cb-breadcrumbs.js"></script>
+    <!--title-->
+    <script src="../scripts/components/cb-title.js"></script>
+    <!--textarea-->
+    <script src="../scripts/components/cb-textarea.js"></script>
+    <!--模态框-->
+    <script src="../scripts/components/cb-modal.js"></script>
+    <!--表格-->
+    <script src="../plugins/pagination/script/pagination.js"></script>
+    <script src="../scripts/components/cb-table.js"></script>
+    <script src="../scripts/components/base-components/cb-business-table.js"></script>
+    <script src="../scripts/components/cb-background-image.js"></script>
+</head>
+<body>
+
+<cb-background-image class="register-page"
+        data-options='{"imageUrl":"webapp/images/icon-background.png","width":"100%","height":"100%","parentHeight":"100%","parentWidth":"100%"}'>
+    <cb-title>用户登录</cb-title>
+    <cb-form class="clearfix" listen={"submitFormData":"submitFormDataFunction"} data-options='{"service":"111","url":"aaa"}'>
+            <cb-view class="cb-view-center clearfix">
+
+                <cb-form-base  regexp="required-必须输入姓名" class="cb-form-base-black clearfix" regExp="" data-options='{"item":"input","margin":["12px","0","12px","0"],"labelOptions":{"cid":"ssss","labelText":"用户名:","type":"label","width":"75px","height":"36px"},
+"itemComponentOptions":{"type":"","cid":"ssss","name":"goodLevel","placeholder":"请输入手机号/邮箱/用户名","width":"302px","height":"36px","padding":["0","20px","0","20px"]}}'></cb-form-base>
+                <cb-form-base class="cb-form-base-black clearfix" regExp="required-必须输入密码,userPassword-至少8位，可以由数字、特殊字符、字母构成" data-options='{"item":"input","margin":["12px","0","12px","0"],"labelOptions":{"cid":"ssss","labelText":"密码:","type":"label","width":"75px","height":"36px"},
+"itemComponentOptions":{"type":"","cid":"ssss","name":"goodLevel","type":"password","placeholder":"请输入密码","width":"302px","height":"36px","padding":["0","20px","0","20px"]}}'></cb-form-base>
+                <cb-view class="clearfix">
+                    <cb-form-base class="cb-form-base-black verification-code" regExp="required" data-options='{"item":"input","margin":["12px","0","12px","0"],"labelOptions":{"cid":"ssss","labelText":"验证码：","type":"label","width":"75px","height":"36px"},
+"itemComponentOptions":{"type":"","cid":"ssss","name":"goodLevel","placeholder":"请输入验证码","width":"200px","height":"36px","padding":["0","20px","0","20px"]}}'></cb-form-base>
+                    <cb-view class="cb-view-right cb-view-border">
+                        <cb-background-image data-options='{"imageUrl":"","width":"100%","height":"100%","parentHeight":"36px","parentWidth":"90px","isRepeat":true,"service":"111","url":"cb-background-image.json","imageUrlName":"imageUrl"}'></cb-background-image>
+                    </cb-view>
+                </cb-view>
+                <cb-view class="clearfix" data-options='{"padding":["30px","15px","10px","0"]}'>
+                    <cb-checkbox class="cb-checkbox-blue cb-checkbox-right"  data-options='{"name":"goodLevel","option":[{"key":"11","value":"记住密码"}]}'></cb-checkbox>
+                </cb-view>
+                <cb-view class="clearfix" data-options='{"padding":["0","0","0","80px"]}'>
+                    <cb-btn class="btn-blue btn-log"  data-options='{"domDiv":"1","cid":"btn1","height":"34px","borderRadius":["5px","5px","5px","5px"],"width":"300px","href":"222"}' bindcl="triggersubmitFormData,submitFormData" >登录</cb-btn>
+                </cb-view>
+                <cb-view class="clearfix" data-options='{"padding":["5px","0","10px","75px"]}'>
+                    <cb-btn class="btn-a btn-left" data-options='{"domDiv":"1","cid":"btn1"}'>忘记密码</cb-btn>
+                    <cb-btn class="btn-a btn-right" data-options='{"domDiv":"1","cid":"btn1"}'>立即注册</cb-btn>
+                </cb-view>
+            </cb-view>
+    </cb-form>
+</cb-background-image>
+
+<script>
+    (function(){
+        EventHandler.addHandler("triggersubmitFormData",function(triggerName){
+            var $form=$(this).closest("form");
+            Event.trigger(triggerName,$form);
+        })
+    })();
+    (function(){
+        EventListenr.addListenr("submitFormDataFunction",function($form){
+            var $dom = $form.parent('div [tagtype="cb-form"]');
+            CbForm.prototype.ajaxSubmit($dom);
+        })
+    })();
+</script>
+</body>
+<link rel="stylesheet" type="text/css" href="webapp/css/log.css">
+</html>

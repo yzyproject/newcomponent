@@ -1,0 +1,18 @@
+{
+  "respCode":"0000",
+  "respDesc":"操作成功",
+  "recordsTotal":"11",
+  "total":"11",
+  "data":[
+    {"respCode":null,"respDesc":null,"fileId":111,"fileName":"批量短信发送.xsl","sendType":"立即发送","state":"已发送","sendTime":"2017-07-14 05:48:25","sendResult":"发送成功"},
+    {"respCode":null,"respDesc":null,"fileId":222,"fileName":"批量短信发送1.xsl","sendType":"定时发送","state":"已发送","sendTime":"2017-07-14 06:34:43","sendResult":"发送失败"},
+    {"respCode":null,"respDesc":null,"fileId":333,"fileName":"批量短信发送2.xsl","sendType":"立即发送","state":"已发送","sendTime":"2017-07-18 10:55:21","sendResult":"部分失败"},
+    {"respCode":null,"respDesc":null,"fileId":444,"fileName":"批量短信发送3.xsl","sendType":"定时发送","state":"发送中","sendTime":"2017-07-17 09:49:24","sendResult":null},
+    {"respCode":null,"respDesc":null,"fileId":555,"fileName":"批量短信发送4.xsl","sendType":"立即发送","state":"已发送","sendTime":"2017-07-18 10:33:21","sendResult":"发送失败"},
+    {"respCode":null,"respDesc":null,"fileId":666,"fileName":"批量短信发送5.xsl","sendType":"定时发送","state":"未发送","sendTime":"2017-07-18 10:34:50","sendResult":null},
+    {"respCode":null,"respDesc":null,"fileId":777,"fileName":"批量短信发送6.xsl","sendType":"定时发送","state":"已发送","sendTime":"2017-07-18 10:39:58","sendResult":"发送成功"},
+    {"respCode":null,"respDesc":null,"fileId":888,"fileName":"批量短信发送7.xsl","sendType":"定时发送","state":"已发送","sendTime":"2017-07-18 10:41:17","sendResult":"部分失败"},
+    {"respCode":null,"respDesc":null,"fileId":999,"fileName":"批量短信发送7.xsl","sendType":"定时发送","state":"取消发送","sendTime":null,"sendResult":null},
+    {"respCode":null,"respDesc":null,"fileId":100,"fileName":"批量短信发送7.xsl","sendType":"定时发送","state":"发送中","sendTime":"2017-07-18 10:43:33","sendResult":null}
+  ]
+}

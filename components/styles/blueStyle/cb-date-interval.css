@@ -1,0 +1,31 @@
+@charset "utf-8";
+.cb-date-interval-div{
+    float: left;
+}
+.cb-date-interval-div .date-input-group{
+    position: relative;
+    width: 150px;
+    float: left;
+}
+.cb-date-interval-div .date-input-group .cb-input-div{
+    width: 100%;
+}
+.cb-date-interval-div .date-input-group input{
+    padding-right: 34px;
+}
+
+.cb-date-interval-div .date-input-group .cb-icon-div{
+    height: 26px;
+    width: 34px;
+    background: #ccc;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.cb-date-interval-div  .cb-text{
+    margin: 0 5px;
+    width: auto;
+}

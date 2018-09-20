@@ -1,0 +1,154 @@
+/*
+ * cuvbtn 1.0.0
+ * author： niulei
+ * Time: 2017.3.27
+ * description: 按钮组件样式。
+ */
+ @charset "utf-8";
+
+.cb-btn-div,.cb-btn-big{
+  font-size: 14px;
+}
+.cb-btn{
+  cursor: pointer;
+}
+.cb-btn-div .cb-btn{
+  height: 28px;
+  padding: 0 14px;
+  line-height: 26px;
+  margin-left: 20px;
+  border: 1px solid #2B75B2;
+  background: #3796E5;
+  color: #FFF;
+}
+.cb-btn-big .cb-btn{
+  height: 34px;
+  padding: 0 14px;
+  line-height: 32px;
+  margin-left: 20px;
+  border: 1px solid #2B75B2;
+  background: #3796E5;
+  color: #FFF;
+}
+.cb-btn-big{
+  margin-left: 125px;
+}
+.cb-btn:hover,.cb-btn:active,.cb-btn-big .cb-btn:hover,.cb-btn-big .cb-btn:active{
+  border-color: #2B75B2;
+  background-color: #3186CC;
+  color: #FFF;
+}
+.disabled{
+  color: #999;
+  background-color: #e7e7e7;
+  cursor:not-allowed;
+}
+
+.btn1 .cb-btn{
+  height: 36px;
+  border-radius: 26px;
+  line-height: 36px;
+  padding: 0 30px;
+}
+
+.btn-default .cb-btn{
+  padding: 0 16px;
+  height: 30px;
+  border: 1px solid #4490cf;
+  line-height: 28px;
+  font-size: 14px;
+  color: #4490cf;
+  background-color: #fff;
+  border-radius: 5px;
+}
+.btn-default .cb-btn:hover{
+  background: #4490cf;
+  color: #fff;
+}
+.btn-blue{
+  text-align: center;
+}
+.btn-black .cb-btn{
+  font-size: 14px;
+  color: #fff;
+  background-color: rgba(0,0,0,0.7);
+  border:none;
+}
+.btn-black .cb-btn:hover,.btn-black .cb-btn:active{
+  background-color: #4490cf;
+}
+.btn-blue .cb-btn{
+  padding: 0 22px;
+  font-size: 14px;
+  height:30px;
+  color: #fff;
+  background-color: #4490cf;
+  border-radius: 5px;
+}
+.btn-blue .cb-btn:hover{
+  background-color: #3e84bd;
+}
+.btn-right{
+  float: right;
+}
+.btn-left {
+  float: left;
+}
+.btn-margin-right{
+  margin-right: 10px;
+}
+
+.btn-delete .cb-btn{
+  color:#c54545;
+  background-color: #fff;
+  border: 1px solid #c54545;
+  font-size: 16px;
+  padding: 0 16px;
+  height: 30px;
+  line-height: 28px;
+  border-radius: 5px;
+}
+ .btn-delete .cb-btn{
+  background-color: #fff0f0;
+ }
+
+ .btn-right{
+   float: right;
+ }
+ .btn-left{
+   float: left;
+ }
+ .btn-a .cb-btn{
+   background: none;
+   color: #fff;
+ }
+.btn-a .cb-btn:hover{
+  text-decoration: underline;
+}
+
+.btn-quit{
+  margin-right: 25px;
+  padding: 25px 0;
+  line-height: 20px;
+}
+.btn-quit button:hover{
+  color:#4490cf;
+}
+
+
+
+/*适配vop*/
+.cb-btn-div .btn-icon{
+  display:inline-block;
+  width:20px;
+  height:20px;
+  padding:10px;
+  vertical-align: middle;
+}
+
+.cb-btn-div .btn-icon-export{
+  background: url('../../images/cb-btn/icon-export.png') no-repeat 3px 2px;
+}
+.cb-btn-div .btn-icon-import{
+  background: url('../../images/cb-btn/icon-import.png') no-repeat 3px 2px;
+}

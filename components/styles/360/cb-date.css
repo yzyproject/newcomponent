@@ -1,0 +1,12 @@
+/*
+ * cuform 1.0.0
+ * author： anwenzhen
+ * Time: 2017.4.12
+ * description: 日期组件
+ */
+@charset "utf-8";
+.cb-date-div{
+    width: 0;
+    height: 0;
+    float: left;
+}

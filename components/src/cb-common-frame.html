@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>公共模板</title>
+    <!--  公共模块JS-->
+    <script src="../plugins/jquery/jquery-1.10.1.min.js"></script>
+    <script src="../scripts/api/common-rule.js"></script>
+    <script src="../scripts/common/common.js"></script>
+    <script src="../scripts/api/common-event.js"></script>
+    <script src="../scripts/api/common-listen.js"></script>
+    <script src="../plugins/mustache/mustache.min.js"></script>
+    <script src="../scripts/api/common-template.js"></script>
+    <script src="../scripts/api/common-url.js"></script>
+    <!-- 表单容器 -->
+    <script src="../scripts/components/cb-form.js"></script>
+    <!-- 容器 -->
+    <script src="../scripts/components/cb-view.js"></script>
+    <!-- 按钮 -->
+    <script src="../scripts/components/cb-btn.js"></script>
+    <!-- 输入框 -->
+    <script src="../scripts/components/cb-input.js"></script>
+    <!-- 单选 -->
+    <script src="../scripts/components/cb-radio.js"></script>
+    <!-- 多选 -->
+    <script src="../scripts/components/cb-checkbox.js"></script>
+    <!-- 下拉框 -->
+    <script src="../scripts/components/cb-select.js"></script>
+    <!-- 文本 -->
+    <script src="../scripts/components/cb-text.js"></script>
+    <!-- 表单内基础组件 -->
+    <script src="../scripts/components/cb-form-base.js"></script>
+    <!--标题-->
+    <script src="../scripts/components/cb-title.js"></script>
+    <!--主导航栏-->
+    <script src="../scripts/components/cb-main-nav.js"></script>
+    <!--左导航栏-->
+    <script src="../scripts/components/cb-left-nav.js"></script>
+    <!--图标-->
+    <script src="../scripts/components/cb-icon.js"></script>
+    <!--面包导航栏-->
+    <script src="../scripts/components/cb-breadcrumbs.js"></script>
+    <!--title-->
+    <script src="../scripts/components/cb-title.js"></script>
+    <!--textarea-->
+    <script src="../scripts/components/cb-textarea.js"></script>
+    <!--模态框-->
+    <script src="../scripts/components/cb-modal.js"></script>
+    <script src="../scripts/components/cb-common-frame-opass.js"></script>
+</head>
+<body>
+<cb-common-frame data-options = '{
+"mainNavOptions":{"service":"111","navListName":"navList","navTextName":"navText","flagName":"flag","url":"data-main-nav.json","idName":"menuId","defaultShowId":"1"},
+"userOptions":{"service":"11111","name":"num","url":"text_data.json"},
+"leftNavList":{"service":"111","navListName":"navList","navTextName":"navText","flagName":"flag","url":"data-left-nav.json","hrefName":"href","iconClassName":"iconClass","idName":"menuId","defaultShowId":"1"}
+}'></cb-common-frame>
+
+<cb-view class="clearfix"  listen={"crossFoldUp":"crossSpreadFunction"} data-options = '{"padding":["20px","0","0","287px"]}'>
+<cb-form class="cb-form-default" listen={"submitData":"formSubmit","cloneContents":"cloneContentsFunction"}>
+    <cb-view class="cb-view-block" data-options='{"padding":["20px","20px","0","20px"]}'>
+        <cb-title data-options='{"width":"","borderPosition":"left"}'>申请信息</cb-title>
+        <cb-form class="cb-form-default">
+            <cb-view class="cb-view-block clearfix" data-options='{"padding":["10px","0","5px","0"]}'>
+                <cb-form-base listen={"clearData":"clearInput"} bindcl="modalShow,show" data-options='{"item":"input","width":"60%","labelOptions":{"labelText":"租户","type":"label","width":"15%","height":"30px"},
+"itemComponentOptions":{"name":"danhao","placeholder":"请选择租户","width":"80%","height":"30px","borderRadius":["0"],"isReadonly":true}}'></cb-form-base>
+                <cb-btn class="btn-default" bindcl="clearOperation,clearData">重置
+                </cb-btn>
+            </cb-view>
+        </cb-form>
+        <cb-view class="cb-view-block clearfix" data-options='{"padding":["5px","0","10px","0"]}'>
+            <cb-form-base data-options='{"item":"textarea","width":"60%","labelOptions":{"labelText":"租户","type":"label","width":"15%"},
+"itemComponentOptions":{"name":"goodLevel","width":"80%","borderRadius":["0"],"height":"200px"}}'></cb-form-base>
+        </cb-view>        <cb-view class="cb-view-block clearfix" data-options='{"padding":["5px","0","10px","0"]}'>
+        <cb-form-base data-options='{"item":"textarea","width":"60%","labelOptions":{"labelText":"租户","type":"label","width":"15%"},
+"itemComponentOptions":{"name":"goodLevel","width":"80%","borderRadius":["0"],"height":"200px"}}'></cb-form-base>
+    </cb-view>
+        <cb-view class="cb-view-block clearfix" data-options='{"padding":["5px","0","10px","0"]}'>
+            <cb-form-base data-options='{"item":"textarea","width":"60%","labelOptions":{"labelText":"租户","type":"label","width":"15%"},
+"itemComponentOptions":{"name":"goodLevel","width":"80%","borderRadius":["0"],"height":"200px"}}'></cb-form-base>
+        </cb-view>
+        <cb-view class="cb-view-block clearfix" data-options='{"padding":["5px","0","10px","0"]}'>
+            <cb-form-base data-options='{"item":"textarea","width":"60%","labelOptions":{"labelText":"租户","type":"label","width":"15%"},
+"itemComponentOptions":{"name":"goodLevel","width":"80%","borderRadius":["0"],"height":"200px"}}'></cb-form-base>
+        </cb-view>
+        <cb-view class="cb-view-block clearfix" data-options='{"padding":["5px","0","10px","0"]}'>
+            <cb-form-base data-options='{"item":"textarea","width":"60%","labelOptions":{"labelText":"租户","type":"label","width":"15%"},
+"itemComponentOptions":{"name":"goodLevel","width":"80%","borderRadius":["0"],"height":"200px"}}'></cb-form-base>
+        </cb-view>
+
+        <cb-view class="cb-view-block clearfix" data-options='{"padding":["5px","0","10px","0"]}'>
+            <cb-btn class="btn-blue" bindcl="submitForm,submitData"
+                    data-options='{"padding":["0","30px","0","30px"],"height":"36px"}'>申请
+            </cb-btn>
+        </cb-view>
+    </cb-view>
+</cb-form>
+    </cb-view>
+
+</body>
+
+</html>

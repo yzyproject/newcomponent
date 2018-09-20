@@ -1,0 +1,20 @@
+{
+  "respCode":"0000",
+  "outputParamList":[
+    {
+      "text1":"类型1",
+      "value1":"01",
+      "disabled":true,
+      "description":"disabled 这个字段为true时，多选框禁止点击"
+    },
+    {
+      "text1":"类型二",
+      "value1":"02"
+
+    },
+    {
+      "text1":"类型三",
+      "value1":"03"
+    }
+  ]
+}

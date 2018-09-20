@@ -1,0 +1,37 @@
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>文件上传</title>
+    <!--  公共模块-->
+    <script src="../plugins/jquery/jquery-1.10.1.min.js"></script>
+    <script src="../plugins/jQuery-File-Upload/js/vendor/jquery.ui.widget.js"></script>
+    <script src="../plugins/jQuery-File-Upload/js/jquery.iframe-transport.js"></script>
+    <script src="../plugins/jQuery-File-Upload/js/jquery.fileupload.js"></script>
+    <script src="../plugins/jQuery-File-Upload/js/jquery.fileupload-process.js"></script>
+    <script src="../plugins/jQuery-File-Upload/js/jquery.fileupload-validate.js"></script>
+    <script src="../plugins/layer/layer.js"></script>
+    <script src="../scripts/common/common.js"></script>
+    <script src="../scripts/api/common-event.js"></script>
+    <script src="../scripts/api/common-listen.js"></script>
+    <!-- 组件模块 -->
+    <script src="../scripts/components/cb-input.js"></script>
+    <script src="../scripts/components/cb-btn.js"></script>
+    <script src="../scripts/components/cb-file-upload.js"></script>
+</head>
+<body>
+<cb-input  data-options = '{"cid":"bbb"}'></cb-input>
+<cb-file-upload bindcg="aaa" class="cb-upload-sure" listen={"fileUpload":"fileUploadFunction","fileCancel":"fileCancelFunction"} data-options='{"labelRemark":"浏览","limitFileType":["docx","txt"],"padding":["0","0","0","20px"],"fileName":"fileName","maxFileNum":"3","maxFileSize":"20971520","echoContent":"fileContent","url":"../../","relateCid":"aaa","autoUpload":true,"echoFileNameCid":"bbb"}' ></cb-file-upload>
+<cb-btn class="cb-btn-cancel" bindcl="fileCanceltrigger,fileCancel" >取消上传</cb-btn>
+<cb-btn class="cb-btn-upload" bindcl="fileUploadtrigger,fileUpload" >上传</cb-btn>
+</body>
+<script>
+    (function(){
+        EventHandler.addHandler("aaa",function(){
+            console.log(123);
+        })
+    })()
+</script>
+</html>

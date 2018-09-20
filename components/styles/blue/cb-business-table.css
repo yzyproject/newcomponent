@@ -1,0 +1,120 @@
+/*
+ * cu-business-table 1.0.0
+ * author： dongjingfeng
+ * Time: 2017.5.16
+ * description: 复杂表格组件样式。
+ */
+
+
+/*提示信息样式*/    /*适配vop*/
+.cb-business-table-div .cb-err-prompt{
+    width:100%;
+    min-height: 50px;
+    line-height: 50px;
+    margin:10px 0;
+    padding-left: 100px;
+    font-size: 14px;
+    background: #FCF8E3;
+    border: 1px solid #FAEBCC;
+    border-radius: 4px;
+    text-align: left;
+    color:#8A6D3B;
+}
+/*适配vop-down*/
+.cb-business-table-div .cb-err-prompt .tipIcon{
+    width:20px;
+    height:20px;
+    display: inline-block;
+    margin-right: 5px;
+    background:url("../../images/cb-business-table/icon-tip.png") no-repeat 0 2px;
+}
+.cb-business-table-div table{
+    border: 1px solid #E0E0E0;
+}
+/*适配vop-up*/
+.cb-business-table-div table thead th{
+    background:linear-gradient(bottom,#fefefe,#f4f4f4);
+    border: 1px solid #E0E0E0;
+    font-size: 15px;
+    color:#4d4d4d;
+    font-weight: bold;
+    height: 39px;
+    line-height: 28px;
+    padding :0;
+}
+.cb-business-table-div table tbody td{
+    /*border-left: 1px solid #979ca8;*/
+    /*border-right: 1px solid #979ca8;*/
+    padding: 5px 10px;
+    font-size: 12px;
+    color:#666;
+    line-height: 16px;
+    position: relative;
+}
+.cb-business-table-div  .fixed-table-body,.cb-business-table-div  .fixed-table-height{
+    float: none;
+}
+
+.cb-table-div tbody>tr:hover{
+    background:#d0e5f6;
+}
+
+.cb-business-table-div table tbody td input[type='radio']{
+    display: none;
+}
+.cb-business-table-div table tbody td input[type='radio']+label {
+    position: relative;
+    display: inline-block;
+    height: 16px;
+    width: 50px;
+    background: url("../../images/cb-table/icon-radio.png") no-repeat center;
+    background-size: 16px;
+
+}
+.cb-business-table-div table tbody td input[type='radio']:checked+label:after {
+    height: 16px;
+    width: 50px;
+    background: url("../../images/cb-table/icon-radio-active.png") no-repeat center;
+    background-size: 16px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+}
+.cb-business-table-div table tbody tr:hover td input[type='radio']+label {
+    height: 16px;
+    width: 50px;
+    background: url("../../images/cb-table/icon-radio-hover.png") no-repeat center ;
+    background-size: 16px;
+}
+
+.cb-business-table-div table tbody td input[type='checkbox'],.cb-business-table-div table thead th input[type='checkbox']{
+    display: none;
+}
+.cb-business-table-div table tbody td input[type='checkbox']+label,.cb-business-table-div table thead th input[type='checkbox']+label {
+    position: relative;
+    display: inline-block;
+    height: 16px;
+    width: 50px;
+    background: url("../../images/cb-table/icon-select.png") no-repeat center;
+    background-size: 16px;
+}
+.cb-business-table-div table tbody td input[type='checkbox']:checked+label:after,.cb-business-table-div table thead th input[type='checkbox']:checked+label:after{
+    height: 16px;
+    width: 50px;
+    background: url("../../images/cb-table/icon-select-active.png") no-repeat center;
+    background-size: 16px;
+    position: absolute;
+    top:0;
+    left: 0;
+    content: '';
+}
+.cb-business-table-div table tbody tr:hover td input[type='checkbox']+label {
+    height: 16px;
+    width: 50px;
+    background: url("../../images/cb-table/icon-select-hover.png") no-repeat center;
+    background-size: 16px;
+}
+.cb-business-table-div table thead tr th:first-child{
+    min-width: 50px;
+}

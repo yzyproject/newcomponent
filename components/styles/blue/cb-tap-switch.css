@@ -1,0 +1,48 @@
+@charset "utf-8";
+.cb-tap-switch-div{
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    /*color:#4d4d4d;*/
+    /*适配vop*/
+    border-bottom: 1px solid #ddd;
+}
+
+.cb-tap-switch-div li{
+    float: left;
+    height: 40px;
+    padding: 0 20px;
+    line-height: 40px;
+    cursor: pointer;
+    /*margin-left: 2px;*/
+    /*background-color: #e5eaee;*/
+    /*适配vop*/
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-bottom: 0;
+    margin-bottom: -1px;
+    color:#428BCA;
+}
+.cb-tap-switch-div li:first-child{
+    /*border: 1px solid #373a42;*/
+    margin-left: 0;
+    /*border-top-left-radius: 20px;*/
+    /*border-bottom-left-radius: 20px;*/
+}
+.cb-tap-switch-div li:last-child{
+    /*border-top-right-radius: 20px;*/
+    /*border-bottom-right-radius: 20px;*/
+}
+.cb-tap-switch-div li.tap-active{
+    /*background-color: #4490cf;*/
+    /*color:#fff;*/
+    border-bottom: 1px solid #fff;
+    border-top: 2px solid #4490cf;
+    color: #000;
+}
+.cb-tap-switch-div li:not(.tap-active):hover{
+    /*color: #4490cf;*/
+    /*background-color: #e5eaee;*/
+    color: #000;
+    background-color: #EBF3FA;
+}

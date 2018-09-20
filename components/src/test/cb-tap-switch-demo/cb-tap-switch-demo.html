@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>选项卡组件</title>
+    <!--  公共模块-->
+    <script src="../../../plugins/jquery/jquery-1.10.1.min.js"></script>
+    <script src="../../../plugins/layer/layer.js"></script>
+    <script src="../../../plugins/artTemplate/artTemplate.js"></script>
+    <script src="../../../scripts/common/common.js"></script>
+    <script src="../../../scripts/api/common-event.js"></script>
+    <script src="../../../scripts/api/common-listen.js"></script>
+    <script src="../../../scripts/api/common-rule.js"></script>
+    <script src="../../../scripts/api/common-fn.js"></script>
+    <script src="../../../plugins/store/store.legacy.min.js"></script>
+    <!-- 容器 -->
+    <script src="../../../scripts/components/cb-view.js"></script>
+    <!-- 模板表格组件 -->
+    <script src="../../../scripts/components/cb-tap-switch.js"></script>
+    <!--页面JS -->
+    <script src="cb-tap-switch-demo.js"></script>
+    <link rel="stylesheet" href="cb-tap-switch-demo.css">
+
+  </head>
+  <body>
+    <cb-tap-switch data-options='{"renderSuccess":"renderSuccess","onCheck":"onCheck","checkFn":"checkFn","tapTextList":[{"text":"选项一","toCid":"_1","defaultShow":true},{"text":"选项二","toCid":"_2"},{"text":"选项三","toCid":"_3"}]}'></cb-tap-switch>
+    <cb-view class="" cid="_1"><cb-btn>项目一</cb-btn></cb-view>
+    <cb-view class="hide" cid="_2"><cb-btn>项目二</cb-btn></cb-view>
+    <cb-view class="hide" cid="_3"><cb-btn>项目三</cb-btn></cb-view>
+
+  </body>
+
+</html>

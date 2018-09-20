@@ -1,0 +1,77 @@
+/*
+ * cb-tpl-table.css 1.0.0
+ * author： niulei
+ * Time: 2017.8.22
+ * description: 模板表格组件样式
+ */
+ @charset "utf-8";
+ /*不会变更的样式*/
+ .tydic-hide{
+   display: none;
+ }
+ .cb-tpl-table-area{
+   overflow: auto;
+   position: relative;
+ }
+ .cb-tpl-table-area:after{
+	content: "";
+	clear: both;
+	display: none;
+  }
+  .cb-tpl-table-area table{
+	min-width:100%;
+  }
+ .tydic-table-check{
+   width: 40px;
+   height: 40px;
+   cursor: pointer;
+   background: url("../../images/icon/checkbox_unchecked.png") center no-repeat;
+ }
+ .tydic-table-check.active{
+ 	background: url("../../images/icon/checkbox_checked.png") center no-repeat;
+ }
+ .tydic-check-all{
+   width: 40px;
+   height: 40px;
+   cursor: pointer;
+   background: url("../../images/icon/checkbox_unchecked.png") center no-repeat;
+ }
+ .tydic-check-all.active{
+   background: url("../../images/icon/checkbox_checked.png") center no-repeat;
+ }
+ .tydic-table-radio{
+   width: 40px;
+   height: 40px;
+   cursor: pointer;
+   background: url("../../images/icon/radio-normal.png") center no-repeat;
+ }
+ .tydic-table-radio.active{
+   background: url("../../images/icon/radio-checked.png") center no-repeat;
+
+ }
+ .tydic-table-tr.active{
+   background-color: green;
+ }
+/*默认div下的样式*/
+/*样式-dongjf*/
+.fixed-thead-div th,.fixed-tbody-div th{
+  height: 37px;
+  line-height: 35px;
+  color:#4d4d4d;
+  border:1px solid #e0e0e0;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  background: url('../../images/cb-table/icon-th-backgroud.png');
+}
+.fixed-tbody-div td{
+  border: 1px solid #e0e0e0;
+  font-size: 12px;
+  color:#666;
+  line-height: 16px;
+  position: relative;
+}
+.fixed-tbody-div td div{
+  vertical-align: middle;
+  text-align: center;
+}

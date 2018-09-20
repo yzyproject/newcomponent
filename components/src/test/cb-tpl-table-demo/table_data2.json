@@ -1,0 +1,288 @@
+{
+  "respCode": "0000",
+  "respDesc": "成功",
+  "planTitle": "中国联通2017年第一季度电信智能卡计划表（单位：万）",
+  "provinceCodeName": "山东",
+  "createTime": "2017-02-02",
+  "cityPlanList":[	//地市申请单列表
+    {
+      "isCheck":"true",	//是否勾选 ，true默认勾选上地市申请单，false不勾选
+      "cpApplyId":"111",		//地市列表订单号
+      "areaCode":"591",
+      "areaCodeName":"广西",
+    },
+    {
+      "isCheck":"true",	//是否勾选 ，true默认勾选上地市申请单，false不勾选
+      "cpApplyId":"222",		//地市列表订单号
+      "areaCode":"591",
+      "areaCodeName":"广西",
+    }
+  ],
+  "cityPlanDetailList":[   //地市申请单列表详情
+    {
+      "cpApplyId":"111",		//地市列表订单号
+      "cardTypeInfoList": [
+        {
+          "cardType": "33",
+          "cardTypeName": "微型2",
+          "cardTypeDetailList": [
+            {
+              "cpApplyDetailId":"11",	//卡计划申请明细ID
+              "cardTypeCode": "111",
+              "cardTypeCodeName": "128k手机卡（微型2）",
+              "bookCardCount": "0.0",	//上季度实际订卡量 单位/万
+              "cardPlanCount": "6.001",	//上季度计划量  单位/万
+              "controlQuota": "200",	//计划控制指标
+              "monthlyUserNum":"200",	//本季度预计月均发展用户数
+              "firstNum":"23",		//第一个月
+              "secondNum":"23",		//第二个月
+              "thirdNum":"23"		//第三个月
+            },
+            {
+              "cpApplyDetailId":"11",
+              "cardTypeCode": "111",
+              "cardTypeCodeName": "128k三合一卡",
+              "bookCardCount": "0.0",
+              "cardPlanCount": "6.001",
+              "controlQuota": "200",
+              "monthlyUserNum":"200",
+              "firstNum":"23",
+              "secondNum":"23",
+              "thirdNum":"23"
+            }
+          ]
+        },
+        {
+          "cardType": "33",
+          "cardTypeName": "普通卡",
+          "cardTypeDetailList": [
+            {
+              "cpApplyDetailId":"11",
+              "cardTypeCode": "111",
+              "cardTypeCodeName": "64k手机卡（普通）",
+              "bookCardCount": "0.0",
+              "cardPlanCount": "6.001",
+              "controlQuota": "200",
+              "monthlyUserNum":"200",
+              "firstNum":"23",
+              "secondNum":"23",
+              "thirdNum":"23"
+            },
+            {
+              "cpApplyDetailId":"11",
+              "cardTypeCode": "111",
+              "cardTypeCodeName": "128k手机卡（普通）",
+              "bookCardCount": "0.0",
+              "cardPlanCount": "6.001",
+              "controlQuota": "200",
+              "monthlyUserNum":"200",
+              "firstNum":"23",
+              "secondNum":"23",
+              "thirdNum":"23"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "cpApplyId":"222",		//地市列表订单号
+      "cardTypeInfoList": [
+        {
+          "cardType": "33",
+          "cardTypeName": "微型2",
+          "cardTypeDetailList": [
+            {
+              "cpApplyDetailId":"11",	//卡计划申请明细ID
+              "cardTypeCode": "111",
+              "cardTypeCodeName": "128k手机卡（微型2）",
+              "bookCardCount": "0.0",	//上季度实际订卡量 单位/万
+              "cardPlanCount": "6.001",	//上季度计划量  单位/万
+              "controlQuota": "200",	//计划控制指标
+              "monthlyUserNum":"200",	//本季度预计月均发展用户数
+              "firstNum":"23",		//第一个月
+              "secondNum":"23",		//第二个月
+              "thirdNum":"23"		//第三个月
+            },
+            {
+              "cpApplyDetailId":"11",
+              "cardTypeCode": "111",
+              "cardTypeCodeName": "128k三合一卡",
+              "bookCardCount": "0.0",
+              "cardPlanCount": "6.001",
+              "controlQuota": "200",
+              "monthlyUserNum":"200",
+              "firstNum":"23",
+              "secondNum":"23",
+              "thirdNum":"23"
+            }
+          ]
+        },
+        {
+          "cardType": "33",
+          "cardTypeName": "普通卡",
+          "cardTypeDetailList": [
+            {
+              "cpApplyDetailId":"11",
+              "cardTypeCode": "111",
+              "cardTypeCodeName": "64k手机卡（普通）",
+              "bookCardCount": "0.0",
+              "cardPlanCount": "6.001",
+              "controlQuota": "200",
+              "monthlyUserNum":"200",
+              "firstNum":"23",
+              "secondNum":"23",
+              "thirdNum":"23"
+            },
+            {
+              "cpApplyDetailId":"11",
+              "cardTypeCode": "111",
+              "cardTypeCodeName": "128k手机卡（普通）",
+              "bookCardCount": "0.0",
+              "cardPlanCount": "6.001",
+              "controlQuota": "200",
+              "monthlyUserNum":"200",
+              "firstNum":"23",
+              "secondNum":"23",
+              "thirdNum":"23"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+
+  "cardPatternList": [		//省份申请单模板
+    {
+      "pattern": "1",
+      "patternName": "实体卡计划",
+      "cardTypeInfoList": [
+        {
+          "cardType": "33",
+          "cardTypeName": "微型2",
+          "cardTypeDetailList": [
+            {
+              "cpApplyDetailId":"11",	//卡计划申请明细ID
+              "cardTypeCode": "111",
+              "cardTypeCodeName": "128k手机卡（微型2）",
+              "bookCardCount": "0.0",	//上季度实际订卡量 单位/万
+              "cardPlanCount": "6.001",	//上季度计划量  单位/万
+              "controlQuota": "200",	//计划控制指标
+              "monthlyUserNum":"200",	//本季度预计月均发展用户数
+              "firstNum":"23",		//第一个月
+              "secondNum":"23",		//第二个月
+              "thirdNum":"23"		//第三个月
+            },
+            {
+              "cpApplyDetailId":"11",
+              "cardTypeCode": "111",
+              "cardTypeCodeName": "128k三合一卡",
+              "bookCardCount": "0.0",
+              "cardPlanCount": "6.001",
+              "controlQuota": "200",
+              "monthlyUserNum":"200",
+              "firstNum":"23",
+              "secondNum":"23",
+              "thirdNum":"23"
+            }
+          ]
+        },
+        {
+          "cardType": "33",
+          "cardTypeName": "普通卡",
+          "cardTypeDetailList": [
+            {
+              "cpApplyDetailId":"11",
+              "cardTypeCode": "111",
+              "cardTypeCodeName": "64k手机卡（普通）",
+              "bookCardCount": "0.0",
+              "cardPlanCount": "6.001",
+              "controlQuota": "200",
+              "monthlyUserNum":"200",
+              "firstNum":"23",
+              "secondNum":"23",
+              "thirdNum":"23"
+            },
+            {
+              "cpApplyDetailId":"11",
+              "cardTypeCode": "111",
+              "cardTypeCodeName": "128k手机卡（普通）",
+              "bookCardCount": "0.0",
+              "cardPlanCount": "6.001",
+              "controlQuota": "200",
+              "monthlyUserNum":"200",
+              "firstNum":"23",
+              "secondNum":"23",
+              "thirdNum":"23"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pattern": "2",
+      "patternName": "数据卡计划",
+      "cardTypeInfoList": [
+        {
+          "cardType": "22",
+          "cardTypeName": "微型2",
+          "cardTypeDetailList": [
+            {
+              "cpApplyDetailId":"11",	//卡计划申请明细ID
+              "cardTypeCode": "111",
+              "cardTypeCodeName": "128k手机卡（微型2）",
+              "bookCardCount": "0.0",
+              "cardPlanCount": "6.001",
+              "controlQuota": "200",
+              "monthlyUserNum":"200",
+              "firstNum":"23",
+              "secondNum":"23",
+              "thirdNum":"23"
+            },
+            {
+              "cpApplyDetailId":"11",	//卡计划申请明细ID
+              "cardTypeCode": "111",
+              "cardTypeCodeName": "128k三合一卡",
+              "bookCardCount": "0.0",
+              "cardPlanCount": "6.001",
+              "controlQuota": "200",
+              "monthlyUserNum":"200",
+              "firstNum":"23",
+              "secondNum":"23",
+              "thirdNum":"23"
+            }
+          ]
+        },
+        {
+          "cardType": "33",
+          "cardTypeName": "普通卡",
+          "cardTypeDetailList": [
+            {
+              "cpApplyDetailId":"11",	//卡计划申请明细ID
+              "cardTypeCode": "111",
+              "cardTypeCodeName": "64k手机卡（普通）",
+              "bookCardCount": "0.0",
+              "cardPlanCount": "6.001",
+              "controlQuota": "200",
+              "monthlyUserNum":"200",
+              "firstNum":"23",
+              "secondNum":"23",
+              "thirdNum":"23"
+            },
+            {
+              "cpApplyDetailId":"11",	//卡计划申请明细ID
+              "cardTypeCode": "111",
+              "cardTypeCodeName": "128k手机卡（普通）",
+              "bookCardCount": "0.0",
+              "cardPlanCount": "6.001",
+              "controlQuota": "200",
+              "monthlyUserNum":"200",
+              "firstNum":"23",
+              "secondNum":"23",
+              "thirdNum":"23"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

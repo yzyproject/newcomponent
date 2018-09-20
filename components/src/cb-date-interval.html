@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>日期复合组件</title>
+    <!--  公共模块JS-->
+    <script src="../plugins/jquery/jquery-1.10.1.min.js"></script>
+    <script src="../plugins/bootstrap/bootstrap.min.js"></script>
+    <script src="../plugins/bootstrap/bootstrap-datetimepicker.js"></script>
+    <script src="../plugins/bootstrap/bootstrap-datetimepicker.zh-CN.js"></script>
+    <link rel="stylesheet" href="../plugins/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../plugins/bootstrap/bootstrap-datetimepicker.css">
+    <script src="../scripts/common/common.js"></script>
+    <script src="../scripts/api/common-event.js"></script>
+    <script src="../scripts/api/common-listen.js"></script>
+    <script src="../scripts/api/common-rule.js"></script>
+    <script src="../plugins/mustache/mustache.min.js"></script>
+    <script src="../scripts/api/common-template.js"></script>
+    <!-- 复合日期组件 -->
+    <script src="../scripts/components/cb-icon.js"></script>
+    <script src="../scripts/components/cb-text.js"></script>
+    <script src="../scripts/components/cb-input.js"></script>
+    <script src="../scripts/components/cb-date.js"></script>
+    <script src="../scripts/components/custom-components/cb-date-interval.js"></script>
+</head>
+<body>
+<cb-date-interval class=""
+         data-options='{
+         "ctype":"1",
+         "inputNames":["startTime","endTime"],
+         "isReadonly":true,
+         "labelTexts":["开始","至"],
+         "labelTypes":["label","text"],
+         "placeholder":["请选择1","请选择2"],
+         "dateFormat":"yyyy-mm-dd",
+         "imageUrl":"../images/cb-icon/icon-calendar.png",
+         "dateIntervals":[["2017-01-01","2017-08-10"],["2017-01-11","2017-09-10"]],
+         "onValued":"$($($($master1).children()[0]).children()[0]).val(value1);$($($($master2).children()[0]).children()[0]).val(value2);"
+   }'></cb-date-interval>
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>模板多选框组件</title>
+    <!--  公共模块-->
+    <script src="../../../plugins/jquery/jquery-1.10.1.min.js"></script>
+    <script src="../../../plugins/layer/layer.js"></script>
+    <script src="../../../plugins/artTemplate/artTemplate.js"></script>
+    <script src="../../../scripts/common/common.js"></script>
+    <script src="../../../scripts/api/common-event.js"></script>
+    <script src="../../../scripts/api/common-listen.js"></script>
+    <script src="../../../scripts/api/common-rule.js"></script>
+    <script src="../../../scripts/api/common-fn.js"></script>
+    <script src="../../../plugins/store/store.legacy.min.js"></script>
+    <!-- 按钮 -->
+    <script src="../../../scripts/components/cb-btn.js"></script>
+    <!-- 模板表格组件 -->
+    <script src="../../../scripts/components/cb-tpl-checkbox.js"></script>
+    <!--页面JS -->
+    <script src="cb-tpl-checkbox-demo.js"></script>
+    <link rel="stylesheet" href="cb-tpl-checkbox-demo.css">
+
+  </head>
+  <body>
+    <!-- 通过isRequest=true参数 来确认是否开启组件加载时的请求 -->
+    <div>通过isRequest=true参数 来确认是否开启组件加载时的请求</div>
+    <cb-btn  data-options='{"domDiv":"1"}' bindcl="triggerFn,checkAll" ><div>checkAll全选多选框数据</div></cb-btn>
+    <cb-btn  data-options='{"domDiv":"1"}' bindcl="triggerFn,unCheckAll" ><div>unCheckAll取消多选框选中状态</div></cb-btn>
+
+    <cb-tpl-checkbox class=""  listen='{"checkAll":"checkAll","unCheckAll":"unCheckAll"}' data-options='{
+      "params":{"12":"23"},
+      "name":"test",
+      "list":"outputParamList",
+      "text":"text1",
+      "value":"value1",
+      "isRequest":true,
+      "url":"cb-tpl-checkbox-demo.json",
+      "method":"get",
+      "beforeLoad":"beforeLoad",
+      "loadSuccess":"loadSuccess",
+      "renderSuccess":"renderSuccess",
+      "onCheck":"onCheck",
+      "checkFn":"checkFn",
+      "service":"34334"
+    }'></cb-tpl-checkbox>
+    <div>当isRequest=false时 组件不会在初始化时加载数据，需手动调用loadCheckbox来加载数据</div>
+    <cb-btn  data-options='{"domDiv":"1"}' bindcl="triggerFn,load" ><div>loadCheckBox加载多选框数据</div></cb-btn>
+    <cb-btn  data-options='{"domDiv":"1"}' bindcl="triggerFn,append" ><div>appendCheckBox追加多选框数据</div></cb-btn>
+    <cb-btn  data-options='{"domDiv":"1"}' bindcl="triggerFn,reLoad" ><div>reLoadCheckBox重新加载多选框数据</div></cb-btn>
+    <cb-tpl-checkbox class=""   listen='{"load":"loadtheData","append":"appendtheData","reLoad":"reLoadFn"}'  data-options='{
+      "params":{"12":"23"},
+      "name":"test",
+      "list":"outputParamList",
+      "text":"text1",
+      "value":"value1",
+      "isRequest":false,
+      "url":"cb-tpl-checkbox-demo.json",
+      "method":"get",
+      "beforeLoad":"beforeLoad",
+      "loadSuccess":"loadSuccess",
+      "renderSuccess":"renderSuccess",
+      "onCheck":"onCheck",
+      "checkFn":"checkFn",
+      "service":"34334"
+    }'></cb-tpl-checkbox>
+    <div>当isRequest=false时 组件不会在初始化时加载数据，需手动调用loadCheckbox来加载数据，且通过直接传入值来加载数据，此时的数据字段要求与ajax的字段要求一致</div>
+    <cb-btn  data-options='{"domDiv":"1"}' bindcl="triggerFn,load2" ><div>通过传入Data加载多选框数据</div></cb-btn>
+    <cb-tpl-checkbox class=""   listen='{"load2":"loadtheData2"}'  data-options='{
+      "params":{"12":"23"},
+      "name":"test",
+      "list":"outputParamList",
+      "text":"text1",
+      "value":"value1",
+      "isRequest":false,
+      "onCheck":"onCheck",
+      "checkFn":"checkFn",
+      "service":"34334"
+    }'></cb-tpl-checkbox>
+    <div>通过isRequest==false 且配置option来让多选框加载配置的数据</div>
+    <cb-tpl-checkbox class=""   data-options='{
+      "params":{"12":"23"},
+      "name":"test",
+      "list":"outputParamList",
+      "text":"text1",
+      "value":"value1",
+      "isRequest":false,
+      "onCheck":"onCheck",
+      "checkFn":"checkFn",
+      "service":"34334",
+      "option":[{"text1":"类型1","value1":"01"}]
+    }'></cb-tpl-checkbox>
+
+  </body>
+
+</html>

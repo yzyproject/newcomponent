@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>南京物联网—能力平台</title>
+    <!--  公共模块JS-->
+    <script src="../plugins/jquery/jquery-1.10.1.min.js"></script>
+    <script src="../scripts/api/common-rule.js"></script>
+    <script src="../scripts/common/common.js"></script>
+    <script src="../scripts/api/common-event.js"></script>
+    <script src="../scripts/api/common-listen.js"></script>
+    <script src="../plugins/mustache/mustache.min.js"></script>
+    <script src="../scripts/api/common-template.js"></script>
+    <script src="../scripts/api/common-url.js"></script>
+    <script src="../plugins/jQuery-File-Upload/js/vendor/jquery.ui.widget.js"></script>
+    <script src="../plugins/jQuery-File-Upload/js/jquery.iframe-transport.js"></script>
+    <script src="../plugins/jQuery-File-Upload/js/jquery.fileupload.js"></script>
+    <script src="../plugins/jQuery-File-Upload/js/jquery.fileupload-process.js"></script>
+    <script src="../plugins/jQuery-File-Upload/js/jquery.fileupload-validate.js"></script>
+    <script src="../plugins/layer/layer.js"></script>
+    <script src="../plugins/bootstrap/bootstrap-datetimepicker.js"></script>
+    <script src="../plugins/bootstrap/bootstrap-datetimepicker.zh-CN.js"></script>
+    <link rel="stylesheet" href="../plugins/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../plugins/bootstrap/bootstrap-datetimepicker.css">
+    <script src="../plugins/jedate/jquery.jedate.js"></script>
+    <link rel="stylesheet" href="../plugins/jedate/skin/jedate.css">
+    <!-- 单选 -->
+    <script src="../scripts/components/cb-radio.js"></script>
+    <!-- 表单容器 -->
+    <script src="../scripts/components/cb-form.js"></script>
+    <!-- 容器 -->
+    <script src="../scripts/components/cb-view.js"></script>
+    <!--标题-->
+    <script src="../scripts/components/cb-title.js"></script>
+    <!--左导航栏-->
+    <script src="../scripts/components/cb-left-nav.js"></script>
+    <!--图标-->
+    <script src="../scripts/components/cb-icon.js"></script>
+    <!--模态框-->
+    <script src="../scripts/components/cb-modal.js"></script>
+    <!--文本-->
+    <script src="../scripts/components/cb-text.js"></script>
+    <!--输入框-->
+    <script src="../scripts/components/cb-input.js"></script>
+    <!--按钮-->
+    <script src="../scripts/components/cb-btn.js"></script>
+    <!--文件上传-->
+    <script src="../scripts/components/cb-file-upload.js"></script>
+    <!--日期-->
+    <script src="../scripts/components/cb-date.js"></script>
+
+</head>
+<body>
+    <cb-view  listen={"verticalFoldUp":"verticalFoldUpFunction"} class="cb-view-white main-nav-height clearfix capacity-management-top">
+        <cb-view class="cb-view-left clearfix cb-padding">
+            <cb-icon class="" data-options='{"ctype":"icon-aaa","imageUrl":"../images/capacity-management/capacity-management-logo.jpg","width":"100%","height":"100%"}'></cb-icon>
+        </cb-view>
+        <cb-view class="cb-view-right clearfix">
+            <cb-text class="quit" data-options='{"cid":"ssss","labelText":"[    退出  ]","type":"text","width":"70px","height":"60px"}'></cb-text>
+            <cb-text class="user-name" data-options='{"cid":"ssss","labelText":"user-name","type":"text","width":"90px","height":"60px"}'></cb-text>
+            <cb-icon class="" data-options='{"ctype":"icon-aaa","imageUrl":"../images/capacity-management/capacity-management-user.png","width":"20px","height":"60px"}'></cb-icon>
+        </cb-view>
+    </cb-view>
+    <cb-view class="cb-view-block body capacity-management-body" listen={"verticalFoldUp":"verticalSpreadFunction"}>
+        <cb-view  class="cb-view-left-block left-nav-height body-left" listen={"crossFoldUp":"crossFoldUpFunction"} data-options='{"width":"14.64%"}'>
+            <cb-left-nav data-options='{"service":"","navListName":"navList","navTextName":"navText","flagName":"flag","url":"wlw-capacity-management-left-nav.json","hrefName":"href","iconClassName":"iconClass","idName":"menuId","defaultShowId":"1"}'></cb-left-nav>
+        </cb-view>
+        <cb-view class="cb-view-block body-right" listen={"crossFoldUp":"crossSpreadFunction"}
+                 data-options='{"padding":["0","0","0","14.64%"]}'>
+            <cb-form class="cb-form-default" listen={"submitData":"formSubmit"}>
+                <cb-view class="cb-view-block body-right-nav height" data-options='{}'>
+                    <cb-title data-options='{"width":"","borderPosition":"left"}'>能力</cb-title>
+                    <cb-view class="cb-view-nav">
+
+                    </cb-view>
+                </cb-view>
+            </cb-form>
+        </cb-view>
+    </cb-view>
+    <script>
+        $(window).load(function(){
+            var height = window.innerHeight-$('.main-nav-height').height()-$('.body-bottom').height();
+            console.log(height);
+//            $('.left-nav-height').css('min-height',height+'px');
+//            $('.body-right').css('min-height',height+'px');
+//            $('.cb-form-default').css('min-height',height-60+'px');
+            $(".capacity-management-body .cb-left-nav-div .left-list-nav>li:first-child ul li:first-child").addClass("capacity-management-style");
+            $(".capacity-management-body .cb-left-nav-div .left-list-nav>li:first-child ul li:first-child>a").addClass("capacity-management-style-a");
+        });
+    </script>
+</body>
+</html>

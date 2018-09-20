@@ -1,0 +1,126 @@
+/*
+ * cuform 1.0.0
+ * author： dongjingfeng
+ * Time: 2017.4.17
+ * description: 表格组件样式
+ */
+@charset "UTF-8";
+
+.cb-table-div{
+  overflow-x: auto;
+}
+
+.cb-table-div .fixed-table-body{
+  float: left;
+}
+.fixed-table-head {
+  float: left;
+}
+.cb-table-div .fixed-table-body table{
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: center;
+    border-collapse: collapse;
+    min-width: 100%;
+}
+.cb-table-div .width-cell-div{
+    vertical-align: top;
+    /*overflow: hidden;*/
+    /*text-overflow: ellipsis;*/
+    word-break: break-all;
+    white-space: normal;
+}
+.cb-table-div .cell-div{
+    vertical-align: top;
+    white-space: nowrap;
+}
+
+.cb-table-div thead th{
+    height: 37px;
+    line-height: 35px;
+    color:#4d4d4d;
+    /*border:1px solid #e0e0e0;*/
+    border:1px solid #DDDDDD;
+    border-bottom-color:#333;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    background: url('../../images/cb-table/icon-th-backgroud.png');
+}
+.cb-table-div tbody td .width-cell-div {
+    line-height: 20px;
+    font-size: 14px;
+    margin: 8px 5px;
+    text-align: center;
+}
+.cb-table-div tbody>tr:nth-child(even){
+    background:#fafafa;
+}
+.cb-table-div tbody>tr:hover{
+    background:#d0e5f6;
+}
+
+.cb-table-div tbody>tr a:hover{
+    text-decoration: none;
+}
+
+.detail-table{
+    overflow-x: auto;
+    margin-top: 10px;
+}
+
+.detail-table thead th{
+    height: 37px;
+    line-height: 35px;
+    color:#4d4d4d;
+    border:1px solid #e0e0e0;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    background: url('../../images/cb-table/icon-th-backgroud.png');
+}
+.detail-table tbody td .width-cell-div {
+    line-height: 20px;
+    font-size: 14px;
+    margin: 8px 5px;
+    text-align: center;
+}
+
+.detail-table tbody td{
+    border: 1px solid #e0e0e0;
+}
+.detail-table .detail-table-tbody{
+    border: none;
+}
+
+.detail-table .detail-table-tbody tr td{
+    border: 0;
+    line-height: 20px;
+    padding: 5px 0;
+
+}
+
+.more-btn{
+    cursor: pointer;
+}
+.detail-table  tbody>tr:nth-child(even){
+    background:#fff;
+}
+.detail-table  tbody>tr:hover{
+    background:#fff;
+}
+
+.detail-table{
+    margin: 10px;
+    font-size: 12px;
+}
+.detail-title{
+    border: none !important;
+    line-height: 24px;
+    vertical-align: top;
+}
+.detail{
+    border: none !important;
+    line-height: 24px;
+    vertical-align: top;
+}

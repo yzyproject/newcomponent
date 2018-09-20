@@ -1,0 +1,106 @@
+/*
+ * cuview 1.0.0
+ * author： niulei
+ * Time: 2017.4.5
+ * description: 容器样式
+ */
+ @charset "utf-8";
+ .content-item{
+  float: left;
+  color: #333;
+}
+.border-bottom .content-item{
+  border-bottom: 1px solid #ededed;
+}
+.text-left .content-item{
+  text-align: right;
+}
+.cb-view-div{
+    width: 100%;
+    padding: 10px;
+    clear: right;
+    border-top: 1px dashed #CAE7FF;
+}
+.cb-view-div:first-child{
+    border-top: none;
+}
+.cb-view-table{
+    width: 100%;
+    padding: 18px 10px;
+    clear: right;
+    border-bottom:1px solid #E6E6E6;
+    border-right:1px solid #E6E6E6;
+    border-left:1px solid #E6E6E6;
+}
+.cb-view-table:first-child{
+    border-top:1px solid #E6E6E6;
+}
+
+.cb-view-table{
+    min-height: 70px;
+}
+.cb-view-color{
+    background: #F2F9FF;
+}
+
+/*// 黑色*/
+.cb-view-black{
+    /*background:linear-gradient(bottom,#fefefe,#f4f4f4)*/
+    /*background:linear-gradient(bottom,#2372B4,#025EA9);*/
+    background:#1067AE;
+    height: 70px;
+}
+
+.cb-view-360{
+    /*background:linear-gradient(bottom,#fefefe,#f4f4f4)*/
+    /*background:linear-gradient(bottom,#2372B4,#025EA9);*/
+    background:#2B79CD;
+    height: 48px;
+}
+
+.cb-view-left{
+    float: left;
+}
+.cb-view-right{
+    float: right;
+}
+.cb-view-block{
+    position: relative;
+}
+.cb-view-mainWindow{
+    /*position: absolute;*/
+    /*left:267px;*/
+    /*right:0;*/
+    /*top:0;*/
+    /*z-index:1;*/
+    background: red;
+}
+.cb-view-left-block{
+    position: absolute;
+    top:0;
+    left:0;
+    border-right: 1px solid #81848f;
+    z-index: 1;
+}
+
+.cb-view-block-border{
+    border-bottom: 1px solid #979ca8;
+}
+.text-align-style{
+    text-align:center;
+}
+.cb-view-center{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    -webkit-transform:translate(-50%,-50%);
+    -moz-transform:translate(-50%,-50%);
+    -transform:translate(-50%,-50%);
+}
+.cb-view-border{
+    border: 1px solid #999;
+}
+.cb-view-white{
+    background:#F4F4F4;
+    height: 60px;
+}

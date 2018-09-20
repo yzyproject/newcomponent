@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>复杂表格组件</title>
+    <!--  公共模块JS-->
+    <script src="../plugins/jquery/jquery-1.10.1.min.js"></script>
+    <script src="../scripts/common/common.js"></script>
+    <script src="../scripts/api/common-event.js"></script>
+    <script src="../scripts/api/common-listen.js"></script>
+    <script src="../plugins/mustache/mustache.min.js"></script>
+    <script src="../plugins/layer/layer.js"></script>
+    <script src="../scripts/api/common-template.js"></script>
+    <script src="../plugins/pagination/script/pagination.js"></script>
+    <script src="../scripts/components/cb-table.js"></script>
+    <script src="../scripts/components/base-components/cb-business-table.js"></script>
+    <script src="../scripts/components/cb-btn.js"></script>
+    <script src="../scripts/components/cb-modal.js"></script>
+</head>
+<body>
+  <cb-btn  data-options='{}' bindcl="loadTable,table1"><div>刷新表格内容</div></cb-btn>
+  <cb-btn  data-options='{}' bindcl="getTable,long"><div>获得已选择的表格数据</div></cb-btn>
+  <cb-business-table class="cb-business-table-blue dongjingfeng" listen='{"table1":"loading","long":"geting"}' data-options='{
+          "pagination":true,
+          "method":"post",
+          "chooseBox":"checkbox",
+          "url":"table_data1.json",
+          "tbodyService":"123456",
+          "homePage":"",
+          "endPage":"",
+          "prevContent":"",
+          "nextContent":"",
+          "isPageSearch":true,
+          "keepShowPN":false,
+          "isPageShowAll":false,
+          "cache":false,
+          "thead":{
+            "data":[
+                [
+                  {"contents":"首付款单号","field":"danhao","formatter":"ceshi","class":"er","align":"left"},
+                  {"contents":"转售企业","field":"qiye", "class":"er2"},
+                  {"contents":"结算账期","field":"moneytime","class":"erdf"},
+                  {"contents":"收付款金额","field":"money", "class":"ervf"},
+                  {"contents":"申请人","field":"people","class":"ercd"},
+                  {"contents":"查看","field":"operation","formatter":"modalShow", "class":"esdr"}
+
+                ]
+            ],
+            "merge":[]
+          },
+          "tbody":{
+            "data":[
+
+            ],
+            "merge":[]
+          },
+          "tips":{
+
+          }
+      }'
+          >
+  </cb-business-table>
+
+  <cb-modal data-options = '{"cid":"aa","ctype":"blue","isShowMaskLayer":true,"contentCid":"cb-form1","title":"弹框","isShowCloseIcon":true,"closeIconUrl":"123.jpg","primaryPostion":[266,30],"closeIconLocation":"rightUp","draggable":false,"isShowCancelBtn":false,"isShowConfirmBtn":false,"beforeCloseProcessor":"Fun1"}'>
+      <cb-textarea class="" data-options='{"label":"条件：","name":"aaaa","height":"400","width":"400"}'></cb-textarea>
+  </cb-modal>
+</body>
+
+      <script type="text/javascript">
+        //            "afterAjax":"var oldData = data.data;var newData = [];for(var index in oldData){var item = oldData[index];var arr = [];newData.push(arr);for (var key in item){var  newItem={};newItem.contents=item[key];newItem.field=key;arr.push(newItem);};};data.data=newData;return data;",
+        (function(){
+            CbBusinessTable.addFormatter("ceshi",function(headData,data,$dom){
+                return "<div style='text-align: left'><a href='"+data.contents+"'>"+data.contents+"</a></div>";
+            });
+          EventHandler.addHandler("loadTable",function(triggerName){
+            var param = {
+              name:"董京逢",
+              sex:"♀",
+              class:"草民",
+              service:"5009"
+            };
+            Event.trigger(triggerName,param);
+          })
+        })();
+        (function(){
+          EventListenr.addListenr("loading",function(param){
+            var $table = $(this);
+
+            CbBusinessTable.loadTable($table, param);
+          })
+        })();
+      (function(){
+          EventHandler.addHandler("getTable",function(triggerName){
+              Event.trigger(triggerName);
+          })
+      })();
+      (function(){
+          EventListenr.addListenr("geting",function(param){
+              var data = CbBusinessTable.getSelectionsFrom($(this));
+              console.log(data);
+          })
+      })();
+        (function(){
+            var modalShow = function(){
+                return "<input type='button' data-options='{\"cid\":\"aa\"}' class='modalShow' value='点击'>";
+            };
+            CbBusinessTable.addFormatter("modalShow",modalShow);
+        })();
+
+      </script>
+</html>

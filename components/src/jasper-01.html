@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>物联网jasper</title>
+    <!--  公共模块JS-->
+    <script src="../plugins/jquery/jquery-1.10.1.min.js"></script>
+    <script src="../scripts/api/common-rule.js"></script>
+    <script src="../scripts/common/common.js"></script>
+    <script src="../scripts/api/common-event.js"></script>
+    <script src="../scripts/api/common-listen.js"></script>
+    <script src="../plugins/mustache/mustache.min.js"></script>
+    <script src="../scripts/api/common-template.js"></script>
+    <script src="../scripts/api/common-url.js"></script>
+    <script src="../plugins/jQuery-File-Upload/js/vendor/jquery.ui.widget.js"></script>
+    <script src="../plugins/jQuery-File-Upload/js/jquery.iframe-transport.js"></script>
+    <script src="../plugins/jQuery-File-Upload/js/jquery.fileupload.js"></script>
+    <script src="../plugins/jQuery-File-Upload/js/jquery.fileupload-process.js"></script>
+    <script src="../plugins/jQuery-File-Upload/js/jquery.fileupload-validate.js"></script>
+    <script src="../plugins/layer/layer.js"></script>
+    <script src="../plugins/bootstrap/bootstrap-datetimepicker.js"></script>
+    <script src="../plugins/bootstrap/bootstrap-datetimepicker.zh-CN.js"></script>
+    <link rel="stylesheet" href="../plugins/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../plugins/bootstrap/bootstrap-datetimepicker.css">
+    <script src="../plugins/jedate/jquery.jedate.js"></script>
+    <link rel="stylesheet" href="../plugins/jedate/skin/jedate.css">
+    <!-- 单选 -->
+    <script src="../scripts/components/cb-radio.js"></script>
+    <!-- 表单容器 -->
+    <script src="../scripts/components/cb-form.js"></script>
+    <!-- 容器 -->
+    <script src="../scripts/components/cb-view.js"></script>
+    <!--标题-->
+    <script src="../scripts/components/cb-title.js"></script>
+    <!--左导航栏-->
+    <script src="../scripts/components/cb-left-nav.js"></script>
+    <!--图标-->
+    <script src="../scripts/components/cb-icon.js"></script>
+    <!--模态框-->
+    <script src="../scripts/components/cb-modal.js"></script>
+    <!--文本-->
+    <script src="../scripts/components/cb-text.js"></script>
+    <!--输入框-->
+    <script src="../scripts/components/cb-input.js"></script>
+    <!--按钮-->
+    <script src="../scripts/components/cb-btn.js"></script>
+    <!--文件上传-->
+    <script src="../scripts/components/cb-file-upload.js"></script>
+    <!--日期-->
+    <script src="../scripts/components/cb-date.js"></script>
+</head>
+<body>
+<cb-view  listen={"verticalFoldUp":"verticalFoldUpFunction"} class="cb-view-white main-nav-height white clearfix">
+    <cb-view class="cb-view-left clearfix cb-padding">
+        <cb-icon class="" data-options='{"ctype":"icon-aaa","imageUrl":"../images/jasper/logo.jpg","width":"100%","height":"100%"}'></cb-icon>
+    </cb-view>
+    <cb-view class="cb-view-right clearfix">
+        <!--<cb-text class="user-name" data-options='{"cid":"ssss","labelText":"user-name","type":"text","width":"80px","height":"67px"}'></cb-text>-->
+        <!--<cb-text class="quit" data-options='{"cid":"ssss","labelText":"退出","type":"text","width":"80px","height":"67px"}'></cb-text>-->
+    </cb-view>
+</cb-view>
+<cb-view class="cb-view-block body bgc-red" listen={"verticalFoldUp":"verticalSpreadFunction"}>
+    <cb-view  class="cb-view-left-block left-nav-height body-left bar" listen={"crossFoldUp":"crossFoldUpFunction"} data-options='{"width":"14.64%"}'>
+        <cb-left-nav data-options='{"service":"","navListName":"navList","navTextName":"navText","flagName":"flag","url":"jasper-left-nav.json","hrefName":"href","iconClassName":"iconClass","idName":"menuId","defaultShowId":"1"}'></cb-left-nav>
+    </cb-view>
+    <cb-view class="cb-view-block body-right" listen={"crossFoldUp":"crossSpreadFunction"}
+             data-options='{"padding":["0","0","0","14.64%"]}'>
+        <cb-form class="cb-form-default" listen={"submitData":"formSubmit"}>
+            <cb-view class="cb-view-block body-right-nav height" data-options='{}'>
+                <cb-title data-options='{"width":"","borderPosition":"left"}'>JASPER短信</cb-title>
+                <cb-view class="cb-view-nav">
+                    <cb-view class="cb-view-nav-top" data-options={"height":"102px"}>
+                        <cb-text class="cb-text-title" data-options='{"cid":"ssss","labelText":"上传短信文件","type":"text","width":"80px","height":"26px"}'></cb-text>
+                        <cb-input  data-options = '{"cid":"bbb","width":"400px","height":"26px"}'></cb-input>
+                        <cb-file-upload class="cb-upload-sure red" listen={"fileUpload":"fileUploadFunction","fileCancel":"fileCancelFunction"} data-options='{"labelRemark":"上传","limitFileType":["docx","txt"],"padding":["0","0","0","20px"],"fileName":"fileName","maxFileNum":"3","maxFileSize":"20971520","echoContent":"fileContent","url":"../../","relateCid":"aaa","autoUpload":false,"echoFileNameCid":"bbb"}' ></cb-file-upload>
+                        <cb-btn class="cb-btn-cancel red-cancel" bindcl="fileCanceltrigger,fileCancel" >取消上传</cb-btn>
+                        <cb-text class="cb-text-download" data-options='{"cid":"ssss","labelText":"模板下载","type":"text","width":"80px","height":"26px"}'></cb-text>
+                    </cb-view>
+                    <cb-view class="cb-view-nav-bottom" data-options={"height":"49px"}>
+                        <cb-text class="cb-text-title" data-options='{"cid":"ssss","labelText":"选择发送时间","type":"text","width":"80px","height":"26px"}'></cb-text>
+                        <cb-radio class=""  bindcg="listenRadio,readRadio" data-options='{"width":"222px","cid":"","service":"","name":"goodLevel","list":"outputParamList","value":"key","text":"value","url":"","option":[{"key":"1","value":"立即发送"},{"key":"2","value":"定时发送"}]}'></cb-radio>
+                        <cb-btn class="cb-btn-upload red" bindcl="sendMessage,fileUpload+show">发送</cb-btn>
+                    </cb-view>
+                    <cb-view class="red-data" listen={"readRadio":"readRadioFun"} data-options={"height":"50px"}>
+                        <cb-input class="cb-input-big"   data-options='{"name":"aaa","isReadonly":true,"width":"200px","height":"34px"}'>
+                            <cb-icon class="cb-icon-big bg"
+                                     data-options='{"ctype":"icon-calendar","imageUrl":"../images/cb-icon/icon-calendar.png"}'></cb-icon>
+                        </cb-input>
+                        <cb-date class=""
+                                 data-options='{"name":"input1","ctype":"1","masterId":"","onValued":"","format":"yyyy-mm-dd hh:mm","minDate":"2017-03-17 00:00:00","maxDate":"2017-04-17 00:00:00","language":"zh-CN","weekStart":"","autoclose":false,"todayBtn":true,"todayHighlight":true,"weekAlias":["日","一","二","三","四","五","六"],
+         "duringDate":"var n=6;var nowDate = new Date();var yy = nowDate.getFullYear();var mmo = nowDate.getMonth() + 1;var dd = nowDate.getDate();var hh = nowDate.getHours();var mmi = nowDate.getMinutes();var ss = nowDate.getSeconds();var nowD = yy + \"-\" + mmo + \"-\" + dd+\" \" + hh + \":\" + mmi + \":\" + ss;options.minDate=nowD;console.log(options.minDate);var d = new Date();var year = d.getFullYear();var mon = d.getMonth() + 1;var day = d.getDate();var hours = d.getHours();var minutes = d.getMinutes();var seconds = d.getSeconds();if(day <= n){if(mon > 1) {mon = mon + 1;} else {year = year + 1;mon = 12;}};d.setDate(d.getDate() + n);year = d.getFullYear();mon = d.getMonth() + 1;day = d.getDate();s = year + \"-\" + (mon < 10 ? (\"0\"+ mon) : mon) + \"-\" + (day < 10 ? (\"0\" + day) : day)+\" \" + hours + \":\" + minutes + \":\" + seconds;options.maxDate=s;console.log(options.maxDate);console.log(options);"
+         }'></cb-date>
+                    </cb-view>
+                </cb-view>
+            </cb-view>
+        </cb-form>
+    </cb-view>
+</cb-view>
+<cb-view  class="cb-view-block body-bottom" listen={"crossFoldUp":"crossFoldUpFunction"} data-options='{"width":"100%"}'>
+    <cb-text class="text-bottom" data-options='{"cid":"ssss","labelText":"Copyright© 1999-2017     中国联通   版权所有","type":"text","width":"100%","height":""}'></cb-text>
+    <cb-text class="text-bottom" data-options='{"cid":"ssss","labelText":"中华人民共和国增值电信业务经营许可证 经营许可证编号：A2.B1.B2-20090003","type":"text","width":"100%","height":""}'></cb-text>
+</cb-view>
+<!--模态框-->
+<cb-modal class="cb-modal-div cb-modal-red" listen={"show":"showModal","modalHide":"hideModalFunction"} data-options = '{"ctype":"blue","title":"","primaryPostion":[348,166,30,40],"isShowMaskLayer":true,"isShowCloseIcon":true,"closeIconLocation":"rightUp","draggable":true,"beforeCloseProcessor":"Fun1","isShowConfirmBtn":false,"isShowCancelBtn":false}'>
+    <cb-text class="cb-text-first" data-options='{"cid":"ssss","labelText":"短信已发送","type":"text","width":"100%","height":"30px"}'></cb-text>
+    <cb-view class="modal-top" data-options={"width":"60%"}>
+        <cb-text class="aa" data-options='{"cid":"ssss","labelText":"稍后可至","type":"text","width":"","height":"30px"}'></cb-text>
+        <cb-text class="cb-text-link" data-options='{"cid":"ssss","labelText":"发送记录","type":"text","width":"","height":"30px"}'></cb-text>
+        <cb-text class="aa" data-options='{"cid":"ssss","labelText":"查看发送情况","type":"text","width":"","height":"30px"}'></cb-text>
+    </cb-view>
+    <cb-btn class="modal-btn-red" bindcl="sendMessage,modalHide" data-options={"height":"26px","width":"92px"} >确定</cb-btn>
+</cb-modal>
+
+<script>
+    $(window).load(function(){
+        var height = window.innerHeight-$('.main-nav-height').height()-$('.body-bottom').height();
+        console.log(height);
+        $('.left-nav-height').css('min-height',height+'px');
+        $('.body-right').css('min-height',height+'px');
+        $('.cb-form-default').css('min-height',height-60+'px');
+        $(".cb-radio-div .radio-list input[value=1]").attr("checked","checked");
+        $(".bar .cb-left-nav-div .left-list-nav>li ul li:first-child").addClass("show-now-nav");
+        $(".bar .cb-left-nav-div .left-list-nav>li ul li:first-child>a").addClass("show-now-nav-a");
+    });
+
+    (function(){
+        EventHandler.addHandler("sendMessage",function(triggerName){
+            var names = triggerName.split("+");
+                console.log(names);
+                Event.trigger(names[0]);
+                Event.trigger(names[1]);
+        })
+    })();
+    (function(){
+        EventHandler.addHandler("listenRadio",function(triggerName){
+            Event.trigger(triggerName,$(this).val());
+        })
+    })();
+    (function(){
+        EventListenr.addListenr("readRadioFun",function(param){
+            console.log(param);
+            if(param == 1){
+                $(this).css("display","none");
+            }
+            if(param == 2){
+                $(this).css("display","block");
+            }
+        })
+    })();
+</script>
+</body>
+
+</html>

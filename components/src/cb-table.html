@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>表格组件</title>
+    <!--  公共模块JS-->
+    <script src="../plugins/jquery/jquery-1.10.1.min.js"></script>
+    <script src="../scripts/common/common.js"></script>
+    <script src="../scripts/api/common-event.js"></script>
+    <script src="../scripts/api/common-listen.js"></script>
+    <script src="../plugins/mustache/mustache.min.js"></script>
+    <script src="../scripts/api/common-template.js"></script>
+    <!-- 按钮 -->
+    <script src="../scripts/components/cb-table.js"></script>
+    <script src="../scripts/components/cb-btn.js"></script>
+
+</head>
+<body>
+  <cb-btn  data-options='{}' bindcl="loadTable,table1"><div>刷新表格内容</div></cb-btn>
+  <cb-btn  data-options='{}' bindcl="appendTable,append"><div>追加表格数据</div></cb-btn>
+  <cb-btn  data-options='{}' bindcl="getTable,long"><div>获得表格数据</div></cb-btn>
+  <cb-btn  data-options='{}' bindcl="setcell,celling"><div>设置单元格数据</div></cb-btn>
+<cb-table listen='{"table1":"loading","long":"geting","append":"appending","celling":"setcelling"}' data-options='{
+        "bodyData":{
+          "merge":[ [ [0,0] , [1,0] ], [ [0,2],[1,2] ] ],
+
+          "data":[["0.0-1.1 合并","1","2","数据4","3"],
+                  [null,null,null,"数据5","4"]
+                ]
+        },
+        "headData":{
+          "data":[["姓名","性别","年龄","备注","备注1"]
+                ]
+        }
+      }'
+        >
+</cb-table>
+<!-- <cb-table listen='{"even1":"listen1"}' data-options='{
+        "headData":{
+          "data":[["姓名","性别","年龄","备注"]]
+          },
+          "bodyData":{
+            "data":[["大古","男","33","迪迦"],
+                    ["飞鸟信","","23","忘了"],
+                    ["未来","男","23","梦比优斯"]
+            ]
+          }
+      }'
+        >
+</cb-table> -->
+</body>
+
+      <script type="text/javascript">
+
+      (function(){
+          EventHandler.addHandler("loadTable",function(triggerName){
+            var data = {
+              "data":[["0.2-1.1 合并","1","2","数据4","3"],
+                      [null,null,null,"数据5","4"]
+                    ]
+            }
+            var object = ParsingHelper.getObject("cb-table");
+            Event.trigger(triggerName,data);
+          })
+        })();
+        (function(){
+          EventListenr.addListenr("loading",function(param){
+            var $table = $(this);
+            var tableData = param;
+            CbTable.loadData($table, tableData);
+          })
+        })();
+        (function(){
+          EventHandler.addHandler("getTable",function(triggerName){
+            Event.trigger(triggerName);
+          })
+        })();
+        (function(){
+            EventListenr.addListenr("geting",function(param){
+              var data = CbTable.getData($(this).attr("cid"));
+              console.log(data);
+            })
+        })();
+        (function(){
+          EventHandler.addHandler("appendTable",function(triggerName){
+            var data = {
+              "merge":[ [ [0,0] , [1,0] ], [ [0,2],[1,2] ] ],
+              "data":[["增加 合并","1","2","数据4","3"],
+                      [null,null,null,"数据5","4"]
+                    ]
+            }
+            Event.trigger(triggerName,data);
+          })
+        })();
+        (function(){
+            EventListenr.addListenr("appending",function(param){
+              var $table = $(this);
+              var tableData = param;
+              CbTable.appendData($table, tableData);
+            })
+        })();
+        (function(){
+          EventHandler.addHandler("setcell",function(triggerName){
+            var data = {
+              cell:[1,1],
+              data:"德玛西亚"
+            }
+            Event.trigger(triggerName,data);
+          })
+        })();
+        (function(){
+            EventListenr.addListenr("setcelling",function(param){
+              var $table = $(this);
+              var tableData = param;
+              CbTable.setCellData($table, tableData);
+            })
+        })();
+
+
+      </script>
+</html>

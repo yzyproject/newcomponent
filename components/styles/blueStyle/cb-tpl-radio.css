@@ -1,0 +1,32 @@
+/*
+ * cb-tpl-radio 1.0.0
+ * author： niulei
+ * Time: 2017.9.24
+ * description: 单选框样式
+ */
+.cb-tpl-radio-list .tydic-radio{
+  display: none;
+}
+.cb-tpl-radio-list .tydic-radio-label{
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  background: url("../../images/cb-tpl-radio/radio.png") center no-repeat;
+  cursor: pointer;
+}
+.cb-tpl-radio-list .tydic-radio-label.disabled{
+  cursor: auto;
+}
+.cb-tpl-radio-list .tydic-radio-label.active{
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  background: url("../../images/cb-tpl-radio/radio-checked.png") center no-repeat;
+  cursor: pointer;
+}
+.cb-tpl-radio-list .tydic-radio-span{
+  display: inline-block;
+  vertical-align: middle;
+}

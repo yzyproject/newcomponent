@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>按钮组件</title>
+    <!--  公共模块-->
+    <script src="../../../plugins/jquery/jquery-1.10.1.min.js"></script>
+    <script src="../../../plugins/artTemplate/artTemplate.js"></script>
+    <script src="../../../plugins/layer/layer.js"></script>
+    <script src="../../../scripts/common/common.js"></script>
+    <script src="../../../scripts/api/common-event.js"></script>
+    <script src="../../../scripts/api/common-listen.js"></script>
+    <script src="../../../scripts/api/common-rule.js"></script>
+    <script src="../../../scripts/api/common-fn.js"></script>
+    <script src="../../../plugins/store/store.legacy.min.js"></script>
+    <!-- 输入框 -->
+    <script src="../../../scripts/components/cb-input.js"></script>
+    <!-- 文本 -->
+    <script src="../../../scripts/components/cb-text.js"></script>
+    <!-- 按钮 -->
+    <script src="../../../scripts/components/cb-btn.js"></script>
+    <!-- 按钮 -->
+    <script src="../../../scripts/components/cb-view.js"></script>
+    <!-- 模态框 -->
+    <script src="../../../scripts/components/cb-modal.js"></script>
+    <!--页面JS -->
+    <script src="cb-modal-demo.js"></script>
+  </head>
+  <body>
+    <cb-btn  data-options='{"domDiv":"1"}' bindcl="wing,openModal" ><div>打开无按钮模态框，宽度为500px</div></cb-btn>
+    <cb-modal data-options='{"title":"示例一","shadeClose":false,"move":true,"area":["500px","300px"],"successFn":"successFn","cancelFn":"cancelFn","endFn":"endFn"}' listen='{"openModal":"showModal","closeModal":"hideModalFunction"}'>
+      <cb-btn  data-options='{"domDiv":"1"}' bindcl="wing,closeModal" ><div>关闭模态框</div></cb-btn>
+
+      <cb-input  regexp="required-必填,chinese-只能输入中文"  data-options='{"name":"input1"}'></cb-input>
+      <cb-input  regexp="letter-只能输入英文"  data-options='{"name":"input2"}'></cb-input>
+    </cb-modal>
+
+    <cb-btn  data-options='{"domDiv":"1"}' bindcl="wing,openModal1" ><div>打开有按钮模态框,宽度为80%</div></cb-btn>
+    <cb-modal data-options='{"title":"示例一","shadeClose":false,"move":true,"area":["80%","300px"],"btn":["确定","取消"],"btn2Fn":"btn2","successFn":"successFn","yesFn":"yesFn","cancelFn":"cancelFn","endFn":"endFn"}' listen='{"openModal1":"showModal","closeModal":"hideModalFunction"}'>
+      <cb-btn  data-options='{"domDiv":"1"}' bindcl="wing,closeModal" ><div>关闭模态框</div></cb-btn>
+
+      <cb-input  regexp="required-必填,chinese-只能输入中文"  data-options='{"name":"input1"}'></cb-input>
+      <cb-input  regexp="letter-只能输入英文"  data-options='{"name":"input2"}'></cb-input>
+    </cb-modal>
+  </body>
+
+</html>

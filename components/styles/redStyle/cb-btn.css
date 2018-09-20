@@ -1,0 +1,111 @@
+/*
+ * CbBtn 1.0.0
+ * author: liuqianwen
+ * Time: 2017.08.08
+ * description: 按钮
+ */
+@charset "utf-8";
+/*公共*/
+.cb-btn {
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.disabled {
+    color: #999;
+    background-color: #e7e7e7;
+    cursor: not-allowed;
+}
+
+.cb-btn-div,
+.cb-btn-blue,
+.cb-btn-cancel,
+.cb-btn-lightblue,
+.cb-btn-lightblue-cancel {
+    float: left;
+    border: 1px solid transparent;
+    /*margin-left: 40px;*/
+}
+
+/*基色调—红色*/
+.cb-btn-div .cb-btn {
+    width: 90px;
+    height: 26px;
+    line-height: 26px;
+    background-color: #bf2934;
+    border-radius: 5px;
+    color: #FFF;
+}
+
+.cb-btn-div .cb-btn:hover,
+.cb-btn-div .cb-btn:active {
+    border-color: #a2222c;
+    background-color: #a2222c;
+    color: #FFF;
+}
+
+/*红色版取消-边框红色、背景透明、字体红色*/
+.cb-btn-cancel .cb-btn {
+    width: 90px;
+    height: 26px;
+    line-height: 26px;
+    background-color: transparent;
+    border-radius: 5px;
+    color: #bf2934;
+    border: 1px solid #bf2934;
+}
+
+/*蓝色*/
+.cb-btn-blue .cb-btn {
+    width: 90px;
+    height: 26px;
+    padding: 0 14px;
+    line-height: 26px;
+    margin-left: 20px;
+    background-color: #4490cf;
+    border-radius: 5px;
+    color: #FFF;
+}
+.cb-btn-blue .cb-btn:hover,
+.cb-btn-blue .cb-btn:active {
+    border-color: #4490cf;
+    background-color: #4490cf;
+    color: #FFF;
+}
+
+/*浅蓝色*/
+.cb-btn-lightblue .cb-btn {
+    width: 90px;
+    height: 26px;
+    padding: 0 14px;
+    line-height: 26px;
+    margin-left: 20px;
+    background-color: #1eb5e5;
+    border-radius: 5px;
+    color: #FFF;
+}
+.cb-btn-lightblue .cb-btn:hover,
+.cb-btn-lightblue  .cb-btn:active {
+    border-color: #1da6d2;
+    background-color: #1da6d2;
+    color: #FFF;
+}
+/*浅蓝色取消*/
+.cb-btn-lightblue-cancel .cb-btn {
+    width: 90px;
+    height: 26px;
+    line-height: 26px;
+    background-color: transparent;
+    border-radius: 5px;
+    color: #1eb5e5;
+    border: 1px solid #1eb5e5;
+}
+.cb-btn-lightblue-cancel .cb-btn:hover,
+.cb-btn-lightblue-cancel .cb-btn:active {
+    border-color: #1da6d2;
+    background-color: #1da6d2;
+    color: #FFF;
+}
+.cb-btn-left .cb-btn {
+    margin-left: 70%;
+}

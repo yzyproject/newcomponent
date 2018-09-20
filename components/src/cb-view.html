@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>容器组件</title>
+    <!--  公共模块JS-->
+    <script src="../plugins/jquery/jquery-1.10.1.min.js"></script>
+    <script src="../scripts/common/common.js"></script>
+    <script src="../scripts/api/common-event.js"></script>
+    <script src="../scripts/api/common-listen.js"></script>
+    <script src="../plugins/mustache/mustache.min.js"></script>
+    <script src="../scripts/api/common-template.js"></script>
+    <!-- 容器 -->
+    <script src="../scripts/components/cb-view.js"></script>
+    <!-- 表格 -->
+    <script src="../scripts/components/cb-table.js"></script>
+    <!-- 按钮 -->
+    <script src="../scripts/components/cb-btn.js"></script>
+    <!-- 输入框 -->
+    <script src="../scripts/components/cb-select.js"></script>
+
+  </head>
+  <body>
+    <cb-view class="clearfix" listen="aa:listen1" data-options='{"domDiv":"cuview2","id":"233","width":"1000px","padding":["30px"],"service":"111","url":"input_data.json","onValued":"","isDefaultAjax":false}'>
+      <cb-select class=""  data-options='{"cid":"ssss","service":"111","name":"goodLevel","list":"outputParamList","value":"key","text":"value","url":"checkbox-data.json","isDefault":true}'></cb-select>
+    </cb-view>
+  </body>
+
+      <script type="text/javascript">
+
+        (function(){
+          EventListenr.addListenr("listen1",function(triggerName){
+            console.log($(this));
+            console.log("demaxiya");
+          })
+        })();
+
+        $(function () {
+          Event.trigger('aa');
+        })
+      </script>
+</html>

@@ -1,0 +1,107 @@
+/*
+ * common 1.0.0
+ * author： niulei
+ * Time: 2017.4.1
+ * description: 公共样式，目的为格式化浏览器样式，不要添加无用的组件样式。
+ */
+
+@charset "UTF-8";
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    box-sizing: border-box;
+    font-size: 12px;
+    line-height: 1;
+    font-family: Arial, "微软雅黑";
+    color: #666;
+    margin: 0;
+    overflow:hidden;
+}
+
+/*公共样式*/
+.clearfix:after {
+    clear: both;
+    content: ' ';
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+
+.hide{
+    display: none;
+}
+
+/*重置样式*/
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+input[type="button"], input[type="submit"], button {
+    border: 0;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*输入框提示与颜色*/
+input::-webkit-input-placeholder,input:-moz-placeholder,input::-moz-placeholder,input:-ms-input-placeholder{
+    color: #999;
+}
+/*内容居左居右*/
+.text-left{
+    text-align: left;
+}
+.text-right {
+    text-align: right;
+}
+
+
+ul{
+    margin: 0;
+    list-style: none;
+    padding: 0;
+}
+
+label{
+  margin-bottom: 0;
+}
+.hide{
+    display: none;
+}
+.show{
+    display: block;
+}
+
+.border-bottom{
+    border-bottom: 1px solid #979ca8;
+}
+a{
+    cursor: pointer;
+}
+
+/*添加左浮动 右浮动*/
+.floatLeft{
+    float:left;
+}
+.floatRight{
+    float:right;
+}
+/*loading框*/
+.loading{
+    position: absolute;
+    width: 32px;
+    height:32px;
+    left:50%;
+    top:50%;
+    z-index: 1100;
+    background: url("../../images/common/loading.gif") center no-repeat;
+    /*z-index: 99;*/
+}

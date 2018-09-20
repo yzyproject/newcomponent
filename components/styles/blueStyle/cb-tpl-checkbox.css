@@ -1,0 +1,32 @@
+/*
+ * cb-tpl-checkbox 1.0.0
+ * author： niulei
+ * Time: 2017.9.24
+ * description: 多选框样式
+ */
+.cb-tpl-checkbox-list .tydic-checkbox{
+  display: none;
+}
+.cb-tpl-checkbox-list .tydic-checkbox-label{
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  background: url("../../images/icon/checkbox_unchecked.png") center no-repeat;
+  cursor: pointer;
+}
+.cb-tpl-checkbox-list .tydic-checkbox-label.disabled{
+  cursor: auto;
+}
+.cb-tpl-checkbox-list .tydic-checkbox-label.active{
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  background: url("../../images/icon/checkbox_checked.png") center no-repeat;
+  cursor: pointer;
+}
+.cb-tpl-checkbox-list .tydic-checkbox-span{
+  display: inline-block;
+  vertical-align: middle;
+}

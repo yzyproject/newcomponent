@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>不要加班</title>
+    <!--  公共模块-->
+    <link rel="stylesheet" href="../plugins/ztree/css/zTreeStyle/zTreeStyle.css">
+
+    <script src="../plugins/jquery/jquery-1.10.1.min.js"></script>
+    <script src="../plugins/jQuery-File-Upload/js/vendor/jquery.ui.widget.js"></script>
+    <script src="../plugins/jQuery-File-Upload/js/jquery.iframe-transport.js"></script>
+    <script src="../plugins/jQuery-File-Upload/js/jquery.fileupload.js"></script>
+    <script src="../plugins/jQuery-File-Upload/js/jquery.fileupload-process.js"></script>
+    <script src="../plugins/jQuery-File-Upload/js/jquery.fileupload-validate.js"></script>
+    <script src="../scripts/common/common.js"></script>
+    <script src="../scripts/api/common-event.js"></script>
+    <script src="../scripts/api/common-listen.js"></script>
+    <script src="../scripts/api/common-rule.js"></script>
+    <script src="../scripts/api/common-template.js"></script>
+    <script src="../plugins/mustache/mustache.min.js"></script>
+    <script src="../plugins/layer/layer.js"></script>
+    <script src="../plugins/ztree/js/jquery.ztree.core.min.js"></script>
+    <script src="../plugins/ztree/js/jquery.ztree.exedit.js"></script>
+    <script src="../plugins/ztree/js/jquery.ztree.excheck.min.js"></script>
+
+    <script src="../scripts/components/cb-form-base.js"></script>
+    <script src="../scripts/components/cb-select.js"></script>
+    <script src="../scripts/components/cb-input.js"></script>
+    <script src="../scripts/components/cb-text.js"></script>
+    <script src="../scripts/components/cb-form.js"></script>
+    <script src="../scripts/components/cb-modal.js"></script>
+    <script src="../scripts/components/cb-btn.js"></script>
+    <script src="../scripts/components/cb-icon.js"></script>
+    <script src="../scripts/components/cb-view.js"></script>
+    <script src="../scripts/components/cb-file-upload.js"></script>
+    <script src="../scripts/components/base-components/cb-tree.js"></script>
+
+</head>
+<body>
+<cb-view data-options='{"column":"2"}'>
+    <cb-view>
+        <cb-view>
+            <cb-input data-options='{"placeholder":"搜索脚本"}'></cb-input>
+        </cb-view>
+        <cb-view>
+            <cb-tree listen='{"modify":"showModify","delete":"showDelete"}' data-options='{"onClickFun":"clickFun(event,treeId,treeNode,clickFlag)","width":"600px","height":"300px","treeListName":"treeList","rowShowNum":"2","tipsOptions":[{"tipContent":"修改","tipFlag":"modify"},{"tipContent":"删除","tipFlag":"delete"}],"customMenu":[{"tipName":"cb-text","tipOptions":{"cid":"modifyNode","labelText":"替换","width":"50px","service":"123"},"bindStyle":"bindcl","bindFun":"modifyTrigger,modify","tipContent":"","service":"1"},{"tipName":"cb-text","tipOptions":{"cid":"deleteNode","labelText":"删除","width":"50px","service":"123"},"bindStyle":"bindcl","bindFun":"deleteTrigger,delete","service":"2"}],"treeCheckList":{"enable":true,"chkStyle":false},"addNodeRelate":["parentName"],"url":"tree-data.json","service":"111","beforeAjax":"data.params.id = 1;return data;"}'></cb-tree>
+        </cb-view>
+    </cb-view>
+    <cb-view data-options='{"height":"800px"}'>
+        <cb-text data-options='{"labelText":"展示树信息","type":"text"}'></cb-text>
+        <cb-text data-options='{"cid":"showTree","labelText":"","type":"text"}'></cb-text>
+    </cb-view>
+</cb-view>
+<cb-modal listen={"modifyNode":"modifyConfirm"} data-options='{"cid":"modifyModal","title":"替换脚本","isShowMaskLayer":false,"isShowCancelBtn":false,"isShowConfirmBtn":false}'>
+    <cb-view data-options='{"padding":["20","20","20","20"]}'>
+        <cb-text data-options='{"labelText":"脚本路径：","width":"100px"}'></cb-text>
+        <cb-input  data-options = '{"cid":"bbb","width":"250px"}'></cb-input>
+        <cb-file-upload listen={"fileUpload":"fileUploadFunction","fileCancel":"fileCancelFunction"} data-options='{"labelRemark":"浏览","limitFileType":["docx","txt"],"padding":["0","0","0","20px"],"fileName":"fileName","maxFileNum":"3","maxFileSize":"20971520","echoContent":"fileContent","url":"tree-data.json","relateCid":"aaa","autoUpload":true,"echoFileNameCid":"bbb","afterAjax":"uploadAfter($dom,data)","beforeAjax":""}' ></cb-file-upload>
+    </cb-view>
+    <cb-view data-options='{"column":"2"}'>
+        <cb-view data-options='{"padding":["","40px","","90px"]}'>
+            <cb-btn class="cb-btn-upload" bindcl="confirmModify,modifyNode" >上传</cb-btn>
+        </cb-view>
+        <cb-view data-options='{"padding":["","90px","","40px"]}'>
+            <cb-btn class="cb-btn-cancel" bindcl="fileCanceltrigger,fileCancel" >重置</cb-btn>
+        </cb-view>
+    </cb-view>
+</cb-modal>
+
+
+
+<script>
+    (function(){
+        EventHandler.addHandler("confirmModify",function(triggerName){
+            Event.trigger(triggerName);
+        })
+    })();
+    (function(){
+        EventListenr.addListenr("modifyConfirm",function(){
+            var nodeId = $(".opeation-menu-btn-area").attr("data-checkNodeId");
+            var fileId = $("[cid='modifyModal']").attr("data-fileId");
+            var options = $("[cid='modifyNode']").attr("data-options");
+            var url = JSON.parse($("#cbTree").parent("div").attr("data-options"))["url"];
+            var data = {},params = {};
+            params.nodeId = nodeId;
+            params.fileId = fileId;
+            params.service = options.service;
+
+            data.url = url?url:false;
+            data.type =  options.type ? options.type : 'POST';
+            data.params=params;
+            data.successF = function(returnData){
+                console.log("success");
+                if(returnData["respCode"]==="0000"){
+                    layer.alert('节点替换成功', {
+                        icon: 'error',
+                        skin: 'layui-blue'
+                    });
+                }else{
+                    layer.alert('节点替换失败', {
+                        icon: 'error',
+                        skin: 'layui-blue'
+                    });
+                }
+            };
+            data.errorF = function(){
+                console.log("error");
+            };
+            CommonAjax.ajax(data);
+        })
+    })();
+    //替换 差上传
+    (function(){
+        EventHandler.addHandler("modifyTrigger",function(triggerName){
+            Event.trigger(triggerName);
+        })
+    })();
+    (function(){
+        EventListenr.addListenr("showModify",function(){
+            var $dom = $("[cid='modifyModal']");
+            $dom.attr("data-nodeId",$(".opeation-menu-btn-area").attr("data-checkNodeId"));
+            Cbmodal.showModal($dom);
+        })
+    })();
+    //删除 ok 差样式
+    (function(){
+        EventHandler.addHandler("deleteTrigger",function(triggerName){
+            Event.trigger(triggerName);
+        })
+    })();
+    (function(){
+        EventListenr.addListenr("showDelete",function(){
+            console.log("delete");
+            var deleteNodeId = $(this).find(".opeation-menu-btn-area").attr("data-checkNodeId");
+            var treeOptions = $(this).data()["options"];
+            var options = $(this).find("[cid='deleteNode']").data()["options"];
+            var data = {},params = {};
+            params.service = options.service;
+            params.deleteId = deleteNodeId;
+            data.url = treeOptions.url?treeOptions.url:false;
+            data.type =  options.type ? options.type : 'POST';
+            data.params=params;
+            console.log(data.params);
+            data.successF = function(returnData){
+                console.log("success");
+                if(returnData["respCode"]==="0000"){
+                    layer.alert('节点删除成功', {
+                        icon: 'error',
+                        skin: 'layui-blue'
+                    });
+                }else{
+                    layer.alert('节点删除失败', {
+                        icon: 'error',
+                        skin: 'layui-blue'
+                    });
+                }
+            };
+            data.errorF = function(){
+                console.log("error");
+            };
+            CommonAjax.ajax(data);
+
+        })
+    })();
+    var clickFun = function(event,treeId,treeNode,clickFlag){
+        var options = $("#"+treeId).parent("div").data()["options"];
+        var nodeId = treeNode.id;
+        var data={},params={};
+        params.nodeId= nodeId;
+        params.service= options.service;
+        data.params = params;
+        data.type =  options.type ? options.type : 'POST';
+        data.url = options.url ? options.url : false;
+        data.successF = function (returnData) {
+            console.log(returnData);
+            if(returnData["respCode"]=="0000"){
+                var data = JSON.stringify(returnData["treeList"]);
+                $("[cid='showTree']").text(data);
+            }
+        };
+        data.errorF = function (returnData) {
+            console.log(returnData);
+        };
+        CommonAjax.ajax(data);
+    }
+    var uploadAfter = function($dom,data){
+        if(data["respCode"]==="0000"){
+            $("[cid='modifyModal']").attr("data-fileId",data["fileId"]);
+        }else{
+            layer.alert('文件上传失败', {
+                icon: 'error',
+                skin: 'layui-blue'
+            });
+        }
+    }
+</script>
+
+</body>
+</html>

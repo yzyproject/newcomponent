@@ -1,0 +1,65 @@
+/*
+ * check-style 1.0.0
+ * author： niulei
+ * Time: 2017.4.5
+ * description: 校验样式
+ */
+ @charset "utf-8";
+
+ label.required:before {
+     margin-right: 2px;
+     content: "*";
+     color: #ff0000;
+ }
+ .validate-color{
+   border: 1px solid #fc5043 !important;
+ }
+ .validate-color:focus{
+   border: 1px solid #fc5043 !important;
+ }
+.reg-tip{
+  position: absolute;
+}
+.invalid-div{
+    font-size: 12px;
+    color: #fc5043;
+    display: inline-block;
+    width: 150px;
+    line-height: 34px;
+    margin-left: 10px;
+}
+.after-blue{
+  font-size: 12px;
+  color: #999;
+  line-height: 26px;
+  border: 1px solid #98caf4;
+  background-color: #f2f9ff;
+  display: inline-block;
+  margin-left: 5px;
+  padding: 0 5px;
+}
+
+.register-page .invalid-div{
+    border:1px solid #f1a747;
+    font-size: 12px;
+    color: #f1a747;
+    display: inline-block;
+    margin-left: 10px;
+    height: 36px;
+    line-height: 34px;
+    padding: 0 5px;
+    min-width: 300px;
+}
+.register-page .invalid-div:before{
+/*    height: 10px;
+    width: 6px;
+    content: "";
+    position: absolute;
+    background: url("../../images/page-images/login-in/icon-yellow-arrow.png") no-repeat;
+    top:10px;
+    left: -5px;*/
+}
+
+.verification-code .invalid-div{
+    display: none;
+}

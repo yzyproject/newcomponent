@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>测试页面</title>
+    <!--  公共模块JS-->
+    <script src="../plugins/jquery/jquery-1.10.1.min.js"></script>
+    <script src="../scripts/api/common-rule.js"></script>
+    <script src="../scripts/common/common.js"></script>
+    <script src="../scripts/api/common-event.js"></script>
+    <script src="../scripts/api/common-listen.js"></script>
+    <script src="../plugins/mustache/mustache.min.js"></script>
+    <script src="../scripts/api/common-template.js"></script>
+    <script src="../scripts/api/common-url.js"></script>
+    <!-- 表单容器 -->
+    <script src="../scripts/components/cb-form.js"></script>
+    <!-- 容器 -->
+    <script src="../scripts/components/cb-view.js"></script>
+    <!-- 按钮 -->
+    <script src="../scripts/components/cb-btn.js"></script>
+    <!-- 输入框 -->
+    <script src="../scripts/components/cb-input.js"></script>
+    <!-- 单选 -->
+    <script src="../scripts/components/cb-radio.js"></script>
+    <!-- 多选 -->
+    <script src="../scripts/components/cb-checkbox.js"></script>
+    <!-- 下拉框 -->
+    <script src="../scripts/components/cb-select.js"></script>
+    <!-- 文本 -->
+    <script src="../scripts/components/cb-text.js"></script>
+    <!-- 表单内基础组件 -->
+    <script src="../scripts/components/cb-form-base.js"></script>
+    <!--标题-->
+    <script src="../scripts/components/cb-title.js"></script>
+    <!--主导航栏-->
+    <script src="../scripts/components/cb-main-nav.js"></script>
+    <!--左导航栏-->
+    <script src="../scripts/components/cb-left-nav.js"></script>
+    <!--图标-->
+    <script src="../scripts/components/cb-icon.js"></script>
+    <!--面包导航栏-->
+    <script src="../scripts/components/cb-breadcrumbs.js"></script>
+    <!--title-->
+    <script src="../scripts/components/cb-title.js"></script>
+    <!--textarea-->
+    <script src="../scripts/components/cb-textarea.js"></script>
+</head>
+<body>
+<cb-view  class="cb-view-black main-nav-height clearfix">
+    <cb-view class="cb-view-left clearfix">
+        <cb-text class ="cb-text-logo" data-options='{"labelText":"迪科能力平台","type":"text"}'></cb-text>
+        <cb-text class="cb-text-logo-remark" data-options='{"labelText":"号卡","type":"text"}'></cb-text>
+        <cb-main-nav data-options='{"ctype":"blue","service":"111","navListName":"navList","navTextName":"navText","flagName":"flag","url":"data-main-nav.json"}'></cb-main-nav>
+    </cb-view>
+    <cb-view class="cb-view-right clearfix">
+        <cb-input class="cb-input-search"  data-options='{"name":"input1"}'>
+            <cb-icon class="" data-options='{"ctype":"icon-search","imageUrl":"../images/cb-icon/icon-search.png"}'></cb-icon>
+        </cb-input>
+        <cb-icon class="" data-options='{"ctype":"icon-notice-gray","imageUrl":"../images/cb-icon/icon-notice-gray.png"}'>
+            <cb-text class="cb-text-remark" data-options='{"labelText":"99","type":"text","service":"11111","name":"num","url":"text_data.json","onVauled":"if(parseInt(returnData[options.name])>99){returnData[options.name] = 99;}"}'></cb-text>
+        </cb-icon>
+        <cb-text class="cb-text-color-white" data-options='{"labelText":"张三","type":"text","service":"11111","name":"text","url":"text_data.json"}'>
+            <cb-icon class="" data-options='{"ctype":"icon-arrow-down","imageUrl":"../images/cb-icon/icon-arrow-down.png"}'></cb-icon>
+        </cb-text>
+    </cb-view>
+</cb-view>
+<cb-view class="cb-view-block">
+    <cb-view  class="cb-view-left-block left-nav-height" data-options='{"width":"267px"}'>
+        <cb-view class="cb-view-block-border clearfix" data-options='{"padding":["0","20px","0","20px"]}'>
+            <cb-icon class="" data-options='{"ctype":"icon-notice-blue","imageUrl":"../images/cb-icon/icon-notice-blue.png","height":"48px","width":"16px"}'></cb-icon>
+            <cb-text class ="" data-options='{"labelText":"通知：","type":"text","height":"48px"}'></cb-text>
+            <cb-text class="cb-text-ellipsis" data-options='{"labelText":"好消息好消息好消息好消息好消息好消息好消息好消息","type":"text","height":"48px","width":"160px"}'></cb-text>
+        </cb-view>
+        <cb-left-nav data-options='{"ctype":"black","service":"111","navListName":"navList","navTextName":"navText","flagName":"flag","url":"data-left-nav.json","hrefName":"href","iconClassName":"iconClass"}'></cb-left-nav>
+    </cb-view>
+    <cb-view  class="cb-view-block" data-options='{"padding":["0","0","0","267px"]}'>
+        <cb-breadcrumbs data-options='{"service":1101, "breadcrumbsNavListName":"data","breadcrumbsNavLabelName":"linkText","breadcrumbsNavHrefName":"linkHref"}'></cb-breadcrumbs>
+        <cb-form class="cb-form-default" listen={"submitData":"formSubmit"}>
+            <cb-view class="cb-view-block" data-options='{"padding":["20px","20px","0","20px"]}'>
+                <cb-title data-options='{"width":"","borderPosition":"left"}'>申请机构</cb-title>
+                <cb-view class="cb-view-block clearfix" data-options='{"padding":["10px","0","5px","0"]}'>
+                    <cb-form-base listen={"clearData":"clearInput"} data-options='{"item":"input","width":"60%","labelOptions":{"labelText":"组织机构","type":"label","width":"15%","height":"30px"},
+"itemComponentOptions":{"type":"","name":"goodLevel","placeholder":"请选择组织机构","width":"80%","height":"30px","borderRadius":["0"]}}'></cb-form-base>
+                    <cb-btn class="btn-default"  bindcl="clearOperation,clearData" data-options='{"domDiv":"1","cid":"btn1"}'>清除</cb-btn>
+                </cb-view>
+                <cb-view class="cb-view-block clearfix" data-options='{"padding":["5px","0","10px","0"]}'>
+                    <cb-btn class="btn-blue"  bindcl="submitForm,submitData"  data-options='{"padding":["0","30px","0","30px"],"height":"36px"}'>申请</cb-btn>
+                </cb-view>
+            </cb-view>
+        </cb-form>
+    </cb-view>
+</cb-view>
+
+<script>
+    $(window).load(function(){
+        $('.left-nav-height').height($('body').height()-$('.main-nav-height').height());
+    });
+
+    //清除输入框
+    (function () {
+        EventHandler.addHandler("clearOperation", function (triggerName) {
+            Event.trigger(triggerName);
+        });
+
+    })();
+    (function(){
+        EventListenr.addListenr("clearInput",function(){
+            $(this).find('input').val('');
+        })
+    })();
+</script>
+
+</body>
+
+</html>

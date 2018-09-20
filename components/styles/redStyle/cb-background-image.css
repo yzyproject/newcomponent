@@ -1,0 +1,13 @@
+/*
+ * CbBackgroundImage 1.0.0
+ * author: liuqianwen
+ * Time: 2017.08.08
+ * description: 背景图片
+ */
+@charset "utf-8";
+.cb-background-image-div{
+    float: left;
+    background-position: left;
+    background-position-x: 46px;
+    border-bottom: 3px solid #e1e1e1;
+}

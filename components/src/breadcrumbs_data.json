@@ -1,0 +1,10 @@
+{
+  "respCode":"0000",
+  "data":[
+    {"linkText":"导航1","linkHref":"xxx.com"},
+    {"linkText":"导航2","linkHref":"xxx.com"},
+    {"linkText":"导航3","linkHref":"xxx.com"},
+    {"linkText":"导航4","linkHref":"xxx.com"},
+    {"linkText":"导航5","linkHref":"xxx.com"}
+  ]
+}

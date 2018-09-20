@@ -1,0 +1,44 @@
+/*
+ * CbDownload 1.0.0
+ * author: liuqianwen
+ * Time: 2017.08.08
+ * description: 下载
+ */
+@charset "utf-8";
+.cb-download-div,
+.cb-download-a,
+.down-load-blue {
+    width: 92px;
+    height: 26px;
+    float: left;
+    color: #fff;
+}
+/*红色*/
+.cb-download-div .down-load{
+    width: 92px;
+    height: 26px;
+    line-height: 26px;
+    background-color: #bf2934;
+    display: block;
+    border-radius: 5px;
+    color: #fff;
+}
+/*a标签样式*/
+.cb-download-a .down-load {
+    width: 92px;
+    height: 40px;
+    color: #4490cf;
+    outline: none;
+    text-decoration: underline;
+    background-color: transparent;
+    display: block;
+}
+/*蓝色*/
+.down-load-blue .down-load {
+    width: 92px;
+    height: 26px;
+    line-height: 26px;
+    background-color: #4490cf;
+    display: block;
+    border-radius: 5px;
+}

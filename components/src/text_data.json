@@ -1,0 +1,40 @@
+{
+  "recordsTotal": null,
+  "total": null,
+  "title":"用户1",
+  "data": [
+    {
+      "deep": 0,
+      "code": "100",
+      "descrip": "",
+      "rootId": "",
+      "orderId": 1,
+      "autoId": 1,
+      "title": "a企业",
+      "parentId": ""
+    },
+    {
+      "deep": 0,
+      "code": "200",
+      "descrip": "",
+      "rootId": "",
+      "orderId": 2,
+      "autoId": 2,
+      "title": "b企业",
+      "parentId": ""
+    },
+    {
+      "deep": 0,
+      "code": "300",
+      "descrip": "",
+      "rootId": "",
+      "orderId": 3,
+      "autoId": 3,
+      "title": "c企业",
+      "parentId": ""
+    }
+  ],
+  "respCode": "0000",
+  "respDesc": "0000"
+}
+

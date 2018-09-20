@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>日期组件</title>
+    <!--  公共模块JS-->
+    <script src="../plugins/jquery/jquery-1.10.1.min.js"></script>
+    <script src="../plugins/bootstrap/bootstrap.min.js"></script>
+    <script src="../plugins/bootstrap/bootstrap-datetimepicker.js"></script>
+    <script src="../plugins/bootstrap/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script src="../plugins/layer/layer.js"></script>
+    <link rel="stylesheet" href="../plugins/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../plugins/bootstrap/bootstrap-datetimepicker.css">
+    <script src="../plugins/jedate/jquery.jedate.js"></script>
+    <link rel="stylesheet" href="../plugins/jedate/skin/jedate.css">
+    <script src="../scripts/common/common.js"></script>
+    <script src="../scripts/api/common-event.js"></script>
+    <script src="../scripts/api/common-listen.js"></script>
+    <script src="../scripts/api/common-rule.js"></script>
+    <script src="../plugins/mustache/mustache.min.js"></script>
+    <script src="../scripts/api/common-template.js"></script>
+    <!-- 组件日期 -->
+    <script src="../scripts/components/cb-date.js"></script>
+    <script src="../scripts/components/cb-input.js"></script>
+    <style>
+        .asd{
+            width:50px;
+            height:50px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<cb-input data-options='{"cid":"ddd"}'></cb-input>
+<cb-date class=""
+         data-options='{"ctype":"1","defaultDate":"2017/03/20 02:15","masterId":"ddd","onValued":"","format":"yyyy-mm-dd hh:ii","minDate":"2017-03-17 00:00","maxDate":"2017-04-17 00:00","language":"zh-CN","weekStart":"","autoclose":false,"todayBtn":true,"todayHighlight":true,"weekAlias":["a","b","c",3,4,5,6]
+         }'></cb-date>
+</body>
+
+</html>

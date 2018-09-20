@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>测试</title>
+    <!--  公共模块JS-->
+    <script src="../plugins/jquery/jquery-1.10.1.min.js"></script>
+    <script src="../scripts/api/common-rule.js"></script>
+    <script src="../scripts/common/common.js"></script>
+    <script src="../scripts/api/common-event.js"></script>
+    <script src="../scripts/api/common-listen.js"></script>
+    <script src="../plugins/mustache/mustache.min.js"></script>
+    <script src="../scripts/api/common-template.js"></script>
+    <script src="../scripts/api/common-url.js"></script>
+
+    <script src="../plugins/bootstrap/bootstrap-datetimepicker.js"></script>
+    <script src="../plugins/bootstrap/bootstrap-datetimepicker.zh-CN.js"></script>
+    <link rel="stylesheet" href="../plugins/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../plugins/bootstrap/bootstrap-datetimepicker.css">
+
+    <!--树-->
+    <link rel="stylesheet" href="../plugins/ztree/css/zTreeStyle/zTreeStyle.css">
+    <script src="../plugins/layer/layer.js"></script>
+    <script src="../plugins/ztree/js/jquery.ztree.core.min.js"></script>
+    <script src="../plugins/ztree/js/jquery.ztree.exedit.js"></script>
+    <script src="../plugins/ztree/js/jquery.ztree.excheck.min.js"></script>
+    <script src="../scripts/components/base-components/cb-tree.js"></script>
+
+    <!-- 表单容器 -->
+    <script src="../scripts/components/cb-form.js"></script>
+    <!-- 容器 -->
+    <script src="../scripts/components/cb-view.js"></script>
+    <!-- 按钮 -->
+    <script src="../scripts/components/cb-btn.js"></script>
+    <!-- 输入框 -->
+    <script src="../scripts/components/cb-input.js"></script>
+    <!-- 单选 -->
+    <script src="../scripts/components/cb-radio.js"></script>
+    <!-- 多选 -->
+    <script src="../scripts/components/cb-checkbox.js"></script>
+    <!-- 下拉框 -->
+    <script src="../scripts/components/cb-select.js"></script>
+    <!-- 文本 -->
+    <script src="../scripts/components/cb-text.js"></script>
+    <!-- 表单内基础组件 -->
+    <script src="../scripts/components/cb-form-base.js"></script>
+    <!--图标-->
+    <script src="../scripts/components/cb-icon.js"></script>
+    <!--title-->
+    <script src="../scripts/components/cb-title.js"></script>
+    <!--textarea-->
+    <script src="../scripts/components/cb-textarea.js"></script>
+    <!--模态框-->
+    <script src="../scripts/components/cb-modal.js"></script>
+    <!--表格-->
+    <script src="../plugins/pagination/script/pagination.js"></script>
+    <script src="../scripts/components/cb-table.js"></script>
+    <script src="../scripts/components/base-components/cb-business-table.js"></script>
+
+
+</head>
+<body>
+
+<cb-view>
+    <cb-view class="cb-view-icon clearfix" data-options='{"padding":["0px","0","5px","0"]}'>
+        <cb-form-base class="cb-input-left " listen={"clearData":"clearInput","inputValue":"inputValueFunction"}
+                      bindcl="modalShow,show" data-options='{"item":"input","width":"30%","showId":"modal1","labelOptions":{"labelText":"执行脚本","type":"label","width":"20%","height":"30px"},
+"itemComponentOptions":{"name":"danhao","placeholder":"脚本选择","width":"50%","height":"30px","borderRadius":["0"],"isReadonly":true}}'></cb-form-base>
+        <cb-icon class="form-base-icon" bindcl="modalShow,show"
+                 data-options='{"ctype":"icon-aaa","imageUrl":"../images/cb-icon/icon-search.png"}'></cb-icon>
+        <cb-modal listen={"show":"showModal","modalHide":"hideModalFunction"}
+                  data-options='{"cid":"modal1","ctype":"blue","isShowMaskLayer":false,"contentCid":"cb-form1","title":"脚本标签","isShowCloseIcon":true,"closeIconUrl":"123.jpg","primaryPostion":[266,30],"closeIconLocation":"rightUp","draggable":true,"width":"600","isShowConfirmBtn":false,"isShowCancelBtn":false}'>
+            <cb-tree listen='{"getTreeSelectedData":"getTreeSelectedDataFunction"}' data-options='{"width":"200px","height":"200px","treeListName":"treeList","treeCheckList":{"enable":true,"chkStyle":false},"url":"tree-data.json","service":"111"
+}'></cb-tree>
+            <cb-view class="cb-view-right clearfix" data-options='{"padding":["20px","0","20px","0"]}'>
+                <cb-btn class="btn-blue btn-left btn-margin-right" data-options='{"domDiv":"1","cid":"btn1"}'
+                        bindcl="loa,table1+modalHide+getTreeSelectedData">确定
+                </cb-btn>
+                <cb-btn class="btn-default btn-left btn-margin-right" data-options='{"domDiv":"1","cid":"btn2"}'
+                        bindcl="modalHideFunction,modalHide">取消
+                </cb-btn>
+            </cb-view>
+        </cb-modal>
+        <cb-view class="cb-view-border-top">
+            <cb-business-table class="detail-table" listen='{"table1":"loading"}' data-options='{
+        "width":"100%",
+        "pagination":false,
+        "width":"100%",
+        "method":"post",
+        "tbodyService":"111111",
+        "url":"table_data.json",
+        "thead":{
+          "data":[
+              [
+                {"contents":"脚本名称","field":"danhao", "width":"25%","class":"er"},
+                {"contents":"脚本类型","field":"qiye","width":"10%", "class":"er2"},
+                {"contents":"应用标签","field":"moneytime","width":"10%", "class":"erdf"},
+                {"contents":"环境标签","field":"money","width":"10%", "class":"ervf"},
+                {"contents":"上传时间","field":"people","width":"15%", "class":"ercd"},
+                {"contents":"上传人","field":"type","width":"15%", "class":"esdr"},
+                {"contents":"操作","field":"operation","width":"5%","formatter":"modalShow", "class":"esdr"}
+
+              ]
+          ],
+          "merge":[]
+        },
+        "tbody":{
+          "service":"1111",
+          "data":[
+
+          ],
+          "merge":[]
+        },
+        "tips":{
+
+        }
+    }'
+            >
+            </cb-business-table>
+        </cb-view>
+    </cb-view>
+    <cb-modal
+            data-options='{"cid":"aa","ctype":"blue","isShowMaskLayer":false,"contentCid":"cb-form1","title":"弹框","isShowCloseIcon":true,"closeIconUrl":"123.jpg","primaryPostion":[266,30],"closeIconLocation":"rightUp","draggable":false,"isShowCancelBtn":false,"isShowConfirmBtn":false,"beforeCloseProcessor":"Fun1"}'>
+        <cb-textarea class="" data-options='{"label":"条件：","name":"aaaa","height":"400","width":"400"}'></cb-textarea>
+    </cb-modal>
+</cb-view>
+
+
+<script>
+    (function () {
+        EventHandler.addHandler("triggerGetTreeSelectedDataFunction", function (triggerName) {
+            Event.trigger(triggerName);
+        })
+    })();
+
+    (function () {
+        EventListenr.addListenr("getTreeSelectedDataFunction", function () {
+            var getData = CbTree.selectedTreeData('cbTree');
+        })
+    })();
+
+    (function () {
+        EventHandler.addHandler("loa", function (triggerName) {
+            var param = {};
+            var names = triggerName.split("+");
+            Event.trigger(names[0], param);
+            Event.trigger(names[1]);
+            Event.trigger(names[2]);
+        })
+    })();
+
+    (function () {
+        EventListenr.addListenr("loading", function (param) {
+            var $table = $(this);
+            CbBusinessTable.loadTable($table, param);
+        })
+    })();
+    (function () {
+        EventHandler.addHandler("hideModalFunction", function (triggerName) {
+            Event.trigger(triggerName);
+        })
+    })();
+    (function () {
+        EventListenr.addListenr("loading", function (param) {
+            var $table = $(this);
+            CbBusinessTable.loadTable($table, param);
+        })
+    })();
+
+    (function () {
+        EventListenr.addListenr("getSelectedDataFunction", function () {
+            var selectedData = CbBusinessTable.getSelectionsFrom($(this));
+            if (selectedData) {
+                Event.trigger('inputValue', selectedData);
+                Event.trigger('modalHide');
+            } else {
+                console.log("请选择数据");
+            }
+        })
+    })();
+
+    (function () {
+        EventListenr.addListenr("inputValueFunction", function (selectedData) {
+            var $this = $(this);
+            $.each(selectedData[0], function (key, item) {
+                if (item.field === $this.find('input').attr('name')) {
+                    $this.find('input[name="' + item.field + '"]').val(item.contents);
+                }
+            })
+        })
+    })();
+
+    (function () {
+        var modalShow = function () {
+            return "<img src='../images/cb-icon/icon-search.png' data-options='{\"cid\":\"aa\"}' class='modalShow'>";
+        };
+        CbBusinessTable.addFormatter("modalShow", modalShow);
+    })();
+
+</script>
+</body>
+
+</html>

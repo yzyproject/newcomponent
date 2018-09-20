@@ -1,0 +1,172 @@
+/*
+ * cuform 1.0.0
+ * author： anwenzhen
+ * Time: 2017.4.12
+ * description: 文本样式
+ */
+@charset "utf-8";
+.cb-text-div{
+    width: 10%;
+    float: left;
+    line-height: 26px;
+}
+.cb-text{
+    width: auto;
+    float: left;
+}
+.cb-text-big{
+    width: 130px;
+    float: left;
+    margin-left: 150px;
+}
+.cb-text-top{
+    width: 100%;
+    float: left;
+}
+.cb-text-top label,.cb-text-div label{
+    display: inline-block;
+    line-height:30px;
+    width: 100%;
+    color:#4c4c4c;
+    padding-right: 10px;
+    font-weight: normal;
+}
+.cb-text-div label,.cb-text-big label{
+    text-align: right;
+}
+.cb-text-div span,.cb-text-top span,.cb-text-big span{
+    display: inline-block;
+    width: 100%;
+    color:#4c4c4c;
+    line-height: 26px;
+}
+
+.cb-text-big label{
+    display: inline-block;
+    width: 100%;
+    color:#4c4c4c;
+    line-height: 34px;
+    padding-right: 10px;
+    font-weight: normal;
+    margin-bottom: 0;
+}
+.cb-view-table .cb-text-big:nth-child(1) {
+    margin-left: 0;
+}
+
+.content-item .cb-text-div{
+}
+.content-item .cb-text-div label{
+    font-weight: 900;
+    color: #333;
+    margin-bottom: 0;
+}
+.content-item .cb-text{
+    color: #333;
+}
+/*logo文本*/
+.cb-text-logo{
+    padding:20px 0 20px 30px;
+    color:#f5f6fa;
+    font-size: 26px;
+    font-weight: bold;
+    float:left;
+}
+.cb-text-logo-white{
+    padding:17px 0 17px 30px;
+    color:#333;
+    font-size: 26px;
+    font-weight: bold;
+    float:left;
+}
+.cb-text-logo>span{
+    line-height: 30px;
+    padding-right: 10px;
+    border-right: 1px solid #f5f6fa;
+}
+.cb-text-logo-remark{
+    padding: 20px 0 20px 10px;
+    color:#f5f6fa;
+    font-size: 22px;
+    float:left;
+}
+.cb-text-logo-remark>span{
+    line-height: 30px;
+}
+
+.cb-text-color-white{
+    float: left;
+    padding: 25px 0;
+    color: #fff;
+    margin-right: 4px;
+}
+.cb-text-color-white >.text-content{
+    display: inline-block;
+    margin: 2px 0;
+    padding-right: 10px;
+    line-height: 16px;
+    border-right: 1px solid #fff;
+}
+
+.cb-text-color-black{
+    float: left;
+    padding: 25px 0;
+    color: #333;
+    margin-right: 4px;
+}
+.cb-text-color-black >.text-content:before{
+    position: absolute;
+    top :0;
+    left: -30px;
+    content: '';
+    height: 20px;
+    width: 20px;
+    background: url("../../images/cb-left-nav/icon-zuhuguanli.png") no-repeat;
+    /*display:inline-block;*/
+    /*width:20px;*/
+    /*height:20px;*/
+    /*background:url("../../images/cb-icon/icon-arrow-down.png") no-repeat;*/
+}
+.cb-text-color-black >.text-content{
+    display: inline-block;
+    margin: 2px 0;
+    padding-right: 10px;
+    line-height: 16px;
+    position:relative;
+    /*border-right: 1px solid #333;*/
+}
+
+.cb-text-ellipsis>span{
+    overflow:hidden;
+    text-overflow:ellipsis;
+    display: block;
+   white-space: nowrap;
+}
+
+/*标记提示*/
+.cb-text-remark{
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    top:30px;
+    left:10px;
+    border-radius: 9px;
+    line-height: 18px;
+    background: #4490cf;
+    color:#fff;
+    text-align: center;
+    font-size: 12px;
+    display: inline-block;
+}
+.cb-text-remark>span{
+    display: inline-block !important;
+    vertical-align: inherit !important;
+}
+
+/*360*/
+/*.userIcon:before{*/
+    /*display:inline-block;*/
+    /*width:20px;*/
+    /*height:20px;*/
+    /*background:url("../../images/cb-icon/icon-arrow-down.png") no-repeat;*/
+/*}*/

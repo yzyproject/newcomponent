@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>公共模板</title>
+    <!--  公共模块JS-->
+    <script src="../plugins/jquery/jquery-1.10.1.min.js"></script>
+    <script src="../plugins/bootstrap/bootstrap.min.js"></script>
+    <script src="../plugins/layer/layer.js"></script>
+    <script src="../plugins/jQuery-File-Upload/js/vendor/jquery.ui.widget.js"></script>
+    <script src="../plugins/jQuery-File-Upload/js/jquery.iframe-transport.js"></script>
+    <script src="../plugins/jQuery-File-Upload/js/jquery.fileupload.js"></script>
+    <script src="../plugins/jQuery-File-Upload/js/jquery.fileupload-process.js"></script>
+    <script src="../plugins/jQuery-File-Upload/js/jquery.fileupload-validate.js"></script>
+    <script src="../plugins/ztree/js/jquery.ztree.core.min.js"></script>
+    <script src="../plugins/ztree/js/jquery.ztree.exedit.js"></script>
+    <script src="../plugins/ztree/js/jquery.ztree.excheck.min.js"></script>
+    <script src="../scripts/api/common-rule.js"></script>
+    <script src="../scripts/common/common.js"></script>
+    <script src="../scripts/api/common-event.js"></script>
+    <script src="../scripts/api/common-listen.js"></script>
+    <script src="../plugins/mustache/mustache.min.js"></script>
+    <script src="../scripts/api/common-template.js"></script>
+    <script src="../scripts/api/common-url.js"></script>
+    <link rel="stylesheet" href="../plugins/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../plugins/ztree/css/zTreeStyle/zTreeStyle.css">
+    <!-- 表单容器 -->
+    <script src="../scripts/components/cb-form.js"></script>
+    <!-- 容器 -->
+    <script src="../scripts/components/cb-view.js"></script>
+    <!-- 按钮 -->
+    <script src="../scripts/components/cb-btn.js"></script>
+    <!-- 输入框 -->
+    <script src="../scripts/components/cb-input.js"></script>
+    <!-- 单选 -->
+    <script src="../scripts/components/cb-radio.js"></script>
+    <!-- 多选 -->
+    <script src="../scripts/components/cb-checkbox.js"></script>
+    <!-- 下拉框 -->
+    <script src="../scripts/components/cb-select.js"></script>
+    <!-- 文本 -->
+    <script src="../scripts/components/cb-text.js"></script>
+    <!-- 表单内基础组件 -->
+    <script src="../scripts/components/cb-form-base.js"></script>
+    <!--标题-->
+    <script src="../scripts/components/cb-title.js"></script>
+    <!--主导航栏-->
+    <script src="../scripts/components/cb-main-nav.js"></script>
+    <!--左导航栏-->
+    <script src="../scripts/components/cb-left-nav.js"></script>
+    <!--图标-->
+    <script src="../scripts/components/cb-icon.js"></script>
+    <!--title-->
+    <script src="../scripts/components/cb-title.js"></script>
+    <!--textarea-->
+    <script src="../scripts/components/cb-textarea.js"></script>
+    <!--模态框-->
+    <script src="../scripts/components/cb-modal.js"></script>
+    <!--模态框-->
+    <script src="../scripts/components/base-components/cb-tree.js"></script>
+    <!--文件上传-->
+    <script src="../scripts/components/cb-file-upload.js"></script>
+    <script src="../scripts/components/cb-custom-table.js"></script>
+</head>
+<body>
+
+<cb-custom-table  listen='{"addTableTr":"addTableTrFunction","submitTableData":"submitTableDataFunction"}' data-options='{"url":"...","service":"1111",
+"tableOptions":[
+{"content":"脚本文件","field":"fileName","item":"cb-file-upload","itemOptionsData":{"domDiv":"defalutInput","limitFileType":["docx","txt"],"padding":["0","0","0","20px"],"fileName":"fileName","maxFileSize":"20971520","url":"../../","isShowFileName":true,"afterAjax":"aaa(data,$dom);"}},
+{"content":"文件类型","field":"fileName","item":"cb-select","itemOptionsData":{"cid":"","service":"1111","width":"200px","height":"25px","name":"goodLevel","list":"list","value":"code","text":"title","url":"checkbox-data.json","regexpOptions":[{"regexpName":"required","regexpRemark":""}]}},
+{"content":"版本","field":"fileName","item":"cb-input","itemOptionsData":{"name":"aaa","width":"200px","height":"25","regexpOptions":[{"regexpName":"required","regexpRemark":""}]}},
+{"content":"需求ID","field":"fileName","item":"cb-input","bindEvent":"bindbl","bindFunction":"validateValueTrigger1","bindInfo":"validateValue","itemOptionsData":{"name":"aaa","width":"200px","height":"25","regexpOptions":[{"regexpName":"required","regexpRemark":""}]}},
+{"content":"需求名称","field":"fileName","item":"cb-input","bindEvent":"bindbl","bindFunction":"validateValueTrigger2","bindInfo":"validateValue","itemOptionsData":{"name":"aaa","width":"200px","height":"25","regexpOptions":[{"regexpName":"required","regexpRemark":""}]}},
+{"content":"脚本名称","field":"fileName","item":"cb-input","listenInfo":"validateValue","listenFunction":"validateValueFunction","itemOptionsData":{"cid":"scriptName","name":"input1","width":"200px","height":"25","service":"111","url":"input_data.json","isRequest":false,"regexpOptions":[{"regexpName":"required","regexpRemark":""}],"isReadonly":true}},
+{"content":"脚本标签","field":"fileName","item":"cb-input","bindEvent":"bindcl","bindFunction":"modalShowTree","bindInfo":"showModal","listenInfo":"inputValueEcho","listenFunction":"inputValueEchoFunction","itemOptionsData":{"name":"aaa","width":"200px","height":"25","isDefault":true,"isReadonly":true,"regexpOptions":[{"regexpName":"required","regexpRemark":""}]}}
+]}'>
+</cb-custom-table>
+<cb-btn bindcl="addTableTrTrigger,addTableTr">新增</cb-btn>
+
+
+<cb-view class=" clearfix">
+    <cb-btn class="btn-blue" bindcl="submitTableDataTrigger,submitTableData">提交</cb-btn>
+</cb-view>
+
+<cb-modal  listen={"showModal":"showModalFunction","closeModal":"closeModalFunction"} data-options = '{"cid":"modal1","ctype":"blue","isShowMaskLayer":false,"contentCid":"cb-form1","title":"脚本标签","isShowCloseIcon":true,"closeIconUrl":"123.jpg","primaryPostion":[266,30],"closeIconLocation":"rightUp","draggable":true,"width":"600","isShowConfirmBtn":false,"isShowCancelBtn":false}'>
+    <cb-tree  listen='{"getTreeSelectedData":"getTreeSelectedDataFunction"}' data-options='{"width":"200px","height":"300px","treeListName":"treeList","treeCheckList":{"enable":true,"chkStyle":false},"url":"tree-data.json","service":"111"
+}'></cb-tree>
+
+    <cb-view class="cb-view-right">
+        <cb-btn bindcl="triggerGetTreeSelectedDataFunction,getTreeSelectedData" class="btn-default btn-left btn-margin-right close-modal-btn">确认</cb-btn>
+        <cb-btn class="btn-default btn-left btn-margin-right close-modal-btn">取消</cb-btn>
+    </cb-view>
+</cb-modal>
+
+
+
+<script>
+
+    //按钮增加一个tr的相关函数
+    (function(){
+        EventHandler.addHandler("addTableTrTrigger",function(triggerName){
+            Event.trigger(triggerName);
+        })
+    })();
+    (function(){
+        EventListenr.addListenr("addTableTrFunction",function(){
+            /*var $this = $(this);
+            var $lastTr =$this.find('table tbody tr:last');
+            var isAdd = true;
+            $lastTr.find('td').each(function () {
+                if($(this).find('input').val() === ''){
+                        layer.alert('错误提示', {
+                            icon: 'error',
+                            skin: 'layui-blue'
+                        },function () {
+                            layer.closeAll();
+                        });
+                        isAdd = false;
+                    return false;
+                }
+            });*/
+
+//            if(isAdd){
+                CbCustomTable.cloneTr($this,$this.data("options"));
+//            }
+
+        })
+    })();
+    //提交数据
+    (function(){
+        EventHandler.addHandler("submitTableDataTrigger",function(triggerName){
+            Event.trigger(triggerName);
+        })
+    })();
+    (function () {
+        EventListenr.addListenr("submitTableDataFunction", function () {
+            var $this = $(this);
+            var $tr = $this.find('table tbody tr');
+            var tableData = [];
+            var isValidate = true;
+            $tr.each(function () {
+                if (isValidate) {
+                    var $td = $(this);
+                    var trData = {};
+                    $td.each(function () {
+                        if (isValidate) {
+                            if (!CheckHelper.checkForm($(this).find("form"))) {
+                                isValidate = false;
+                                layer.alert('错误提示', {
+                                    icon: 'error',
+                                    skin: 'layui-blue'
+                                }, function () {
+                                    layer.closeAll();
+                                });
+                                return false;
+                            }
+                            ;
+                            var tdData = Serialize.serializeObject($(this).find("form"));
+                            $.each(tdData, function (index, item) {
+                                trData[index] = item;
+                            });
+                        } else {
+                            return false;
+                        }
+                    });
+                    tableData.push(trData);
+                } else {
+                    return false;
+                }
+
+            });
+            if (!isValidate) {
+                return false;
+            }
+            var data = {};
+            var params = {};
+            params.data = tableData;
+            var options = $this.data("options");
+            params.service = options.service ? options.service : '';
+            data.params = params;
+            data.type = options.type ? options.type : 'POST';
+            data.url = options.url ? options.url : false;
+            data.successF = function (returnData) {
+                history.go(0);
+            };
+            data.errorF = function (returnData) {
+                layer.alert('returnData.respDesc', {
+                    closeBtn: 0,
+                    icon: 'error',
+                    skin: 'layui-blue'
+                }, function () {
+                    layer.closeAll();
+                });
+            };
+            CommonAjax.ajax(data);
+        })
+    })();
+    //选择脚本标签的的相关函数
+    (function(){
+        EventHandler.addHandler("modalShowTree",function(triggerName){
+            $(this).parents('div').addClass("hadShowBack");
+            Event.trigger(triggerName);
+        })
+    })();
+    (function(){
+        EventListenr.addListenr("showModalFunction",function(){
+            Cbmodal.showModal($(this));
+        })
+    })();
+
+    (function(){
+        EventHandler.addHandler("triggerGetTreeSelectedDataFunction",function(triggerName){
+            Event.trigger(triggerName);
+        })
+    })();
+    (function(){
+        EventListenr.addListenr("getTreeSelectedDataFunction",function(){
+            var getData = CbTree.selectedTreeData('cbTree');
+            var data=[];
+            for(var i=0;i<getData.length;i++){
+                data.push(getData[i].name);
+            }
+            Event.trigger("inputValueEcho",data);
+            Event.trigger("closeModal");
+        })
+    })();
+    (function(){
+        EventListenr.addListenr("closeModalFunction",function(){
+            Cbmodal.hideModal($(this));
+        })
+    })();
+    (function(){
+        EventListenr.addListenr("inputValueEchoFunction",function(data){
+            if($(this).hasClass("hadShowBack")){
+                $(this).find('input').val(data.join(','));
+                $(this).find('input').focus();
+                $(this).find('input').blur();
+                $(this).removeClass("hadShowBack");
+            }
+        })
+    })();
+    (function () {
+        EventHandler.addHandler("validateValueTrigger1", function (triggerName) {
+            var params = {};
+            params.aa = $(this).val();
+            params.bb = $(this).parents('td').next('td').find('input').val();
+            $(this).parents('tr').addClass('validate-success');
+            Event.trigger(triggerName, params);
+        });
+    })();
+
+    (function(){
+        EventHandler.addHandler("validateValueTrigger2", function (triggerName) {
+            var params = {};
+            params.aa = $(this).val();
+            params.bb = $(this).parents('td').prev('td').find('input').val();
+            $(this).parents('tr').addClass('validate-success');
+            Event.trigger(triggerName, params);
+        });
+    })();
+    (function(){
+        EventListenr.addListenr("validateValueFunction",function(param){
+            var $this = $(this);
+            var isTrue = true;
+            $.each(param, function(index,item) {
+                if(item === ''){
+                    isTrue = false;
+                    $this.find("input").val();
+                    return false;
+                }
+            });
+            if(!isTrue){
+                return false;
+            }
+            $this.attr('validateValue',JSON.stringify(param));
+            if($this.parents('tr').hasClass('validate-success')){
+                var beforeAjax = '$.extend(data.params,$dom.attr("validateValue")); return data;';
+                var afterAjax = ' return returnData.data;';
+                var options= $this.data('options');
+                options.beforeAjax = beforeAjax;
+                options.afterAjax = afterAjax;
+                CbInput.prototype.initInputValue($(this),options);
+                $this.parents('tr').removeClass('validate-success')
+            }
+        })
+    })();
+
+
+    function  aa(data,$dom) {
+        var options = $dom.data("options");
+        var name = options.name;
+        $dom.find('input[name="'+name+'"]').val(data.data[name]);
+        $dom.find('input[name="'+name+'"]').append('<input type="hidden" name="fileId" value="'+data.data[fileId]+'">');
+    }
+</script>
+</body>
+
+</html>

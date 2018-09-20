@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>南京物联网—运营门户-增加</title>
+    <!--  公共模块JS-->
+    <script src="../plugins/jquery/jquery-1.10.1.min.js"></script>
+    <script src="../scripts/api/common-rule.js"></script>
+    <script src="../scripts/common/common.js"></script>
+    <script src="../scripts/api/common-event.js"></script>
+    <script src="../scripts/api/common-listen.js"></script>
+    <script src="../plugins/mustache/mustache.min.js"></script>
+    <script src="../scripts/api/common-template.js"></script>
+    <script src="../scripts/api/common-url.js"></script>
+    <script src="../plugins/jQuery-File-Upload/js/vendor/jquery.ui.widget.js"></script>
+    <script src="../plugins/jQuery-File-Upload/js/jquery.iframe-transport.js"></script>
+    <script src="../plugins/jQuery-File-Upload/js/jquery.fileupload.js"></script>
+    <script src="../plugins/jQuery-File-Upload/js/jquery.fileupload-process.js"></script>
+    <script src="../plugins/jQuery-File-Upload/js/jquery.fileupload-validate.js"></script>
+    <script src="../plugins/layer/layer.js"></script>
+    <script src="../plugins/bootstrap/bootstrap-datetimepicker.js"></script>
+    <script src="../plugins/bootstrap/bootstrap-datetimepicker.zh-CN.js"></script>
+    <link rel="stylesheet" href="../plugins/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../plugins/bootstrap/bootstrap-datetimepicker.css">
+    <script src="../plugins/jedate/jquery.jedate.js"></script>
+    <link rel="stylesheet" href="../plugins/jedate/skin/jedate.css">
+    <link rel="stylesheet" href="../styles/redStyle/common.css">
+    <!-- form组件 -->
+    <script src="../scripts/components/cb-text.js"></script>
+    <script src="../scripts/components/cb-input.js"></script>
+    <script src="../scripts/components/cb-select.js"></script>
+    <script src="../scripts/components/cb-radio.js"></script>
+    <script src="../scripts/components/cb-textarea.js"></script>
+    <script src="../scripts/components/cb-checkbox.js"></script>
+    <script src="../scripts/components/cb-form-base.js"></script>
+    <!-- 表单容器 -->
+    <script src="../scripts/components/cb-form.js"></script>
+    <!-- 容器 -->
+    <script src="../scripts/components/cb-view.js"></script>
+    <!--标题-->
+    <script src="../scripts/components/cb-title.js"></script>
+    <!--左导航栏-->
+    <script src="../scripts/components/cb-left-nav.js"></script>
+    <!--图标-->
+    <script src="../scripts/components/cb-icon.js"></script>
+    <!--模态框-->
+    <script src="../scripts/components/cb-modal.js"></script>
+    <!--文本-->
+    <script src="../scripts/components/cb-text.js"></script>
+    <!--按钮-->
+    <script src="../scripts/components/cb-btn.js"></script>
+    <!--文件上传-->
+    <script src="../scripts/components/cb-file-upload.js"></script>
+    <!--日期-->
+    <script src="../scripts/components/cb-date.js"></script>
+    <style>
+        .invalid-div.reg-tip {
+            position: static;
+            line-height: 14px;
+        }
+    </style>
+</head>
+<body>
+<cb-view class="cb-view-div cb-view-padding clearfix operation-portal-head jasper-border">
+    <cb-view class="cb-view-left">
+        <cb-icon class=""
+                 data-options='{"ctype":"icon-aaa","imageUrl":"../images/operation-portal/operation-portal-logo.jpg","width":"100%","height":"100%"}'></cb-icon>
+    </cb-view>
+</cb-view>
+<cb-view class="cb-view-div body operation-portal-body clearfix">
+    <cb-view class="cb-view-left body-left" data-options='{"width":"15%"}'>
+        <cb-input class="cb-input-div cb-input-search o-p-search clearfix" data-options='{"height":"24px"}'>
+            <cb-icon class="cb-icon-div o-p-search-icon" data-options='{"ctype":"icon-search","imageUrl":"../images/cb-icon/icon-search.png"}'></cb-icon>
+        </cb-input>
+        <cb-left-nav class="left-nav-jasper c-m-left-nav" data-options='{"service":"","navListName":"navList","navTextName":"navText","flagName":"flag","url":"wlw-operation-portal-left-nav.json","hrefName":"href","iconClassName":"iconClass","idName":"menuId","defaultShowId":"1"}'></cb-left-nav>
+    </cb-view>
+    <cb-view class="cb-view-right body-right" data-options='{"width":"85%"}'>
+        <cb-view class="body-right-nav">
+            <cb-form class="cb-form-default" data-options={"url":"aaaaaaa"} listen={"submitData":"formSubmit"}>
+                <cb-view data-options='{"padding":["0","10px","0","10px"]}'>
+                    <cb-view data-options='{"width":"100%"}'>
+                        <cb-title data-options='{"width":"98%"}'>能力新增</cb-title>
+                    </cb-view>
+                    <cb-view  class="cb-view-div clearfix" data-options='{"padding":["40px","0","0","0"]}'>
+                        <cb-view class="cb-view-left" data-options='{"width":"61%"}'>
+                            <cb-text class="aa o-p-info" data-options='{"cid":"ssss","labelText":"基本信息","type":"text","width":"100px"}'></cb-text>
+                            <cb-form-base class="cb-form-base-div o-p-form-base o-p-form-base-first" regExp="required-必输项,chinese-最多20位汉字" data-options='{"item":"input","width":"100%","labelOptions":{"cid":"ssss","labelText":"能力中文名称","type":"label","width":"24%"},"itemComponentOptions":{"type":"","cid":"ssss","name":"goodLevel","placeholder":"不超过20个字","width":"76%"}}'></cb-form-base>
+                            <cb-view class="cb-form-base-div o-p-form-base o-p-textarea" data-options='{"width":"100%"}'>
+                                <cb-text class="" data-options='{"labelText":"能力描述","width":"24%"}'></cb-text>
+                                <cb-textarea regExp="chineseNumDes-最多5位汉字,required-必输项" class="" data-options='{"name":"aaaa","width":"76%","height":"76px","placeholder":"不超过200个字"}'></cb-textarea>
+                            </cb-view>
+                            <cb-view class="cb-form-base-div o-p-form-base" data-options='{"width":"100%"}'>
+                                <cb-text class="" data-options='{"labelText":"能力归属机构","width":"24%"}'></cb-text>
+                                <cb-input class="cb-input-div o-p-readonly o-p-affiliation" regExp="required-必输项" data-options='{"name":"aaaa","width":"76%","isReadonly":"false"}'></cb-input>
+                            </cb-view>
+                            <cb-view class="cb-form-base-div o-p-form-base" data-options='{"width":"100%"}'>
+                                <cb-text class="" data-options='{"labelText":"能力版本","width":"24%"}'></cb-text>
+                                <cb-input class="cb-input-div" regExp="version-格式错误,required-必输项" data-options='{"name":"aaaa","width":"98px"}'></cb-input>
+                                <cb-text class="cb-text-div" data-options='{"labelText":"格式：Vx.x，例如V1.1","width":"160px"}'></cb-text>
+                            </cb-view>
+                            <cb-view class="cb-form-base-div o-p-form-base" data-options='{"width":"100%"}'>
+                                <cb-text class="" data-options='{"labelText":"流量控制","width":"24%"}'></cb-text>
+                                <cb-input class="cb-input-div usage-input-div" regexp="dataUsageControl-最多十位" bindku="showdataUsageControl,dataUsageControl1" listen='{"unlimited1":"unlimitedFun"}' data-options='{"name":"aaaa","width":"98px"}'></cb-input>
+                                <cb-text class="cb-text-div" data-options='{"labelText":"次/秒","width":"53px"}'></cb-text>
+                                <cb-text class="cb-text-div o-p-underline unlimited" bindcl="showValue,unlimited1" data-options='{"labelText":"不限","width":"53px"}'></cb-text>
+                            </cb-view>
+                            <cb-view class="cb-form-base-div o-p-form-base" data-options='{"width":"100%"}'>
+                                <cb-text class="" data-options='{"labelText":"","width":"24%"}'></cb-text>
+                                <cb-input class="cb-input-div usage-input-div" regexp="dataUsageControl-最多十位" listen='{"unlimited2":"unlimitedFun"}' data-options='{"name":"aaaa","width":"98px"}'></cb-input>
+                                <cb-text class="cb-text-div" data-options='{"labelText":"次/天","width":"53px"}'></cb-text>
+                                <cb-text class="cb-text-div o-p-underline" bindcl="showValue,unlimited2" data-options='{"labelText":"不限","width":"53px"}'></cb-text>
+                            </cb-view>
+                        </cb-view>
+                        <cb-view class="cb-view-right" data-options='{"width":"39%","padding":["0","0","0","5%"]}'>
+                             <cb-view class="o-p-img-upload-div"></cb-view>
+                            <cb-text class="cb-text-div o-p-imgupload-text" data-options='{"labelText":"点击上传能力icon，图片大小为150px* 150 px，不超过400kb","width":"150px"}'></cb-text>
+                        </cb-view>
+                    </cb-view>
+                    <cb-view data-options='{"padding":["40px","0","0","0"]}'>
+                        <cb-text class="aa o-p-info" data-options='{"cid":"ssss","labelText":"分类信息","type":"text","width":"100px"}'></cb-text>
+                        <cb-view class="cb-form-base-div o-p-form-base o-p-form-base-first" data-options='{"width":"100%"}'>
+                            <cb-text class="" data-options='{"labelText":"能力接入类型","width":"15%"}'></cb-text>
+                            <cb-select class="o-p-sel" regExp="required-必输项"  data-options='{"cid":"ssss","service":"","width":"68px","name":"goodLevel","list":"outputParamList","value":"key","text":"value","url":"checkbox-data.json","isDefault":false,"dataType":"ajaxData","mergeDataOrder":"ajax","option":[{"key":"","value":"请选择"},{"key":"1","value":"HTTP"},{"key":"2","value":"HTTPS"}]}'></cb-select>
+                            <cb-text class="cb-text-div o-p-add" data-options='{"labelText":"+","width":"20px"}'></cb-text>
+                            <cb-select class="o-p-sel" regExp="required-必输项" bindcg="joinType,type" data-options='{"cid":"ssss","service":"","width":"68px","name":"goodLevel","list":"outputParamList","value":"key","text":"value","url":"checkbox-data.json","isDefault":false,"dataType":"ajaxData","mergeDataOrder":"ajax","option":[{"key":"","value":"请选择"},{"key":"1","value":"SOAP"},{"key":"2","value":"XML"},{"key":"3","value":"JSON"}]}'></cb-select>
+                        </cb-view>
+                        <cb-view class="cb-form-base-div o-p-form-base" data-options='{"width":"100%"}'>
+                            <cb-text class="cb-text-div floatLeft" data-options='{"labelText":"能力订购方式","width":"15%"}'></cb-text>
+                            <cb-radio regExp="required-必输项" bindcg="payMethod,pay" class="cb-radio-div floatLeft o-p-method-radio" style="width:100%" data-options='{"cid":"rediochoose","name":"sendType","list":"outputParamList","value":"key","text":"value","option":[{"key":"1","value":"免费"},{"key":"2","value":"付费"}]}'></cb-radio>
+                        </cb-view>
+                        <cb-view  class="cb-form-base-div o-p-form-base o-p-paymethod-one hide" listen='{"pay":"payMethodFun"}' data-options='{"width":"100%"}'>
+                            <cb-text class="" data-options='{"labelText":"","width":"15%"}'></cb-text>
+                            <cb-select class="o-p-sel" bindcg="showLabel,showLabel1" data-options='{"cid":"ssss","service":"","width":"100px","name":"goodLevel","list":"outputParamList","value":"key","text":"value","url":"checkbox-data.json","isDefault":false,"dataType":"ajaxData","mergeDataOrder":"ajax","option":[{"key":"0","value":"请选择"},{"key":"1","value":"按次"},{"key":"2","value":"包月不限量"}]}'></cb-select>
+                            <cb-text class="cb-text-div o-p-add" data-options='{"labelText":"-","width":"20px"}'></cb-text>
+                            <cb-input regExp="required-必输项" class="cb-input-div o-p-sel" data-options='{"name":"aaaa","width":"68px"}'></cb-input>
+                            <cb-text class="cb-text-div hide" listen='{"showLabel1":"showLabelFun"}' data-options='{"labelText":"元/次","width":"53px"}'></cb-text>
+                            <cb-text class="cb-text-div o-p-add-method hide" bindcl="showMethodTwo,showTwo" data-options='{"labelText":"+","width":"26px"}'></cb-text>
+                        </cb-view>
+                        <cb-view  class="cb-form-base-div o-p-form-base o-p-paymethod-two hide" listen='{"showTwo":"showMethodTwoFun","delTwo":"delMethodTwoFun"}' data-options='{"width":"100%"}'>
+                            <cb-text class="" data-options='{"labelText":"","width":"15%"}'></cb-text>
+                            <cb-select class="o-p-sel o-p-sel-ci" bindcg="showLabel,showLabel2" data-options='{"cid":"ssss","service":"","width":"100px","name":"goodLevel","list":"outputParamList","value":"key","text":"value","url":"checkbox-data.json","isDefault":false,"dataType":"ajaxData","mergeDataOrder":"ajax","option":[{"key":"1","value":"按次"}]}'></cb-select>
+                            <cb-select class="o-p-sel o-p-sel-yue" bindcg="showLabel,showLabel2" data-options='{"cid":"ssss","service":"","width":"100px","name":"goodLevel","list":"outputParamList","value":"key","text":"value","url":"checkbox-data.json","isDefault":false,"dataType":"ajaxData","mergeDataOrder":"ajax","option":[{"key":"1","value":"包月不限量"}]}'></cb-select>
+                            <cb-text class="cb-text-div o-p-add" data-options='{"labelText":"-","width":"20px"}'></cb-text>
+                            <cb-input regExp="required-必输项" class="cb-input-div o-p-sel" data-options='{"name":"aaaa","width":"68px"}'></cb-input>
+                            <cb-text class="cb-text-div o-p-sel-ci" listen='{"showLabel2":"showLabelFun"}' data-options='{"labelText":"元/次","width":"53px"}'></cb-text>
+                            <cb-text class="cb-text-div o-p-sel-yue" listen='{"showLabel2":"showLabelFun"}' data-options='{"labelText":"元/月","width":"53px"}'></cb-text>
+                            <cb-text class="cb-text-div o-p-del-method" bindcl="delMethodTwo,delTwo" data-options='{"labelText":"×","width":"26px"}'></cb-text>
+                        </cb-view>
+                    <cb-view data-options='{"padding":["40px","0","0","0"]}'>
+
+                    </cb-view>
+                </cb-view>
+                    <cb-view  class="cb-view-div clearfix" data-options='{"padding":["40px","0","0","0"]}'>
+                            <cb-text class="aa o-p-info" data-options='{"cid":"ssss","labelText":"技术信息","type":"text","width":"100px"}'></cb-text>
+                            <cb-form-base class="cb-form-base-div o-p-form-base o-p-form-base-first"  bindbl="showRemark,remark" data-options='{"item":"input","width":"100%","labelOptions":{"cid":"ssss","labelText":"后端测试URL","type":"label","width":"15%"},"itemComponentOptions":{"type":"","cid":"ssss","name":"goodLevel","placeholder":"后端测试URL","width":"63%"}}'></cb-form-base>
+                            <cb-view class="cb-form-base-div o-p-form-base o-p-textarea hide" listen='{"remark":"showRemarkFun"}' data-options='{"width":"100%"}'>
+                                <cb-text class="" data-options='{"labelText":"","width":"15%"}'></cb-text>
+                                <cb-textarea class="" data-options='{"name":"aaaa","width":"63%","height":"76px"}'></cb-textarea>
+                            </cb-view>
+                        <cb-form-base class="cb-form-base-div o-p-form-base o-p-form-base-first" regExp="required-必输项"  data-options='{"item":"input","width":"100%","labelOptions":{"cid":"ssss","labelText":"后端生产URL","type":"label","width":"15%"},"itemComponentOptions":{"type":"","cid":"ssss","name":"goodLevel","placeholder":"后端生产URL","width":"63%"}}'></cb-form-base>
+                        <cb-view class="cb-form-base-div o-p-form-base o-p-textarea" data-options='{"width":"100%"}'>
+                            <cb-text class="" data-options='{"labelText":"","width":"15%"}'></cb-text>
+                            <cb-textarea class="" data-options='{"name":"aaaa","width":"63%","height":"76px"}'></cb-textarea>
+                        </cb-view>
+                        <cb-view class="cb-form-base-div o-p-form-base o-p-wsdl o-p-wxj hide" listen='{"type":"joinTypeFun"}' data-options='{"width":"100%"}'>
+                            <cb-text class="" data-options='{"labelText":"WSDL内容","width":"15%"}'></cb-text>
+                            <cb-input regExp="required-必输项" data-options = '{"cid":"aaa"}'></cb-input>
+                            <cb-file-upload class="cb-file-upload-div cb-file-upload-text o-p-upload-div" listen={"fileUpload":"fileUploadFunction","fileCancel":"fileCancelFunction"} data-options='{"labelRemark":"上传WSDL文件","limitFileType":["docx","txt"],"padding":["0","0","0","20px"],"fileName":"fileName","maxFileNum":"3","maxFileSize":"20971520","echoContent":"fileContent","url":"/local","relateCid":"aaa","autoUpload":true,"echoFileNameCid":"aaa","afterAjax":"addShowFileName(data)"}' ></cb-file-upload>
+                        </cb-view>
+                        <cb-view class="cb-form-base-div o-p-form-base o-p-xsd o-p-wxj hide" listen='{"type":"joinTypeFun"}' data-options='{"width":"100%"}'>
+                            <cb-text class="" data-options='{"labelText":"XSD内容","width":"15%"}'></cb-text>
+                            <cb-input  data-options = '{"cid":"bbb"}'></cb-input>
+                            <cb-file-upload class="" listen={"fileUpload":"fileUploadFunction","fileCancel":"fileCancelFunction"} data-options='{"labelRemark":"上传XSD文件","limitFileType":["docx","txt"],"padding":["0","0","0","20px"],"fileName":"fileName","maxFileNum":"3","maxFileSize":"20971520","echoContent":"fileContent","url":"../../","relateCid":"","autoUpload":false,"echoFileNameCid":"bbb"}' ></cb-file-upload>
+                        </cb-view>
+                        <cb-view class="cb-form-base-div o-p-form-base o-p-xsd-reg o-p-wxj hide" listen='{"type":"joinTypeFun"}' data-options='{"width":"100%"}'>
+                            <cb-text class="" data-options='{"labelText":"XSD内容","width":"15%"}'></cb-text>
+                            <cb-input regExp="required-必输项" data-options = '{"cid":"ccc"}'></cb-input>
+                            <cb-file-upload class="" listen={"fileUpload":"fileUploadFunction","fileCancel":"fileCancelFunction"} data-options='{"labelRemark":"上传XSD文件","limitFileType":["docx","txt"],"padding":["0","0","0","20px"],"fileName":"fileName","maxFileNum":"3","maxFileSize":"20971520","echoContent":"fileContent","url":"../../","relateCid":"","autoUpload":false,"echoFileNameCid":"ccc"}' ></cb-file-upload>
+                        </cb-view>
+                        <cb-view class="cb-form-base-div o-p-form-base o-p-json o-p-wxj hide" listen='{"type":"joinTypeFun"}' data-options='{"width":"100%"}'>
+                            <cb-text class="" data-options='{"labelText":"JSON内容","width":"15%"}'></cb-text>
+                            <cb-input regExp="required-必输项" data-options = '{"cid":"ddd"}'></cb-input>
+                            <cb-file-upload class="" listen={"fileUpload":"fileUploadFunction","fileCancel":"fileCancelFunction"} data-options='{"labelRemark":"上传JSON内容","limitFileType":["docx","txt"],"padding":["0","0","0","20px"],"fileName":"fileName","maxFileNum":"3","maxFileSize":"20971520","echoContent":"fileContent","url":"../../","relateCid":"","autoUpload":false,"echoFileNameCid":"ddd"}' ></cb-file-upload>
+                        </cb-view>
+                        <cb-view class="cb-form-base-div o-p-form-base" data-options='{"width":"100%"}'>
+                            <cb-text class="" data-options='{"labelText":"API文档","width":"15%"}'></cb-text>
+                            <cb-input regExp="required-必输项" data-options = '{"cid":"eee"}'></cb-input>
+                            <cb-file-upload class="" listen={"fileUpload":"fileUploadFunction","fileCancel":"fileCancelFunction"} data-options='{"labelRemark":"上传API文档","limitFileType":["docx","txt"],"padding":["0","0","0","20px"],"fileName":"fileName","maxFileNum":"3","maxFileSize":"20971520","echoContent":"fileContent","url":"../../","relateCid":"","autoUpload":false,"echoFileNameCid":"eee"}' ></cb-file-upload>
+                        </cb-view>
+                        <cb-view class="cb-form-base-div o-p-form-base" data-options='{"width":"100%"}'>
+                            <cb-text class="" data-options='{"labelText":"附件","width":"15%"}'></cb-text>
+                            <cb-input  data-options = '{"cid":"fff"}'></cb-input>
+                            <cb-file-upload class="" listen={"fileUpload":"fileUploadFunction","fileCancel":"fileCancelFunction"} data-options='{"labelRemark":"上传附件","limitFileType":["docx","txt"],"padding":["0","0","0","20px"],"fileName":"fileName","maxFileNum":"3","maxFileSize":"20971520","echoContent":"fileContent","url":"../../","relateCid":"","autoUpload":false,"echoFileNameCid":"fff"}' ></cb-file-upload>
+                        </cb-view>
+                        <cb-view class="cb-form-base-div o-p-form-base o-p-textarea" data-options='{"width":"100%"}'>
+                            <cb-text class="" data-options='{"labelText":"备注","width":"15%"}'></cb-text>
+                            <cb-textarea class="" data-options='{"name":"aaaa","width":"63%","height":"76px"}'></cb-textarea>
+                        </cb-view>
+                    </cb-view>
+                    <cb-view  data-options='{"padding":["10px","0","20px","0"]}'>
+                        <cb-btn class="cb-btn-lightblue marginNo cb-btn-left"  bindcl="submitForm,submitData" data-options='{"domDiv":"1","cid":"btn1","type":"button","borderRadius":["26px","26px","26px","26px"]}' data-cbstyle='{"width":"50%"}'>确定</cb-btn>
+                        <cb-btn class="cb-btn-lightblue-cancel marginNo cb-btn-right" data-options='{"domDiv":"1","cid":"btn1","type":"button","borderRadius":["10px","10px","10px","10px"]}' data-cbstyle='{"width":"50%"}'>取消</cb-btn>
+                    </cb-view>
+                </cb-view>
+            </cb-form>
+        </cb-view>
+    </cb-view>
+</cb-view>
+<script>
+    $(window).load(function(){
+        $(".left-nav-jasper .left-list-nav>li>ul .nav-href:first-child").siblings().removeClass("nav-href");
+        $(".operation-portal-body .cb-left-nav-div .left-list-nav>li:first-child ul li:first-child").addClass("operation-portal-style");
+        $(".operation-portal-body .cb-left-nav-div .left-list-nav>li:first-child ul li:first-child>a").addClass("operation-portal-style-a");
+        $(".o-p-affiliation .cb-input").val("小米科技");
+        var $bodyRightHeight = $(".body-right").outerHeight();
+        $(".body-left").height($bodyRightHeight);
+        $(".c-m-left-nav").height($bodyRightHeight-52);
+        $(".cb-radio-div .radio-list input[type=radio]").removeAttr("checked");
+    });
+    //正则表达式校验
+    (function(){
+        ValidateRules.addCheckRegExp("chineseNumDes","^[\u4e00-\u9fa5]{1,5}$");
+        ValidateRules.addCheckRegExp("chineseNum","^[\u4e00-\u9fa5]{1,20}$");
+        ValidateRules.addCheckRegExp("version","^[V]{1}[0-9]{1,}\\.[0-9]{1,}$");
+        ValidateRules.addCheckRegExp("dataUsageControl","^[0-9]{0,10}$");
+        ValidateRules.addCheckRegExp("url",'^((https|http|ftp|rtsp|mms)?://)'
+                + '?(([0-9a-z_!~*\'().&=+$%-]+: )?[0-9a-z_!~*\'().&=+$%-]+@)?' //ftp的user@
+                + '(([0-9]{1,3}.){3}[0-9]{1,3}' // IP形式的URL- 199.194.52.184
+                + '|' // 允许IP和DOMAIN（域名）
+                + '([0-9a-z_!~*\'()-]+.)*' // 域名- www.
+                + '([0-9a-z][0-9a-z-]{0,61})?[0-9a-z].' // 二级域名
+                + '[a-z]{2,6})' // first level domain- .com or .museum
+                + '(:[0-9]{1,4})?' // 端口- :80
+                + '((/?)|' // a slash isn't required if there is no file name
+                + '(/[0-9a-z_!~*\'().;?:@&=+$,%#-]+)+/?)||\s$');
+    })();
+    //点击不限时显示在文本框中
+    (function(){
+        EventHandler.addHandler("showValue",function(triggerName){
+            Event.trigger(triggerName,$(this));
+        })
+    })();
+    (function(){
+        EventListenr.addListenr("unlimitedFun",function(param){
+            param.parent().siblings().find(".cb-input").val("不限");
+        })
+    })();
+    //点击单选按钮显示子级
+    (function(){
+        EventHandler.addHandler("payMethod",function(triggerName){
+            Event.trigger(triggerName,$(this));
+        })
+    })();
+    (function(){
+        EventListenr.addListenr("payMethodFun",function(param){
+            console.log(param);
+            $(".o-p-paymethod-one").find("select").val("0");
+            if(param.attr("value") == 1){
+                $(".o-p-paymethod-one").addClass("hide");
+            }else{
+                $(".o-p-paymethod-one").removeClass("hide");
+            }
+        })
+    })();
+    //根据能力接入类型显示子级
+    (function(){
+        EventHandler.addHandler("joinType",function(triggerName){
+            Event.trigger(triggerName,$(this));
+        })
+    })();
+    (function(){
+        EventListenr.addListenr("joinTypeFun",function(param){
+            if(param.val() == 0){
+                $(".o-p-wxj").addClass("hide");
+            }else if(param.val() == 1){
+                $(".o-p-wxj").addClass("hide");
+                $(".o-p-wsdl").removeClass("hide");
+                $(".o-p-xsd").removeClass("hide");
+            }else if(param.val() == 2){
+                $(".o-p-xsd-reg").removeClass("hide").siblings(".o-p-wxj").addClass("hide");
+            }else if(param.val() == 3){
+                $(".o-p-json").removeClass("hide").siblings(".o-p-wxj").addClass("hide");
+            }
+        })
+    })();
+    //根据选择的方式显示后面label
+    (function(){
+        EventHandler.addHandler("showLabel",function(triggerName){
+            Event.trigger(triggerName,$(this));
+        })
+    })();
+    (function(){
+        EventListenr.addListenr("showLabelFun",function(param){
+            if(param.val() === "0"){
+                $(this).addClass("hide");
+                $(this).next(".o-p-add-method").addClass("hide");
+            }else{
+                $(this).removeClass("hide");
+                $(this).next(".o-p-add-method").removeClass("hide");
+            }
+            if(param.val() === "1"){
+                $(this).find("label").text("元/次");
+                $(".o-p-paymethod-two .o-p-sel-ci").addClass("hide");
+                $(".o-p-paymethod-two .o-p-sel-yue").removeClass("hide");
+            }else{
+                $(this).find("label").text("元/月");
+                $(".o-p-paymethod-two .o-p-sel-yue").addClass("hide");
+                $(".o-p-paymethod-two .o-p-sel-ci").removeClass("hide");
+            }
+        })
+    })();
+    //点击添加另一条付费方式
+    (function(){
+        EventHandler.addHandler("showMethodTwo",function(triggerName){
+            Event.trigger(triggerName,$(this));
+        })
+    })();
+    (function(){
+        EventListenr.addListenr("showMethodTwoFun",function(param){
+            $(this).removeClass("hide");
+            $(".o-p-add-method").addClass("hide");
+            $(".o-p-paymethod-one select").attr("disabled","disabled");
+
+        })
+    })();
+    //点击删除一种方式
+    (function(){
+        EventHandler.addHandler("delMethodTwo",function(triggerName){
+            Event.trigger(triggerName,$(this));
+        })
+    })();
+    (function(){
+        EventListenr.addListenr("delMethodTwoFun",function(param){
+            $(this).addClass("hide");
+            $(".o-p-add-method").removeClass("hide");
+            $(".o-p-paymethod-one select").removeAttr("disabled");
+
+        })
+    })();
+    //是否显示配置访问地址的备注内容
+    (function(){
+        EventHandler.addHandler("showRemark",function(triggerName){
+            Event.trigger(triggerName,$(this));
+        })
+    })();
+    (function(){
+        EventListenr.addListenr("showRemarkFun",function(param){
+            console.log(param);
+//            var url = '^((https|http|ftp|rtsp|mms)?://)'
+//                    + '?(([0-9a-z_!~*\'().&=+$%-]+: )?[0-9a-z_!~*\'().&=+$%-]+@)?' //ftp的user@
+//                    + '(([0-9]{1,3}.){3}[0-9]{1,3}' // IP形式的URL- 199.194.52.184
+//                    + '|' // 允许IP和DOMAIN（域名）
+//                    + '([0-9a-z_!~*\'()-]+.)*' // 域名- www.
+//                    + '([0-9a-z][0-9a-z-]{0,61})?[0-9a-z].' // 二级域名
+//                    + '[a-z]{2,6})' // first level domain- .com or .museum
+//                    + '(:[0-9]{1,4})?' // 端口- :80
+//                    + '((/?)|' // a slash isn't required if there is no file name
+//                    + '(/[0-9a-z_!~*\'().;?:@&=+$,%#-]+)+/?)||\s$';
+//            var regUrl = new RegExp('^((https|http|ftp|rtsp|mms)?://)'
+//                    + '?(([0-9a-z_!~*\'().&=+$%-]+: )?[0-9a-z_!~*\'().&=+$%-]+@)?' //ftp的user@
+//                    + '(([0-9]{1,3}.){3}[0-9]{1,3}' // IP形式的URL- 199.194.52.184
+//                    + '|' // 允许IP和DOMAIN（域名）
+//                    + '([0-9a-z_!~*\'()-]+.)*' // 域名- www.
+//                    + '([0-9a-z][0-9a-z-]{0,61})?[0-9a-z].' // 二级域名
+//                    + '[a-z]{2,6})' // first level domain- .com or .museum
+//                    + '(:[0-9]{1,4})?' // 端口- :80
+//                    + '((/?)|' // a slash isn't required if there is no file name
+//                    + '(/[0-9a-z_!~*\'().;?:@&=+$,%#-]+)+/?)$');
+//            var val = regUrl.test(param.val());
+//            console.log(val);
+        })
+    })();
+    function addShowFileName(data){
+        console.log(2222222222222222);
+        if(data.respCode === "0000"){
+            var $fileName = "<div class='cb-input-div' cid='aaa'><input class='cb-input' hasbind='true' type='text'></div>";
+
+        }else{
+            layer.alert(data.respDesc, {
+                icon: 'error',
+                skin: 'layui-blue'
+            });
+        }
+    }
+</script>
+</body>
+</html>

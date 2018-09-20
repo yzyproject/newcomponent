@@ -1,0 +1,34 @@
+
+<table>
+    <thead>
+    <tr>
+        <th><div>序号</div></th>
+        <th><div>单选</div></th>
+        <th><div>工作号</div></th>
+        <th><div>主单号</div></th>
+        <th><div>委托单位</div></th>
+        <th><div>业务类型</div></th>
+    </tr>
+    </thead>
+    <tbody>
+    {{each data as value i }}
+    <tr><td colspan="6" class="tou">{{value.name}}</td></tr>
+    {{each value.data as rows j}}
+      {{each rows as row m}}
+      <tr >
+          {{if m == 0}}
+          <td rowspan="{{rows.length}}"><div>{{ row.name }}</div></td>
+          {{/if}}
+          <td><div>{{ row.a }}</div></td>
+          <td><div>{{ row.b }}</div></td>
+          <td><div>{{ row.c }}</div></td>
+          <td><div>{{ row.d }}</div></td>
+          <td><div>{{ row.e }}</div></td>
+
+      </tr>
+      {{/each}}
+    {{/each}}
+
+    {{/each}}
+    </tbody>
+</table>

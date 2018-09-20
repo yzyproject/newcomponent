@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>详情</title>
+    <!--  公共模块-->
+    <script src="../plugins/jquery/jquery-1.10.1.min.js"></script>
+    <script src="../scripts/common/common.js"></script>
+    <script src="../scripts/api/common-event.js"></script>
+    <script src="../scripts/api/common-listen.js"></script>
+    <script src="../scripts/common/url-param-util.js"></script>
+    <script src="../scripts/components/cb-input.js"></script>
+    <script src="../scripts/components/cb-view.js"></script>
+</head>
+<body>
+
+<cb-view listen='{"getId":"getIdFunction"}' class="clearfix" data-options='{"domDiv":"cuview2","id":"233","width":"1000px","padding":["30px"],"service":"111","url":"input_data.json","onValued":"","isDefaultAjax":false}'>
+    <cb-input data-options='{"name":"input1"}'></cb-input>
+</cb-view>
+
+<script>
+/*    (function () {
+//        var dataId = Number(UrlParam.param('id'));
+        var dataId = 111;
+        Event.trigger('getId',dataId);
+    })();*/
+
+(function(){
+    EventListenr.addListenr("getIdFunction",function(dataId){
+        var options = $(this).data('options');
+        options.dataId = dataId;
+        options.ajaxDataFunction ="data.params.dataId = options.dataId; return data";
+        CbView.prototype.initViewData($(this),options);
+    })
+})();
+
+    $(function () {
+        var dataId = Number(UrlParam.param('id'));
+        Event.trigger('getId',dataId);
+    })
+
+</script>
+</body>
+</html>

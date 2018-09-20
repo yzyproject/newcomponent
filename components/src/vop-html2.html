@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>测试页面2</title>
+    <!--  公共模块JS-->
+    <script src="../plugins/jquery/jquery-1.10.1.min.js"></script>
+    <script src="../scripts/api/common-rule.js"></script>
+    <script src="../scripts/common/common.js"></script>
+    <script src="../scripts/api/common-event.js"></script>
+    <script src="../scripts/api/common-listen.js"></script>
+    <script src="../plugins/mustache/mustache.min.js"></script>
+    <script src="../scripts/api/common-template.js"></script>
+    <script src="../plugins/bootstrap/bootstrap-datetimepicker.js"></script>
+    <script src="../plugins/bootstrap/bootstrap-datetimepicker.zh-CN.js"></script>
+    <link rel="stylesheet" href="../plugins/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../plugins/bootstrap/bootstrap-datetimepicker.css">
+    <script src="../plugins/jQuery-File-Upload/js/vendor/jquery.ui.widget.js"></script>
+    <script src="../plugins/jQuery-File-Upload/js/jquery.iframe-transport.js"></script>
+    <script src="../plugins/jQuery-File-Upload/js/jquery.fileupload.js"></script>
+    <script src="../plugins/jQuery-File-Upload/js/jquery.fileupload-process.js"></script>
+    <!-- 表单容器 -->
+    <script src="../scripts/components/cb-form.js"></script>
+    <!-- 容器 -->
+    <script src="../scripts/components/cb-view.js"></script>
+    <!-- 按钮 -->
+    <script src="../scripts/components/cb-btn.js"></script>
+    <!-- 输入框 -->
+    <script src="../scripts/components/cb-input.js"></script>
+    <!-- 单选 -->
+    <script src="../scripts/components/cb-radio.js"></script>
+    <!-- 多选 -->
+    <script src="../scripts/components/cb-checkbox.js"></script>
+    <!-- 下拉框 -->
+    <script src="../scripts/components/cb-select.js"></script>
+    <!-- 文本 -->
+    <script src="../scripts/components/cb-text.js"></script>
+    <!-- 文本框 -->
+    <script src="../scripts/components/cb-textarea.js"></script>
+    <!-- 表单内基础组件 -->
+    <script src="../scripts/components/cb-form-base.js"></script>
+    <script src="../scripts/components/cb-floating-panel.js"></script>
+    <script src="../scripts/components/cb-show-list.js"></script>
+    <script src="../scripts/components/cb-icon.js"></script>
+    <script src="../scripts/components/cb-text.js"></script>
+    <script src="../scripts/components/cb-date.js"></script>
+    <script src="../scripts/components/custom-components/cb-date-interval.js"></script>
+    <!--  表格组件 -->
+    <script src="../plugins/pagination/script/pagination.js"></script>
+    <script src="../scripts/components/cb-table.js"></script>
+    <script src="../scripts/components/base-components/cb-business-table.js"></script>
+    <!--  文件组件 -->
+    <script src="../scripts/components/cb-file-upload.js"></script>
+
+</head>
+<body>
+<cb-form class="cb-form-white" listen={"submitData":"formSubmit"} data-options='{"title":"收付款","width":"","service":"111"}'>
+    <cb-view class="cb-view-table clearfix">
+        <!--转售企业-->
+        <cb-text class="cb-text-big"  data-options='{"labelText":"转售企业："}'></cb-text>
+        <!--input 的name提交的值-->
+        <cb-input class="cb-input-big" listen ={"getMvName":"GetMvName"} regexp="required-必须输入"  bindcl="ShowFloatingPanel,showEvent1"
+                  data-options='{"placeholder":"请输入","name":"aaa","isReadonly": true,"isHasHiddenInput":true}'>
+            <cb-icon class="cb-icon-big"
+                     data-options='{"ctype":"icon-blue-arrow","imageUrl":"../images/cb-icon/icon-blue-arrow.png"}'></cb-icon>
+            <cb-floating-panel listen={"showEvent1":"ShowFloatingPanel","hideEvent1":"HideFloatingPanel"}
+                               data-options='{"ctype":"1","masterId":"","animation":"3","showBeforeProcessor":"","showAfterProcessor":"","hidebeforeProcessor":"","hideAfterProcessor":"","showOperationMethod":""}'>
+                <cb-show-list class="" bindcl="HideFloatingPanel,hideEvent1"
+                              data-options='{"service":"111","name":"goodLevel","isRequest":"true","onValued":"","listName":"outputParamList","valueName":"key","textName":"value","localDataList":[{"key":"1","value":"普号"},{"key":"2","value":"靓号"},{"key":"03","value":"优质号码"},{"key":"04","value":"带“4”号"}]}'></cb-show-list>
+            </cb-floating-panel>
+        </cb-input>
+    </cb-view>
+    <cb-view class="cb-view-table clearfix">
+        <!--收付款类型-->
+        <cb-text class="cb-text-big" data-options='{"labelText":"收付款类型："}'></cb-text>
+        <cb-input class="cb-input-big" regexp="required-必须输入" bindcl="ShowFloatingPanel,showEvent2"
+                  data-options='{"placeholder":"请选择","name":"aaa","isReadonly": true,"isHasHiddenInput":true}'>
+            <cb-icon class="cb-icon-big"
+                     data-options='{"ctype":"icon-gray-arrow","imageUrl":"../images/cb-icon/icon-gray-arrow.png"}'></cb-icon>
+            <cb-floating-panel listen={"showEvent2":"ShowFloatingPanel","hideEvent2":"HideFloatingPanelInput"}
+                               data-options='{"ctype":"1","masterId":"","animation":"3","showBeforeProcessor":"","showAfterProcessor":"","hidebeforeProcessor":"","hideAfterProcessor":"","showOperationMethod":""}'>
+                <cb-show-list class="" bindcl="HideFloatingPanelCheck,hideEvent2"
+                              data-options='{"service":"111","name":"goodLevel","isRequest":"true","onValued":"","listName":"outputParamList","valueName":"key","textName":"value","localDataList":[{"key":"1","value":"普号"},{"key":"2","value":"靓号"},{"key":"03","value":"优质号码"},{"key":"04","value":"带“4”号"}]}'></cb-show-list>
+            </cb-floating-panel>
+        </cb-input>
+        <!--账户余额-->
+        <cb-text class="cb-text-big" data-options='{"labelText":"账户余额(元)："}'></cb-text>
+        <cb-input class="cb-input-big" listen={"PayableBalance":"SelectPayType"}  data-options='{"name":"aaa","isReadonly": true,"service":"1111"}'></cb-input>
+    </cb-view>
+    <cb-view class="cb-view-table clearfix">
+        <!--结算账期-->
+        <cb-text class="cb-text-big" data-options='{"labelText":"结算账期："}'></cb-text>
+        <cb-input class="cb-input-big"   data-options='{"name":"aaa","isReadonly":true}'>
+            <cb-icon class="cb-icon-big"
+                     data-options='{"ctype":"icon-calendar","imageUrl":"../images/cb-icon/icon-calendar.png"}'></cb-icon>
+        </cb-input>
+        <cb-date class=""
+                 data-options='{"ctype":"1","masterId":"","onValued":"","format":"yyyy-mm","minDate":"2017-03-17 00:00:00","maxDate":"2017-04-17 00:00:00","language":"zh-CN","weekStart":"","todayHighlight":true
+         }'></cb-date>
+
+        <!--应缴金额(元)-->
+        <cb-text class="cb-text-big" data-options='{"labelText":"应缴金额(元)："}'></cb-text>
+        <cb-input class="cb-input-big"  listen={"ShowBalance":"ListenShowBalance"}
+                  data-options='{"name":"aaa","isReadonly": true}'></cb-input>
+    </cb-view>
+    <cb-view class="cb-view-table clearfix">
+        <!--到款日期-->
+        <cb-text class="cb-text-big"  data-options='{"labelText":"结算账期："}'></cb-text>
+        <cb-input class="cb-input-big" regexp="required-请输入到款日期"  data-options='{"name":"aaa","isReadonly":true}'>
+            <cb-icon class="cb-icon-big"
+                     data-options='{"ctype":"icon-calendar","imageUrl":"../images/cb-icon/icon-calendar.png"}'></cb-icon>
+        </cb-input>
+        <cb-date class=""
+                 data-options='{"ctype":"1","masterId":"","onValued":"","format":"yyyy-mm-dd","minDate":"2017-03-17 00:00:00","maxDate":"2017-04-17 00:00:00","language":"zh-CN","weekStart":"","todayHighlight":true
+         }'></cb-date>
+
+        <!--收付款金额(元)-->
+        <cb-text class="cb-text-big" data-options='{"labelText":"收付款金额(元)："}'></cb-text>
+        <cb-input class="cb-input-big" regexp="required-请输入到款日期"
+                  data-options='{"name":"aaa"}'></cb-input>
+    </cb-view>
+    <cb-view class="cb-view-table clearfix">
+        <!--收款银行-->
+        <cb-text  class="cb-text-big" data-options='{"labelText":"收款银行："}'></cb-text>
+        <!--input 的name提交的值-->
+        <cb-input class="cb-input-big" regexp="required-请输入到款日期"  bindcl="ShowFloatingPanel,showEvent3"
+                  data-options='{"placeholder":"请选择","name":"aaa","isReadonly": true,"isHasHiddenInput":true}'>
+            <cb-icon class="cb-icon-big"
+                     data-options='{"ctype":"icon-gray-arrow","imageUrl":"../images/cb-icon/icon-gray-arrow.png"}'></cb-icon>
+            <cb-floating-panel listen={"showEvent3":"ShowFloatingPanel","hideEvent3":"HideFloatingPanel"}
+                               data-options='{"ctype":"1","masterId":"","animation":"3","showBeforeProcessor":"","showAfterProcessor":"","hidebeforeProcessor":"","hideAfterProcessor":"","showOperationMethod":""}'>
+                <cb-show-list class="" bindcl="HideFloatingPanel,hideEvent3"
+                              data-options='{"service":"111","name":"goodLevel","isRequest":"true","onValued":"","listName":"outputParamList","valueName":"key","textName":"value","localDataList":[{"key":"1","value":"普号"},{"key":"2","value":"靓号"},{"key":"03","value":"优质号码"},{"key":"04","value":"带“4”号"}]}'></cb-show-list>
+            </cb-floating-panel>
+        </cb-input>
+        <!--结算账户-->
+        <cb-text class="cb-text-big" data-options='{"labelText":"结算账户："}'></cb-text>
+        <cb-input class="cb-input-big"
+                  data-options='{"name":"aaa","isReadonly": true}'></cb-input>
+    </cb-view>
+
+    <cb-view class="cb-view-table clearfix">
+        <!--银行凭证号-->
+        <cb-text class="cb-text-big" data-options='{"labelText":"银行凭证号："}'></cb-text>
+        <cb-input class="cb-input-big"  regexp="required-请输入到款日期"
+                  data-options='{"name":"aaa"}'></cb-input>
+        <!-- 手续费(元)-->
+        <cb-text class="cb-text-big" data-options='{"labelText":" 手续费(元)："}'></cb-text>
+        <cb-input class="cb-input-big"
+                  data-options='{"name":"aaa","isReadonly": true}'></cb-input>
+    </cb-view>
+    <cb-view class="cb-view-table clearfix">
+        <!--备注：-->
+        <cb-text class="cb-text-big" data-options='{"labelText":" 备注："}'></cb-text>
+        <cb-textarea class="" data-options='{"name":"aaaa"}'></cb-textarea>
+    </cb-view>
+    <cb-view class="cb-view-table clearfix">
+        <!--附件数量-->
+        <cb-text class="cb-text-big" data-options='{"labelText":"附件数量："}'></cb-text>
+        <cb-input class="cb-input-big"
+                  data-options='{"name":"aaa","isReadonly": true}'></cb-input>
+    </cb-view>
+    <cb-view class="cb-view-table clearfix">
+        <!--上传收付款存档：-->
+        <cb-text class="cb-text-big" data-options='{"labelText":"上传收付款存档："}'></cb-text>
+        <cb-file-upload data-options='{"ctype":"text","labelRemark":"添加文件(最大20M)","limitFileType":["txt","xml"],"fileName":"fileName","maxFileNum":"3","maxFileSize":"20971520","filePath":"filePath","url":"../../"}' ></cb-file-upload>
+    </cb-view>
+    <cb-view class="cb-view-table cb-view-color clearfix">
+        <cb-btn class="cb-btn-big" bindcl="submitForm,submitData">保存</cb-btn>
+    </cb-view>
+ </cb-form>
+
+<script>
+    //页面特定的动态效果
+    (function () {
+        EventHandler.addHandler("HideFloatingPanelCheck", function (triggerName) {
+            Event.trigger(triggerName);
+        });
+
+    })();
+    (function(){
+        EventListenr.addListenr("HideFloatingPanelInput",function(){
+            CbFloatingPanel.prototype.hideFloatingPanel($(this));
+            var param = {};
+            var aa = $(this).parents('div [tagtype="cb-input"]').find('input[type="hidden"]').val();
+            param.aa=aa;
+            Event.trigger('getMvName',param);
+            Event.trigger('ShowBalance',aa);
+        })
+    })();
+    (function(){
+        EventListenr.addListenr("GetMvName",function(param){
+            var bb =$(this).find('input[type="hidden"]').val();
+            if(bb){
+                param.bb = bb;
+                Event.trigger('PayableBalance',param);
+            } else{
+                return false;
+            }
+        })
+    })();
+    (function(){
+        EventListenr.addListenr("SelectPayType",function(param){
+            var $this = $(this);
+            var data={}, params = {},
+            options = $this.data('options');
+            param.service = options.service;
+            data["params"] = param;
+            data.successF = function (returnData) {
+                $this.find('input').val(returnData.bb);
+            }
+            data.errorF = function (returnData) {
+                console.log("失败");
+            }
+            CommonAjax.ajax(data);
+        })
+    })();
+    (function(){
+        EventListenr.addListenr("ListenShowBalance",function(aa){
+            if(aa=='01' || aa=='02'){
+                $(this).hide();
+            }
+        })
+    })();
+</script>
+</body>
+</html>

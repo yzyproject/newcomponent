@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>layer弹出框示例</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <p>暂时只使用如下场景</p>
+    <button id="btn-confirm" type="button">询问层(点击删除等场景)</button>
+    <p></p>
+    <button id="btn-loading" type="button">loading层(上传文件等场景，ajax列表加载等场景)</button>
+    <p></p>
+    <button id="btn-alert-warn" type="button">alert提示框(警告图标)</button>
+    <p></p>
+    <button id="btn-alert-success" type="button">alert提示框(成功图标)</button>
+    <p></p>
+    <button id="btn-alert-fail" type="button">alert提示框(失败图标)</button>
+    <p></p>
+    <button id="btn-msg-warn" type="button">msg提示框(警告图标)</button>
+    <p></p>
+    <button id="btn-msg-success" type="button">msg提示框(成功图标)</button>
+    <p></p>
+    <button id="btn-msg-fail" type="button">msg提示框(失败图标)</button>
+    <p></p>
+    <button id="btn-dialog-open" type="button">自定义弹出框</button>
+    <div id="dialogContent" class="hide">
+        dsfdsfds<br/>
+        dsfdsfds<br/>
+        dsfdsfds<br/>
+        dsfdsfds<br/>
+        dsfdsfds<br/>
+        dsfdsfds<br/>
+        dsfdsfds<br/>
+        dsfdsfds<br/>
+        dsfdsfds
+    </div>
+<script src="../jquery/jquery-1.10.1.min.js"></script>
+<script src="layer.js"></script>
+<script>
+    $(function(){
+        //询问框
+        $('#btn-confirm').click(function () {
+            layer.confirm('确定要删除吗？', {
+            },function () {
+                alert("确定回调函数");
+                layer.closeAll();
+            }, function () {
+                alert("取消回调函数");
+            });
+        });
+
+        //loading层
+        $('#btn-loading').click(function () {
+            layer.load();
+
+            //此处演示关闭，上传文件等场景需要用到
+            setTimeout(function(){
+                layer.closeAll('loading');
+            }, 2000);
+        });
+
+        //alert(警告)提示
+        $('#btn-alert-warn').click(function(){
+            layer.alert('警告提示',{icon:'warn'});
+        });
+        //alert(成功)提示
+        $('#btn-alert-success').click(function(){
+            layer.alert('成功提示', {
+                closeBtn:0,
+                icon: 'success',
+                skin: 'layui-blue' //该皮肤由layer.seaning.com友情扩展。关于皮肤的扩展规则，去这里查阅
+            },function () {
+                window.location.href = "https://www.baidu.com";
+                layer.closeAll();
+            })
+        });
+
+        //alert(失败)提示
+        $('#btn-alert-fail').click(function(){
+            layer.alert('失败提示',{icon:'error'});
+        });
+
+        //msg(警告)提示
+        $('#btn-msg-warn').click(function(){
+            layer.msg('警告提示',{icon:'warn'});
+        });
+        //msg(成功)提示
+        $('#btn-msg-success').click(function(){
+            layer.msg('成功提示',{icon:'success'});
+        });
+
+        //msg(失败)提示
+        $('#btn-msg-fail').click(function(){
+            layer.msg('失败提示',{icon:'fail'});
+        });
+
+        //自定义弹出框
+        $('#btn-dialog-open').click(function(){
+            layer.open({
+                type: 1,
+                title: '自定义标题',
+                skin: 'layui-ext-blue', //样式类名
+                shadeClose: true, //开启遮罩关闭
+                content: $('#dialogContent'), //捕获的元素
+                area: ['850px', '480px'],
+                btn: ['确定', '取消'],
+                yes: function(index, layero){
+                    //do something
+                    layer.close(index); //如果设定了yes回调，需进行手工关闭
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>

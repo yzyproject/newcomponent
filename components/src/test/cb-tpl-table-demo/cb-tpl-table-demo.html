@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>模板表格组件</title>
+    <!--  公共模块-->
+    <script src="../../../plugins/jquery/jquery-1.10.1.min.js"></script>
+    <script src="../../../plugins/layer/layer.js"></script>
+    <script src="../../../plugins/pagination/script/pagination.js"></script>
+    <script src="../../../plugins/artTemplate/artTemplate.js"></script>
+    <script src="../../../scripts/common/common.js"></script>
+    <script src="../../../scripts/api/common-event.js"></script>
+    <script src="../../../scripts/api/common-listen.js"></script>
+    <script src="../../../scripts/api/common-rule.js"></script>
+    <script src="../../../scripts/api/common-fn.js"></script>
+    <script src="../../../plugins/store/store.legacy.min.js"></script>
+    <!-- 按钮 -->
+    <script src="../../../scripts/components/cb-btn.js"></script>
+    <!-- 模板表格组件 -->
+    <script src="../../../scripts/components/base-components/cb-tpl-table.js"></script>
+    <!--页面JS -->
+    <script src="cb-tpl-table-demo.js"></script>
+    <link rel="stylesheet" href="cb-tpl-table-demo.css">
+
+  </head>
+  <body>
+    <cb-btn class="btn1"  data-options='{"domDiv":"1"}' bindcl="wing,xxx" ><div>获得选中数据</div></cb-btn>
+    <cb-btn class="btn1"  data-options='{"domDiv":"1"}' bindcl="wing,long" ><div>改变第一行数据层one的数据</div></cb-btn>
+
+    <cb-tpl-table class="cb-business-table-blue dongjingfeng" listen='{"xxx":"getData","long":"updatecell"}' data-options='{
+            "pagination":true,
+            "total":"total",
+            "method":"get",
+            "clickTr":true,
+            "chooseBox":"checkBox",
+            "url":"table_data.json",
+            "tbodyService":"123456",
+            "columns":[
+                {"title":"测试字段一","field":"one","formatter":"Hyperlink","class":"one","width":"100px"},
+                {"title":"测试字段二","field":"two", "class":"two"},
+                {"title":"测试字段三","field":"three","class":"three"},
+                {"title":"测试字段四","field":"four", "class":"four"},
+                {"title":"测试字段五","field":"five","class":"five"},
+                {"title":"测试字段六","field":"six", "class":"six"}
+            ],
+            "tips":"哇咔咔，德玛西亚万岁"
+        }'
+    >
+    </cb-tpl-table>
+    <!-- <cb-btn class="btn1"  data-options='{"domDiv":"1","cid":"btn1"}' bindcl="wing,xxx" ><div>获得选中数据</div></cb-btn> -->
+    <!-- <cb-tpl-table class="cb-business-table-blue xiaomiao" listen='{"xxx":"getData","long":"geting"}' data-options='{
+            "pagination":true,
+            "loadSuccess":"cardPatternListData",
+            "tplUrl":"planTable.html",
+            "method":"get",
+            "clickTr":true,
+            "url":"table_data3.json",
+            "tbodyDataName":"cardPatternList",
+            "tbodyService":"123456",
+            "tips":"哇咔咔，德玛西亚万岁"
+        }'
+    >
+    </cb-tpl-table> -->
+    <!-- <div class="wing"></div> -->
+
+
+
+
+  </body>
+
+</html>
